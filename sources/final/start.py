@@ -64,7 +64,7 @@ td.t b {{ color: #0f172a; }} td.t span {{ color: #64748b; }}
 <p class="lead">Three PDFs, a revision tracker and one live site. Everything on this page is tappable: rows jump to the right page, underlined topic names anywhere open their in-depth page online, and every section has an <b>↑ Index</b> button to come back. Use the bookmarks panel in your PDF viewer for the full outline.</p>
 <h2>Your kit</h2>
 <div class="pdfs"><div style="--k:#c2410c"><b>This PDF · Complete</b><p>Guide + Cheat Sheet + Roadmap. Open it to plan, look things up and check progress.</p></div>
-<div style="--k:#2563eb"><b>Knowledge Base PDF</b><p>147 pages: concepts, 43 tested solutions, model answers. Online: <a href="{KB}">Knowledge Base</a>.</p></div>
+<div style="--k:#2563eb"><b>Knowledge Base PDF</b><p>167 pages: concepts, 43 tested solutions, mocks, company files. Online: <a href="{KB}">Knowledge Base</a>.</p></div>
 <div style="--k:#16a34a"><b>Playbook PDF</b><p>Café theme: Today and all 13 parts. Tick progress in the online playbook.</p></div>
 <div style="--k:#7c3aed"><b>Revision tracker</b><p>Google Sheet: log each problem, revision dates fill in, a Due today tab. <a href="https://docs.google.com/spreadsheets/d/1JhZAMJmKocsnES-4Rhn-gSnhuJA9XoSHccqPZWZwREY/edit">Open it</a>.</p></div></div>
 <h2>Inside this PDF</h2>

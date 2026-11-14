@@ -92,7 +92,7 @@ a.pdfback { display: inline-block; vertical-align: middle; margin-left: 8px; fon
     cheat: ['Index', 'Prep Cheat Sheet. Tap a line to jump; ↑ Index on each section brings you back.', 1],
     roadmap: ['Index', 'Placement Roadmap. Sections, then every week and month of the plan. Tap to jump.', 2],
     playbook: ['Index', 'DSA Placement Playbook: Today, all 13 parts and their sections. Tap to jump; ↑ Index on each part brings you back.', 2],
-    kb: ['Index', 'All 147 pages by category: concepts, 43 worked solutions, 5 model-answer sets and the Elite HFT pages. Tap to jump; ↑ Index on each page brings you back.', 2] }[cfg.mode];
+    kb: ['Index', 'All 167 pages by category: concepts, 43 worked solutions, model answers, the Elite pages, 8 mock interviews and 10 company files. Tap to jump; ↑ Index on each page brings you back.', 2] }[cfg.mode];
   await p.evaluate(({ entries, pages, meta, prefix, mode }) => {
     const pad = n => String(n);
     const box = document.createElement('section'); box.className = 'pdfidx'; box.id = prefix + 'pdf-index'; box.style.setProperty('--cols', meta[2]);

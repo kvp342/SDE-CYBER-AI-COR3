@@ -86,6 +86,31 @@ rep('<span class="mono">11</span> HFT track (later)</summary><ol><li><a href="#h
     '<span class="mono">11</span> Elite: HFT track</summary><ol><li><a href="#hft-gate">The gate</a></li><li><a href="#hft-why">What HFT firms test</a></li>', 2)
 rep('CP31 from mid-December, a two-hour AI track from January, a later maths and probability track for HFT roles,',
     'a light CP habit from February, a 4-week AI-security project in May, an Elite HFT track opened only by a checkpoint,')
+
+# ---------- step headers: dates from the new schedule, and a link to each step's concept page ----------
+KB = "https://claude.ai/artifact/McuS723LTAb16Q6SpdUsAT"
+TRK = "https://docs.google.com/spreadsheets/d/1JhZAMJmKocsnES-4Rhn-gSnhuJA9XoSHccqPZWZwREY/edit"
+STEPKB = {1: "cpp-stl", 2: "complexity", 3: "two-pointers", 4: "binary-search", 5: "hashing", 6: "linked-list", 7: "recursion", 8: "bit-manipulation",
+          9: "stack-queue", 10: "sliding-window", 11: "heap", 12: "greedy", 13: "trees", 14: "bst", 15: "bfs", 16: "dp", 17: "trie", 18: "string-algos"}
+ss = h.index("\nvar D=") + 7; ee = h.index("};", ss) + 1; DN = json.loads(h[ss:ee])
+span = {}
+for k, v in DN.items():
+    for x in v.get("due", []):
+        if x[2] != "H": span.setdefault(x[0], []).append(k)
+fmt = lambda k: dt.fromisoformat(k).strftime("%d %b").upper().lstrip("0")
+def eyebrow(m):
+    n = int(m.group(1)); ks = sorted(span.get(n, []))
+    return m.group(0) if not ks else f'<p class="eb">STEP {m.group(1)}  |  {fmt(ks[0])}{" TO " + fmt(ks[-1]) if ks[-1] != ks[0] else ""}  |'
+h, cnt = re.subn(r'<p class="eb">STEP (\d\d)  \|  ([^|<]+?)  \|', eyebrow, h)
+assert cnt >= 18, cnt
+def kbl(m):
+    n = int(m.group(1))
+    return m.group(0) + f'<p class="muted">Concepts first: <a href="{KB}#{STEPKB[n]}" target="_blank" rel="noopener">Knowledge Base page</a> · worked solutions in its Problems section.</p>'
+h, cnt2 = re.subn(r'(?<=<section class="sec" id="step-)(\d+)("[^>]*>(?:(?!</h2>).)*?</h2>)', lambda m: m.group(1) + m.group(2) + f'<p class="muted">Concepts first: <a href="{KB}#{STEPKB[int(m.group(1))]}" target="_blank" rel="noopener">Knowledge Base page</a> · worked solutions in its Problems section.</p>', h, flags=re.S)
+assert cnt2 == 18, cnt2
+rep('<a class="sl" href="#index">Index</a>', f'<a class="sl" href="#index">Index</a><a class="sl" href="{KB}" target="_blank" rel="noopener">Knowledge Base ↗</a><a class="sl" href="{TRK}" target="_blank" rel="noopener">Revision tracker ↗</a>')
+rep('<a href="#logs">Logs</a></nav>', f'<a href="#logs">Logs</a><a href="{KB}" target="_blank" rel="noopener">Knowledge</a></nav>')
+
 h = h.replace('Five tracks, one route', 'Every track, one route')
 open(OUT, "w", encoding="utf-8").write(h)
 print("playbook Path A written", len(h))

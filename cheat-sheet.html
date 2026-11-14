@@ -1,0 +1,237 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Prep Cheat Sheet</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a dense reference in one left-aligned column. Hairline-ruled sections; code in mono panels; two or three columns that stack on a phone. Kestrel tokens. */
+:root{--surface:#f6f4ef;--raised:#ffffff;--line:#dedad1;--ink:#15181d;--muted:#5b5f66;--brand:#c2410c;--on-brand:#ffffff;--brand-soft:#fbe3d4;--code:#fbfaf7;
+  --f-display:"Space Grotesk","IBM Plex Sans",system-ui,sans-serif;--f-sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--surface:#121417;--raised:#1b1e23;--line:#2c3036;--ink:#eeece6;--muted:#a3a7ad;--brand:#f07a3f;--on-brand:#121417;--brand-soft:#3a2116;--code:#16191d;color-scheme:dark}}
+:root[data-theme="dark"]{--surface:#121417;--raised:#1b1e23;--line:#2c3036;--ink:#eeece6;--muted:#a3a7ad;--brand:#f07a3f;--on-brand:#121417;--brand-soft:#3a2116;--code:#16191d;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--surface);color:var(--ink);font:400 15px/22px var(--f-sans);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,p,ul,ol,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+h1,h2{font-family:var(--f-display);font-weight:600;text-wrap:balance}
+h1{font-size:clamp(30px,5vw,44px);line-height:1.08;letter-spacing:-.02em}
+h2{font-size:24px;line-height:30px}
+h3{font:600 16px/22px var(--f-sans);margin-bottom:6px}
+*+h3{margin-top:16px}
+.label{font:500 11px/16px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--f-mono);font-size:13px}
+.muted{color:var(--muted)}.small{font-size:13px;line-height:18px;margin-top:8px}
+code{font:400 13px/1.4 var(--f-mono);background:var(--brand-soft);border-radius:4px;padding:1px 4px;overflow-wrap:anywhere}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px;border-radius:4px}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--surface);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;min-height:48px}
+.top .name{font:600 16px/1 var(--f-display);color:var(--ink);text-decoration:none;white-space:nowrap}
+.top nav{display:flex;gap:2px;overflow-x:auto;min-width:0;flex:1;scrollbar-width:none}
+.top nav::-webkit-scrollbar{display:none}
+.top nav a{font:500 13px/1 var(--f-sans);color:var(--muted);text-decoration:none;padding:8px;white-space:nowrap}
+.top nav a:hover{color:var(--ink)}
+.intro{padding-block:32px 0;display:grid;gap:12px}
+.lede{max-width:62ch;color:var(--muted)}
+section.sec{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);display:grid;gap:16px}
+section.sec>*{min-width:0}
+.sec>header{display:grid;gap:4px}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.cols.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cols>*{min-width:0}
+@media (max-width:900px){.cols,.cols.two{grid-template-columns:minmax(0,1fr)}}
+.plain{display:grid;gap:6px}
+.plain li{padding-left:14px;position:relative}
+.plain li::before{content:"";position:absolute;left:1px;top:9px;width:5px;height:5px;border-radius:50%;background:var(--muted)}
+.num{display:grid;gap:6px;counter-reset:n}
+.num li{counter-increment:n;padding-left:24px;position:relative}
+.num li::before{content:counter(n);position:absolute;left:0;font:500 12px/22px var(--f-mono);color:var(--brand)}
+.num.tight{gap:2px;margin-bottom:12px}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--raised);align-self:start}
+table{border-collapse:collapse;width:100%;font-size:14px;line-height:20px}
+th{font:500 11px/16px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:8px 12px;border-top:1px solid var(--line);vertical-align:top}
+tr:first-child td{border-top:0}
+td:first-child{font-weight:500}
+table.num td:first-child,table.num td:nth-child(2){font-family:var(--f-mono);font-size:13px;white-space:nowrap}
+.code{border:1px solid var(--line);border-radius:8px;background:var(--code);overflow:hidden;align-self:start;margin-bottom:12px}
+.code figcaption{font:500 11px/16px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 12px;border-bottom:1px solid var(--line);background:var(--raised)}
+.code pre{margin:0;padding:12px;overflow-x:auto;font:400 12.5px/19px var(--f-mono);color:var(--ink);tab-size:4}
+.codes{columns:2 440px;column-gap:16px}
+.codes .code{break-inside:avoid}
+footer{margin-top:40px;padding-block:20px 40px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;line-height:18px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<header class="top"><div class="wrap"><a class="name" href="#rules">Cheat sheet</a><nav aria-label="Sections"><a href="#rules">Rules</a><a href="#complexity">Complexity</a><a href="#cpp">C++</a><a href="#patterns">Patterns</a><a href="#templates">Templates</a><a href="#dp">DP</a><a href="#cs">Core CS</a><a href="#sql">SQL</a><a href="#security">Security</a><a href="#aws">AWS</a><a href="#interview">Interviews</a><a href="https://claude.ai/artifact/McuS723LTAb16Q6SpdUsAT" target="_blank" rel="noopener">Knowledge ↗</a></nav></div></header>
+<main class="wrap">
+<section class="intro"><p class="label">Placement prep · one page</p><h1>Prep cheat sheet</h1><p class="lede">The rules, the triggers and the templates. Read the first section before every session, and the whole page before every test.</p></section>
+<section class="sec" id="rules"><header><p class="label">Read before every session</p><h2>The rules</h2></header><div class="cols"><div><h3>The problem loop</h3><ol class="num"><li><b>Restate</b> the input, output and constraints. One example by hand. (3 min)</li><li><b>Brute force</b> and its Big-O. (5 min)</li><li><b>Optimise:</b> sort? hash? two pointers? binary search the answer? repeated work? a graph? (10 to 20 min)</li><li><b>Code</b> it in one go. (10 to 15 min)</li><li><b>Test</b> the sample and two edge cases. (5 min)</li><li><b>Log</b> the pattern, the time, S/H/F and the mistake. (1 min)</li></ol></div><div><h3>When stuck</h3><ul class="plain"><li>30 minutes alone, then a hint only</li><li>60 minutes, then the solution: close it and code from memory</li><li>Re-solve at 1, 3, 7 and 21 days</li><li>Mark it S (solved), H (hint) or F (failed)</li></ul><h3>Never zero</h3><ul class="plain"><li>Minimum day: revision, 2 Striver, 1 LeetCode, 20 min of flashcards</li><li>Short on time, cut: the Elite HFT track (if open), the CP habit, the AI-security project, then cyber. Never DSA or revision.</li></ul></div><div><h3>Edge cases to try</h3><ul class="plain"><li>Empty input, one element, two elements</li><li>All equal, already sorted, reverse sorted</li><li>Negative numbers and zero</li><li>The largest n and the largest values (overflow)</li><li>Duplicates; the target missing</li><li>Trees: empty, one node, a straight line</li><li>Graphs: disconnected, a self-loop, a cycle</li></ul></div></div></section><section class="sec" id="complexity"><header><p class="label">Constraints name the algorithm</p><h2>Complexity</h2></header><div class="cols two"><div class="tw"><table class="num"><thead><tr><th>n up to</th><th>Aim for</th><th>Typical technique</th></tr></thead><tbody><tr><td>10 to 12</td><td>O(n!)</td><td>Permutations, backtracking</td></tr><tr><td>20 to 25</td><td>O(2ⁿ)</td><td>Bitmask, subsets, meet in the middle</td></tr><tr><td>100</td><td>O(n³) or O(n⁴)</td><td>Floyd-Warshall, interval DP</td></tr><tr><td>1,000 to 5,000</td><td>O(n²)</td><td>2D DP, nested loops</td></tr><tr><td>10⁵</td><td>O(n log n)</td><td>Sorting, heap, binary search, segment tree</td></tr><tr><td>10⁶ to 10⁷</td><td>O(n)</td><td>Two pointers, hashing, prefix sums, sieve</td></tr><tr><td>10⁹ to 10¹⁸</td><td>O(log n) or O(√n)</td><td>Binary search, maths, fast power</td></tr></tbody></table></div><div><ul class="plain"><li>About <b>10⁸ simple operations per second</b></li><li><code>int</code> holds about ±2.1×10⁹. Anything bigger: <code>long long</code> (about ±9.2×10¹⁸)</li><li>Overflow happens in the expression: write <code>1LL * a * b</code></li><li>Mid without overflow: <code>lo + (hi - lo) / 2</code></li><li>Modulo: <code>((a % M) + M) % M</code> for negatives; <code>M = 1e9 + 7</code></li><li>Recursion deeper than about 10⁵ risks a stack overflow</li><li><code>sort</code> is O(n log n); <code>map</code> and <code>set</code> are O(log n) per operation; <code>unordered_map</code> is O(1) on average</li><li>A loop that halves or doubles runs log n times; <code>i*i &lt;= n</code> runs √n times</li></ul></div></div></section><section class="sec" id="cpp"><header><p class="label">What you need from C++</p><h2>C++ and the STL</h2></header><figure class="code"><figcaption>Starter</figcaption><pre>#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+
+int main() {
+    ios::sync_with_stdio(false); cin.tie(nullptr);
+    int n; cin &gt;&gt; n;
+    vector&lt;int&gt; a(n);
+    for (int &amp;x : a) cin &gt;&gt; x;
+    cout &lt;&lt; accumulate(a.begin(), a.end(), 0LL) &lt;&lt; &quot;\n&quot;;
+}</pre></figure><div class="cols two"><div class="tw"><table class=""><thead><tr><th>Container</th><th>Use it for</th><th>Key calls</th></tr></thead><tbody><tr><td><code>vector&lt;T&gt;</code></td><td>Dynamic array</td><td><code>push_back pop_back back size [i]</code></td></tr><tr><td><code>string</code></td><td>Text</td><td><code>size substr(i,len) find += </code></td></tr><tr><td><code>pair&lt;A,B&gt;</code></td><td>Two values</td><td><code>.first .second</code></td></tr><tr><td><code>stack&lt;T&gt;</code></td><td>Last in, first out</td><td><code>push pop top empty</code></td></tr><tr><td><code>queue&lt;T&gt;</code></td><td>First in, first out (BFS)</td><td><code>push pop front empty</code></td></tr><tr><td><code>deque&lt;T&gt;</code></td><td>Both ends</td><td><code>push_front push_back pop_front pop_back</code></td></tr><tr><td><code>priority_queue&lt;T&gt;</code></td><td>Max-heap</td><td><code>push pop top</code></td></tr><tr><td><code>set&lt;T&gt;</code></td><td>Sorted unique</td><td><code>insert erase count lower_bound</code></td></tr><tr><td><code>map&lt;K,V&gt;</code></td><td>Sorted key to value</td><td><code>m[k] count find erase</code></td></tr><tr><td><code>unordered_map&lt;K,V&gt;</code></td><td>Hash map, O(1) average</td><td><code>m[k] count find</code></td></tr></tbody></table></div><div><figure class="code"><figcaption>Idioms</figcaption><pre>sort(a.begin(), a.end());                       // ascending
+sort(a.begin(), a.end(), greater&lt;int&gt;());       // descending
+sort(v.begin(), v.end(), [](auto &amp;x, auto &amp;y){  // custom
+    return x.second &gt; y.second; });
+reverse(a.begin(), a.end());
+a.erase(unique(a.begin(), a.end()), a.end());   // after sort: dedupe
+int i = lower_bound(a.begin(), a.end(), x) - a.begin(); // first &gt;= x
+int j = upper_bound(a.begin(), a.end(), x) - a.begin(); // first &gt;  x
+priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; minh;    // min-heap
+for (auto &amp;[k, v] : m) { }                      // iterate a map
+if (m.count(k)) { }       // check without inserting (m[k] inserts!)
+__builtin_popcount(x);    // set bits (use ...ll for long long)
+string t = to_string(42); int v = stoi(&quot;42&quot;);</pre></figure><ul class="plain"><li><code>top()</code> or <code>pop()</code> on an empty container is undefined: check <code>empty()</code> first</li><li><code>v.size()</code> is unsigned: <code>v.size() - 1</code> underflows when empty</li><li>Pass big things by reference: <code>const vector&lt;int&gt; &amp;v</code></li><li>After <code>cin &gt;&gt; n</code>, call <code>cin.ignore()</code> before <code>getline</code></li></ul></div></div></section><section class="sec" id="patterns"><header><p class="label">The trigger tells you the technique</p><h2>Pattern triggers</h2></header><div class="tw"><table class=""><thead><tr><th>If the problem says…</th><th>Think</th><th>Why</th></tr></thead><tbody><tr><td>Sorted array, find a target or a boundary</td><td>Binary search</td><td>Halve the search space each step</td></tr><tr><td>"Minimum of the maximum", "smallest value such that…"</td><td>Binary search on the answer</td><td>The answer is monotonic: check(x) flips once</td></tr><tr><td>Pair or triplet with a sum, in a sorted array</td><td>Two pointers</td><td>Move the end that helps</td></tr><tr><td>Longest or shortest subarray or substring with a condition</td><td>Sliding window</td><td>Grow right, shrink left while invalid</td></tr><tr><td>Subarray sum equals K, count of subarrays</td><td>Prefix sum + hash map</td><td>sum(l..r) = pre[r] − pre[l−1]</td></tr><tr><td>Next greater or smaller element, histogram areas</td><td>Monotonic stack</td><td>Each element is pushed and popped once</td></tr><tr><td>Top K, Kth largest, merge K sorted</td><td>Heap</td><td>Keep only K items</td></tr><tr><td>Seen before? count? group by?</td><td>Hash map or set</td><td>O(1) lookups</td></tr><tr><td>All subsets, permutations, combinations</td><td>Backtracking</td><td>Choose, explore, un-choose</td></tr><tr><td>Shortest path, unweighted</td><td>BFS</td><td>Level by level</td></tr><tr><td>Shortest path, weights ≥ 0</td><td>Dijkstra</td><td>Greedy on the closest node</td></tr><tr><td>Negative edges; all pairs</td><td>Bellman-Ford; Floyd-Warshall</td><td>Relax edges repeatedly</td></tr><tr><td>Connected groups, "same component", merging</td><td>DFS or Union-Find (DSU)</td><td>Near O(1) per union</td></tr><tr><td>Order with prerequisites</td><td>Topological sort</td><td>Kahn's algorithm with in-degrees</td></tr><tr><td>Count ways, min or max cost, "can you reach"</td><td>Dynamic programming</td><td>Overlapping subproblems</td></tr><tr><td>Choices now affect later, local best works</td><td>Greedy (sort first)</td><td>Prove it with an exchange argument</td></tr><tr><td>Prefix lookups, autocomplete, max XOR</td><td>Trie</td><td>One node per character or bit</td></tr><tr><td>Appears once, toggle, subsets up to 20</td><td>Bit manipulation</td><td>XOR cancels pairs; masks enumerate subsets</td></tr><tr><td>Linked list: middle, cycle</td><td>Slow and fast pointers</td><td>Fast moves two, slow moves one</td></tr><tr><td>Tree: any "path" or "height" question</td><td>DFS returning a value up</td><td>Combine the left and right answers</td></tr><tr><td>Intervals: merge, overlap, rooms</td><td>Sort by start or end</td><td>Then sweep once</td></tr></tbody></table></div></section><section class="sec" id="templates"><header><p class="label">Type these until they are automatic</p><h2>Templates</h2></header><div class="codes"><figure class="code"><figcaption>Binary search</figcaption><pre>int lo = 0, hi = n - 1, ans = -1;
+while (lo &lt;= hi) {
+    int mid = lo + (hi - lo) / 2;
+    if (a[mid] &gt;= x) { ans = mid; hi = mid - 1; }   // first index &gt;= x
+    else lo = mid + 1;
+}</pre></figure><figure class="code"><figcaption>Binary search on the answer</figcaption><pre>ll lo = MIN_ANS, hi = MAX_ANS, ans = hi;
+while (lo &lt;= hi) {
+    ll mid = lo + (hi - lo) / 2;
+    if (ok(mid)) { ans = mid; hi = mid - 1; }   // smallest value that works
+    else lo = mid + 1;
+}</pre></figure><figure class="code"><figcaption>Two pointers (sorted array)</figcaption><pre>int i = 0, j = n - 1;
+while (i &lt; j) {
+    int s = a[i] + a[j];
+    if (s == target) { /* found */ i++; j--; }
+    else if (s &lt; target) i++;
+    else j--;
+}</pre></figure><figure class="code"><figcaption>Sliding window (longest valid)</figcaption><pre>int best = 0;
+for (int l = 0, r = 0; r &lt; n; r++) {
+    add(a[r]);
+    while (!valid()) remove(a[l++]);
+    best = max(best, r - l + 1);
+}</pre></figure><figure class="code"><figcaption>Prefix sum; subarrays with sum K</figcaption><pre>vector&lt;ll&gt; pre(n + 1, 0);
+for (int i = 0; i &lt; n; i++) pre[i + 1] = pre[i] + a[i];
+// sum of a[l..r] = pre[r + 1] - pre[l]
+
+unordered_map&lt;ll, int&gt; seen; seen[0] = 1;
+ll sum = 0, ways = 0;
+for (int x : a) { sum += x; ways += seen[sum - k]; seen[sum]++; }</pre></figure><figure class="code"><figcaption>Monotonic stack (next greater)</figcaption><pre>vector&lt;int&gt; nge(n, -1); stack&lt;int&gt; st;       // st holds indices
+for (int i = 0; i &lt; n; i++) {
+    while (!st.empty() &amp;&amp; a[st.top()] &lt; a[i]) { nge[st.top()] = a[i]; st.pop(); }
+    st.push(i);
+}</pre></figure><figure class="code"><figcaption>Backtracking (subsets)</figcaption><pre>void go(int i, vector&lt;int&gt; &amp;cur) {
+    if (i == n) { out.push_back(cur); return; }
+    cur.push_back(a[i]); go(i + 1, cur);     // choose
+    cur.pop_back();      go(i + 1, cur);     // un-choose
+}</pre></figure><figure class="code"><figcaption>BFS (shortest path, unweighted)</figcaption><pre>vector&lt;int&gt; dist(n, -1); queue&lt;int&gt; q;
+dist[s] = 0; q.push(s);
+while (!q.empty()) {
+    int u = q.front(); q.pop();
+    for (int v : adj[u]) if (dist[v] == -1) { dist[v] = dist[u] + 1; q.push(v); }
+}</pre></figure><figure class="code"><figcaption>DFS; grid neighbours</figcaption><pre>void dfs(int u) {
+    vis[u] = true;
+    for (int v : adj[u]) if (!vis[v]) dfs(v);
+}
+int dr[] = {-1, 1, 0, 0}, dc[] = {0, 0, -1, 1};
+// nr = r + dr[k], nc = c + dc[k]; check 0 &lt;= nr &lt; R and 0 &lt;= nc &lt; C</pre></figure><figure class="code"><figcaption>Topological sort (Kahn)</figcaption><pre>vector&lt;int&gt; indeg(n), order; queue&lt;int&gt; q;
+for (int u = 0; u &lt; n; u++) for (int v : adj[u]) indeg[v]++;
+for (int u = 0; u &lt; n; u++) if (!indeg[u]) q.push(u);
+while (!q.empty()) {
+    int u = q.front(); q.pop(); order.push_back(u);
+    for (int v : adj[u]) if (--indeg[v] == 0) q.push(v);
+}
+// order.size() &lt; n  means there is a cycle</pre></figure><figure class="code"><figcaption>Dijkstra</figcaption><pre>vector&lt;ll&gt; d(n, LLONG_MAX);
+priority_queue&lt;pair&lt;ll,int&gt;, vector&lt;pair&lt;ll,int&gt;&gt;, greater&lt;&gt;&gt; pq;
+d[s] = 0; pq.push({0, s});
+while (!pq.empty()) {
+    auto [du, u] = pq.top(); pq.pop();
+    if (du &gt; d[u]) continue;
+    for (auto [v, w] : adj[u])
+        if (du + w &lt; d[v]) { d[v] = du + w; pq.push({d[v], v}); }
+}</pre></figure><figure class="code"><figcaption>Union-Find (DSU)</figcaption><pre>vector&lt;int&gt; p(n), sz(n, 1);
+iota(p.begin(), p.end(), 0);
+int find(int x) { return p[x] == x ? x : p[x] = find(p[x]); }
+bool unite(int a, int b) {
+    a = find(a); b = find(b);
+    if (a == b) return false;
+    if (sz[a] &lt; sz[b]) swap(a, b);
+    p[b] = a; sz[a] += sz[b]; return true;
+}</pre></figure><figure class="code"><figcaption>DP: 0/1 knapsack, LIS, LCS</figcaption><pre>// knapsack: best value with capacity W
+vector&lt;int&gt; dp(W + 1, 0);
+for (int i = 0; i &lt; n; i++)
+    for (int c = W; c &gt;= wt[i]; c--) dp[c] = max(dp[c], dp[c - wt[i]] + val[i]);
+
+// LIS in O(n log n)
+vector&lt;int&gt; t;
+for (int x : a) { auto it = lower_bound(t.begin(), t.end(), x);
+                  if (it == t.end()) t.push_back(x); else *it = x; }
+
+// LCS of s and r
+vector&lt;vector&lt;int&gt;&gt; L(n + 1, vector&lt;int&gt;(m + 1, 0));
+for (int i = 1; i &lt;= n; i++) for (int j = 1; j &lt;= m; j++)
+    L[i][j] = s[i-1] == r[j-1] ? L[i-1][j-1] + 1 : max(L[i-1][j], L[i][j-1]);</pre></figure><figure class="code"><figcaption>Linked list: reverse; slow and fast</figcaption><pre>Node *prev = nullptr, *cur = head;
+while (cur) { Node *nx = cur-&gt;next; cur-&gt;next = prev; prev = cur; cur = nx; }
+head = prev;
+
+Node *slow = head, *fast = head;             // middle, or cycle check
+while (fast &amp;&amp; fast-&gt;next) { slow = slow-&gt;next; fast = fast-&gt;next-&gt;next;
+                             if (slow == fast) { /* cycle */ break; } }</pre></figure><figure class="code"><figcaption>Tree: height, level order</figcaption><pre>int height(Node *r) { return r ? 1 + max(height(r-&gt;left), height(r-&gt;right)) : 0; }
+
+queue&lt;Node*&gt; q; if (root) q.push(root);
+while (!q.empty()) {
+    int k = q.size();                         // one level
+    while (k--) { Node *u = q.front(); q.pop();
+                  if (u-&gt;left) q.push(u-&gt;left); if (u-&gt;right) q.push(u-&gt;right); }
+}</pre></figure><figure class="code"><figcaption>Bits and maths</figcaption><pre>x &amp; 1            // odd?            x &amp; (x - 1)     // drop the lowest set bit
+x &amp; -x           // lowest set bit  x &gt;&gt; i &amp; 1      // i-th bit
+x | (1 &lt;&lt; i)     // set bit i       x &amp; ~(1 &lt;&lt; i)   // clear bit i
+for (int mask = 0; mask &lt; (1 &lt;&lt; n); mask++) { }     // all subsets
+
+ll power(ll a, ll b, ll M) { ll r = 1; a %= M;
+    while (b) { if (b &amp; 1) r = r * a % M; a = a * a % M; b &gt;&gt;= 1; } return r; }
+// gcd(a, b) = __gcd(a, b);  lcm = a / gcd * b
+vector&lt;bool&gt; prime(n + 1, true); prime[0] = prime[1] = false;   // sieve
+for (int i = 2; (ll)i * i &lt;= n; i++) if (prime[i])
+    for (int j = i * i; j &lt;= n; j += i) prime[j] = false;</pre></figure></div></section><section class="sec" id="dp"><header><p class="label">Dynamic programming in five questions</p><h2>DP recipe</h2></header><div class="cols two"><ol class="num"><li><b>State:</b> what changes between subproblems? (index, capacity, last choice)</li><li><b>Meaning:</b> say dp[i] in one sentence</li><li><b>Transition:</b> the choices at this state</li><li><b>Base case:</b> the smallest inputs</li><li><b>Order and answer:</b> which way to fill, and where the answer sits</li></ol><div class="tw"><table class=""><thead><tr><th>Family</th><th>State</th><th>Examples</th></tr></thead><tbody><tr><td>1D</td><td>dp[i]</td><td>Climbing stairs, house robber</td></tr><tr><td>Grid</td><td>dp[r][c]</td><td>Unique paths, minimum path sum</td></tr><tr><td>Subsequence</td><td>dp[i][sum]</td><td>Subset sum, knapsack, coin change</td></tr><tr><td>Two strings</td><td>dp[i][j]</td><td>LCS, edit distance</td></tr><tr><td>LIS</td><td>dp[i] ending at i</td><td>LIS, longest chain</td></tr><tr><td>Stocks</td><td>dp[day][holding][k]</td><td>Buy and sell variants</td></tr><tr><td>Intervals</td><td>dp[l][r]</td><td>Matrix chain, burst balloons</td></tr></tbody></table></div></div></section><section class="sec" id="cs"><header><p class="label">One-line answers, then go deeper</p><h2>Core CS</h2></header><div class="cols two"><div><h3>OOP</h3><ul class="plain"><li><b>Encapsulation:</b> data and methods together, internals hidden</li><li><b>Abstraction:</b> show what it does, hide how</li><li><b>Inheritance:</b> a class reuses and extends another</li><li><b>Polymorphism:</b> one interface, many forms. Compile-time: overloading. Run-time: virtual functions through the vtable.</li><li>A <b>virtual destructor</b> is needed when deleting through a base pointer</li><li><b>Shallow copy</b> copies pointers; <b>deep copy</b> copies what they point to</li><li><b>SOLID:</b> single responsibility, open/closed, Liskov, interface segregation, dependency inversion</li></ul><h3>Operating systems</h3><ul class="plain"><li><b>Process</b> has its own memory; <b>threads</b> share it</li><li><b>Context switch:</b> save one state, load another</li><li><b>Scheduling:</b> FCFS, SJF, round robin, priority</li><li><b>Deadlock</b> needs all four: mutual exclusion, hold and wait, no preemption, circular wait</li><li><b>Mutex</b> has one owner; a <b>semaphore</b> is a counter</li><li><b>Paging</b> maps virtual pages to frames; a page fault loads from disk; thrashing is constant faulting</li><li><b>Virtual memory</b> lets processes use more than physical RAM</li></ul></div><div><h3>DBMS</h3><ul class="plain"><li><b>ACID:</b> atomicity, consistency, isolation, durability</li><li><b>Normal forms:</b> 1NF atomic values; 2NF no partial dependency; 3NF no transitive dependency; BCNF every determinant is a key</li><li><b>Keys:</b> primary, candidate, foreign, composite</li><li><b>Index:</b> a B+ tree that speeds reads and slows writes</li><li><b>Isolation levels:</b> read uncommitted, read committed, repeatable read, serializable</li><li><b>Joins:</b> inner, left, right, full, cross, self</li></ul><h3>Networks</h3><ul class="plain"><li><b>OSI:</b> physical, data link, network, transport, session, presentation, application</li><li><b>TCP:</b> reliable, ordered, 3-way handshake (SYN, SYN-ACK, ACK). <b>UDP:</b> no guarantees, faster</li><li><b>Typing a URL:</b> DNS lookup, TCP handshake, TLS handshake, HTTP request, response, render</li><li><b>HTTP codes:</b> 2xx ok, 3xx redirect, 4xx your fault, 5xx server fault</li><li><b>Subnetting:</b> /24 has 256 addresses, 254 hosts</li><li><b>NAT</b> maps private to public addresses; <b>DHCP</b> hands out addresses; <b>ARP</b> maps IP to MAC</li></ul></div></div></section><section class="sec" id="sql"><header><p class="label">Write the clauses in this order</p><h2>SQL</h2></header><div class="cols two"><figure class="code"><figcaption>Shape of a query</figcaption><pre>SELECT dept, COUNT(*) AS n, AVG(salary) AS avg_sal
+FROM employees e
+JOIN departments d ON d.id = e.dept_id
+WHERE e.active = 1            -- filters rows
+GROUP BY dept
+HAVING COUNT(*) &gt; 5           -- filters groups
+ORDER BY avg_sal DESC
+LIMIT 10;
+-- runs as: FROM, JOIN, WHERE, GROUP BY, HAVING, SELECT, ORDER BY, LIMIT</pre></figure><figure class="code"><figcaption>The interview favourites</figcaption><pre>-- second highest salary
+SELECT MAX(salary) FROM employees
+WHERE salary &lt; (SELECT MAX(salary) FROM employees);
+
+-- top earner in each department
+SELECT * FROM (
+  SELECT e.*, DENSE_RANK() OVER (PARTITION BY dept_id ORDER BY salary DESC) AS r
+  FROM employees e) t
+WHERE r = 1;
+
+-- duplicates
+SELECT email, COUNT(*) FROM users GROUP BY email HAVING COUNT(*) &gt; 1;
+
+-- running total
+SELECT day, SUM(amount) OVER (ORDER BY day) AS running FROM sales;
+
+-- a CTE
+WITH big AS (SELECT * FROM orders WHERE total &gt; 1000)
+SELECT customer_id, COUNT(*) FROM big GROUP BY customer_id;</pre></figure></div></section><section class="sec" id="security"><header><p class="label">Labs only: platforms built for it and machines you own</p><h2>Security</h2></header><div class="cols two"><div><figure class="code"><figcaption>Linux</figcaption><pre>ls -la; pwd; cd; cat; less; head; tail -f
+grep -rn &quot;text&quot; .        find / -name &quot;*.conf&quot; 2&gt;/dev/null
+chmod 640 file           chown user:group file
+ps aux; top; kill -9 PID
+ss -tulpn                # listening ports
+sudo -l                  # what may I run as root?
+find / -perm -4000 2&gt;/dev/null   # SUID files
+curl -I https://site     # response headers</pre></figure><figure class="code"><figcaption>Recon and capture</figcaption><pre>nmap -sV -sC -p- target        # versions, default scripts, all ports
+nmap -sn 192.168.1.0/24        # which hosts are up
+tcpdump -i eth0 port 80
+# Wireshark filters
+http; dns; tcp.port == 443; ip.addr == 10.0.0.5
+tcp.flags.syn == 1 &amp;&amp; tcp.flags.ack == 0</pre></figure></div><div><div class="tw"><table class="num"><thead><tr><th>Port</th><th>Service</th></tr></thead><tbody><tr><td>20, 21</td><td>FTP</td></tr><tr><td>22</td><td>SSH</td></tr><tr><td>23</td><td>Telnet</td></tr><tr><td>25</td><td>SMTP</td></tr><tr><td>53</td><td>DNS</td></tr><tr><td>80 / 443</td><td>HTTP / HTTPS</td></tr><tr><td>110 / 143</td><td>POP3 / IMAP</td></tr><tr><td>3306</td><td>MySQL</td></tr><tr><td>3389</td><td>RDP</td></tr><tr><td>5432</td><td>PostgreSQL</td></tr></tbody></table></div><h3>OWASP Top 10 (2021)</h3><ol class="num tight"><li>Broken access control (IDOR)</li><li>Cryptographic failures</li><li>Injection (SQL, command, XSS)</li><li>Insecure design</li><li>Security misconfiguration</li><li>Vulnerable and outdated components</li><li>Identification and authentication failures</li><li>Software and data integrity failures</li><li>Logging and monitoring failures</li><li>Server-side request forgery (SSRF)</li></ol><ul class="plain"><li><b>Fix injection</b> with parameterised queries, never string building</li><li><b>Fix XSS</b> with output encoding and a content security policy</li><li><b>Hash passwords</b> with bcrypt or Argon2 and a salt; hashing is one-way, encryption is not</li><li><b>STRIDE:</b> spoofing, tampering, repudiation, information disclosure, denial of service, elevation of privilege</li></ul></div></div></section><section class="sec" id="aws"><header><p class="label">For the SAA exam and for TenantWall</p><h2>AWS</h2></header><div class="cols two"><div class="tw"><table class=""><thead><tr><th>Service</th><th>What it is</th></tr></thead><tbody><tr><td>IAM</td><td>Users, groups, roles, policies. Who can do what.</td></tr><tr><td>EC2 / EBS</td><td>Virtual servers / their disks</td></tr><tr><td>S3</td><td>Object storage in buckets</td></tr><tr><td>VPC</td><td>Your private network: subnets, route tables, gateways</td></tr><tr><td>RDS / DynamoDB</td><td>Managed SQL / NoSQL key-value</td></tr><tr><td>ELB + Auto Scaling</td><td>Spread load / add and remove servers</td></tr><tr><td>Route 53</td><td>DNS</td></tr><tr><td>CloudFront</td><td>CDN at edge locations</td></tr><tr><td>Lambda</td><td>Run code without servers</td></tr><tr><td>SQS / SNS</td><td>Queue / publish and subscribe</td></tr><tr><td>CloudTrail</td><td>Who called which API, when</td></tr><tr><td>CloudWatch</td><td>Metrics, logs, alarms</td></tr><tr><td>KMS</td><td>Encryption keys</td></tr><tr><td>CloudFormation</td><td>Infrastructure as code</td></tr></tbody></table></div><div><h3>IAM, the part TenantWall lives on</h3><ul class="plain"><li><b>Evaluation order:</b> an explicit Deny wins; otherwise an Allow is needed; otherwise implicit deny</li><li><b>Identity policy</b> attaches to a user, group or role; <b>resource policy</b> attaches to the thing (a bucket)</li><li><b>ABAC:</b> compare <code>aws:PrincipalTag/Team</code> with <code>aws:ResourceTag/Team</code></li><li><b>Least privilege:</b> grant only what is needed</li><li><b>Role:</b> temporary credentials, no long-lived keys</li></ul><h3>Remember for the exam</h3><ul class="plain"><li><b>Security group:</b> stateful, allow rules only, on the instance. <b>NACL:</b> stateless, allow and deny, on the subnet.</li><li><b>Public subnet</b> routes to an internet gateway; <b>private</b> reaches out through a NAT gateway</li><li><b>Multi-AZ</b> is for availability; <b>read replicas</b> are for read scaling</li><li><b>S3 classes:</b> Standard, Infrequent Access, Glacier, by how often you read</li><li><b>Shared responsibility:</b> AWS secures the cloud; you secure what you put in it</li></ul></div></div></section><section class="sec" id="interview"><header><p class="label">The night before and in the room</p><h2>Interviews</h2></header><div class="cols"><div><h3>In a coding round</h3><ol class="num"><li>Repeat the problem; ask for constraints and an example</li><li>Say the brute force and its complexity</li><li>Improve it out loud; get a nod before coding</li><li>Code cleanly, naming things by meaning</li><li>Walk one example through the code</li><li>State time and space; mention edge cases</li></ol></div><div><h3>Project walk-through, 3 minutes</h3><ol class="num"><li>The problem, in one sentence</li><li>What you built and your part in it</li><li>One hard decision and why you made it</li><li>How you tested it, with a number</li><li>What you would change next</li></ol><p class="small muted">TenantWall: 2 identity policies for any number of teams; 14 of 14 tests; refusals logged and alerted.</p></div><div><h3>Five stories to have ready</h3><ul class="plain"><li>A hard bug you fixed</li><li>A disagreement in a team</li><li>A deadline you nearly missed</li><li>A failure and what changed after</li><li>Something you taught yourself</li></ul><p class="small muted">Tell each as situation, task, action, result. End every interview with one real question.</p></div></div></section>
+<footer><span>Templates are C++17. Type them yourself until they are automatic; do not paste them.</span><span class="mono">13 Nov 2026</span></footer>
+</main>
+</body></html>

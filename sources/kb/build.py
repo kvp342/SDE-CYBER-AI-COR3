@@ -2,7 +2,7 @@
 import json, pathlib, importlib.util
 D = pathlib.Path(__file__).parent
 T = []
-for m in ["t_method", "t_dsa", "t_probs", "t_cs", "t_qa", "t_sec", "t_elite", "t_career"]:
+for m in ["t_method", "t_dsa", "t_probs", "t_cs", "t_qa", "t_sec", "t_elite", "t_career", "t_mocks", "t_companies"]:
     spec = importlib.util.spec_from_file_location(m, D / f"{m}.py"); mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
     T += mod.TOPICS
 ids = [t["id"] for t in T]

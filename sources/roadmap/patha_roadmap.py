@@ -169,5 +169,6 @@ ELITE = f'''<section class="sec" id="elite">
 '''
 rep('<section class="sec" id="rules">', ELITE + '<section class="sec" id="rules">')
 rep('<a href="#offcampus">Off-campus</a>', '<a href="#offcampus">Off-campus</a><a href="#elite">Elite</a>')
+rep('<a href="#toolkit">Toolkit</a>', '<a href="#toolkit">Toolkit</a><a href="https://claude.ai/artifact/McuS723LTAb16Q6SpdUsAT" target="_blank" rel="noopener">Knowledge ↗</a><a href="https://docs.google.com/spreadsheets/d/1JhZAMJmKocsnES-4Rhn-gSnhuJA9XoSHccqPZWZwREY/edit" target="_blank" rel="noopener">Tracker ↗</a>')
 open(OUT, "w", encoding="utf-8").write(h)
 print("roadmap Path A written:", OUT, len(h))

@@ -67,7 +67,7 @@ page("", head("00", "START HERE", "How this guide works", "Every topic is a ladd
  ["Security roles (AppSec, cloud security, SOC+)", chip(2), chip(2), chip(1), chip(3), chip(2)+" AWS"],
  ["Elite: HFT / quant dev (only through the 31 Mar gate)", chip(4), chip(3), chip(2), "—", "maths "+chip(3)],
 ], "lvt")}
-<aside class="call" style="--k:#2563eb"><b>Every name is a door</b><p>Topic names with a dotted underline link to their own page in the <a href="https://claude.ai/artifact/McuS723LTAb16Q6SpdUsAT">Placement Knowledge Base</a>: the concept in depth, why it matters for your plan, key points, code, common mistakes, interview questions to tick off, practice problems and free resources. 147 pages, including 43 worked solutions (all tested) and model answers for Core CS and security.</p></aside>
+<aside class="call" style="--k:#2563eb"><b>Every name is a door</b><p>Topic names with a dotted underline link to their own page in the <a href="https://claude.ai/artifact/McuS723LTAb16Q6SpdUsAT">Placement Knowledge Base</a>: the concept in depth, why it matters for your plan, key points, code, common mistakes, interview questions to tick off, practice problems and free resources. 167 pages, including 43 worked solutions (all tested), model answers for Core CS and security, 8 mock interviews and 10 company files.</p></aside>
 <aside class="call" style="--k:#c2410c"><b>The one rule</b><p>Depth on one ladder beats breadth on five. Your main ladder is DSA to {chip(3)}. Core CS to {chip(2)}. Security to {chip(3)} because it's your degree and your edge. Everything else stops at {chip(1)}–{chip(2)} unless a specific job needs more.</p></aside>
 ''')
 

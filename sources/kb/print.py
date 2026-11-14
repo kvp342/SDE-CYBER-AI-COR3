@@ -5,7 +5,7 @@ src = (D / "kb.html").read_text()
 data = json.loads(re.search(r"const TOPICS = (\[.*?\]);\nconst LV", src, re.S).group(1).replace("<\\/", "</"))
 E = lambda s: html.escape(s, quote=True)
 LV = [("L0", "Foundation", "#15803d"), ("L1", "Core", "#0e7490"), ("L2", "Interview-ready", "#1d4ed8"), ("L3", "Advanced", "#6d28d9"), ("L4", "Elite", "#c2410c")]
-CATS = ["Method", "DSA", "Problems", "Core CS", "Q&A", "Design", "Security", "Cloud", "AI", "Elite", "Career"]
+CATS = ["Method", "DSA", "Problems", "Core CS", "Q&A", "Design", "Security", "Cloud", "AI", "Elite", "Career", "Mocks", "Companies"]
 by = {t["id"]: t for t in data}
 chip = lambda l: f'<span class="chip" style="--k:{LV[l][2]}">{LV[l][0]} · {LV[l][1]}</span>'
 host = lambda u: re.sub(r"^www\.", "", re.sub(r"^https?://([^/]+).*", r"\1", u))
@@ -21,13 +21,13 @@ for c in CATS:
         k = LV[t["lvl"]][2]
         b = [f'<article class="tp" id="{t["id"]}" style="--k:{k}"><p class="mt">{chip(t["lvl"])} <span>{E(t["cat"])}</span></p><h2>{E(t["title"])}</h2>',
              f'<div class="why"><b>Why it matters for you</b><p>{E(t["why"])}</p></div>',
-             f'<h4>{"The idea" if c == "Problems" else "The concept"}</h4>' + "".join(f"<p>{E(p)}</p>" for p in t["core"])]
-        if t.get("qa"): b.append('<h4>Questions and model answers</h4>' + "".join(f'<div class="qa"><p class="q">{i + 1:02d}. {E(qq)}</p><p class="a">{E(aa)}</p></div>' for i, (qq, aa) in enumerate(t["qa"])))
-        if t["points"]: b.append(f'<h4>{"Steps" if c == "Problems" else "Key points"}</h4><ul>' + "".join(f"<li>{E(p)}</li>" for p in t["points"]) + "</ul>")
+             f'<h4>{"The idea" if c == "Problems" else "The process" if c == "Companies" else "The mock" if c == "Mocks" else "The concept"}</h4>' + "".join(f"<p>{E(p)}</p>" for p in t["core"])]
+        if t.get("qa"): b.append(f'<h4>{"Interviewer material (only the interviewer reads this)" if c == "Mocks" else "Questions and model answers"}</h4>' + "".join(f'<div class="qa"><p class="q">{i + 1:02d}. {E(qq)}</p><p class="a">{E(aa)}</p></div>' for i, (qq, aa) in enumerate(t["qa"])))
+        if t["points"]: b.append(f'<h4>{"Steps" if c == "Problems" else "Scoring" if c == "Mocks" else "How your plan prepares you" if c == "Companies" else "Key points"}</h4><ul>' + "".join(f"<li>{E(p)}</li>" for p in t["points"]) + "</ul>")
         if t["code"]: b.append(f'<h4>{"Code" if c in ("DSA", "Core CS", "Design") else "Example"}</h4><pre>{E(t["code"])}</pre>')
         if t["pit"]: b.append('<h4>Common mistakes</h4><ul class="pit">' + "".join(f"<li>{E(p)}</li>" for p in t["pit"]) + "</ul>")
-        if t["ask"]: b.append(f'<h4>{"Follow-up questions" if c == "Problems" else "Interview questions"}</h4><ul class="ask">' + "".join(f"<li>{E(p)}</li>" for p in t["ask"]) + "</ul>")
-        links = [("Practise", t["prac"]), ("Learn from", t["learn"])]
+        if t["ask"]: b.append(f'<h4>{"Follow-up questions" if c == "Problems" else "Reported questions" if c == "Companies" else "Interview questions"}</h4><ul class="ask">' + "".join(f"<li>{E(p)}</li>" for p in t["ask"]) + "</ul>")
+        links = [("Practise", t["prac"]), ("Sources" if c == "Companies" else "Learn from", t["learn"])]
         for h, arr in links:
             if arr: b.append(f'<h4>{h}</h4><p class="lk">' + " · ".join(f'<a href="{E(u)}">{E(n)}</a> <span>({E(host(u))})</span>' for n, u in arr) + "</p>")
         if t["rel"]: b.append('<p class="rel"><b>Related:</b> ' + " · ".join(f'<a href="#{r}">{E(by[r]["title"])}</a>' for r in t["rel"]) + "</p>")

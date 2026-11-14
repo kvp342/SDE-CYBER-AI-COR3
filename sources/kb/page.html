@@ -128,8 +128,8 @@ details.qa .can { display: flex; gap: 8px; align-items: center; padding: 0 12px 
 <script>
 const TOPICS = /*DATA*/[];
 const LV = [["L0","Foundation","--l0"],["L1","Core","--l1"],["L2","Interview-ready","--l2"],["L3","Advanced","--l3"],["L4","Elite","--l4"]];
-const CATS = ["Method","DSA","Problems","Core CS","Q&A","Design","Security","Cloud","AI","Elite","Career"];
-const CAT_NOTE = {Method:"How to learn faster", DSA:"Data structures and algorithms", "Core CS":"OS, DBMS, networks, OOP, SQL", Design:"LLD and system design", Security:"Your edge", Cloud:"AWS and TenantWall", AI:"May: the AI-security project", Elite:"HFT: opens only through the 31 Mar gate", Career:"Getting the offer", Problems:"Worked solutions, every one tested", "Q&A":"Model answers to say aloud"};
+const CATS = ["Method","DSA","Problems","Core CS","Q&A","Design","Security","Cloud","AI","Elite","Career","Mocks","Companies"];
+const CAT_NOTE = {Method:"How to learn faster", DSA:"Data structures and algorithms", "Core CS":"OS, DBMS, networks, OOP, SQL", Design:"LLD and system design", Security:"Your edge", Cloud:"AWS and TenantWall", AI:"May: the AI-security project", Elite:"HFT: opens only through the 31 Mar gate", Mocks:"Ready-to-run interviews with answer keys", Companies:"Reported processes, mapped to your plan", Career:"Getting the offer", Problems:"Worked solutions, every one tested", "Q&A":"Model answers to say aloud"};
 const byId = Object.fromEntries(TOPICS.map(t => [t.id, t]));
 const $ = s => document.querySelector(s);
 const el = (tag, attrs = {}, ...kids) => { const e = document.createElement(tag);
@@ -178,20 +178,20 @@ function topic(t) {
   v.append(el("div", {class: "meta"}, chip(t.lvl), el("span", {class: "cat"}, t.cat)));
   v.append(el("h1", {class: "t-title"}, t.title));
   v.append(el("div", {class: "why", style: kvar(t.lvl)}, el("b", {}, "Why it matters for you"), el("p", {}, t.why)));
-  v.append(blk(t.cat === "Problems" ? "The idea" : "The concept", t.cat === "Problems" ? "how to think about it" : "in depth", el("div", {class: "core"}, t.core.map(p => el("p", {}, p)))));
+  v.append(blk(t.cat === "Problems" ? "The idea" : t.cat === "Companies" ? "The process" : t.cat === "Mocks" ? "The mock" : "The concept", t.cat === "Problems" ? "how to think about it" : t.cat === "Companies" ? "as candidates report it" : t.cat === "Mocks" ? "read this first" : "in depth", el("div", {class: "core"}, t.core.map(p => el("p", {}, p)))));
   if (t.qa && t.qa.length) {
     store.qa = store.qa || {};
-    v.append(blk("Questions and model answers", "answer aloud first, then open", el("div", {class: "qs"}, t.qa.map(([q, a], i) => {
+    v.append(blk(t.cat === "Mocks" ? "Interviewer's material" : "Questions and model answers", t.cat === "Mocks" ? "only the interviewer opens these" : "answer aloud first, then open", el("div", {class: "qs"}, t.qa.map(([q, a], i) => {
       const k = t.id + ":" + i, box = el("input", {type: "checkbox", id: "qa-" + t.id + "-" + i}); box.checked = !!store.qa[k];
       box.addEventListener("change", () => { store.qa[k] = box.checked; save(); });
       return el("details", {class: "qa"}, el("summary", {}, el("span", {class: "qn"}, String(i + 1).padStart(2, "0")), q),
         el("p", {}, a), el("label", {class: "can", for: "qa-" + t.id + "-" + i}, box, " I can answer this cold")); }))));
   }
-  if (t.points.length) v.append(blk(t.cat === "Problems" ? "Steps" : "Key points", t.cat === "Problems" ? "the algorithm" : "remember these", el("ul", {class: "pts"}, t.points.map(p => el("li", {}, p)))));
+  if (t.points.length) v.append(blk(t.cat === "Problems" ? "Steps" : t.cat === "Mocks" ? "Scoring" : t.cat === "Companies" ? "How your plan prepares you" : "Key points", t.cat === "Problems" ? "the algorithm" : t.cat === "Mocks" ? "fill in the tracker's Mocks tab" : t.cat === "Companies" ? "do these the week before" : "remember these", el("ul", {class: "pts"}, t.points.map(p => el("li", {}, p)))));
   if (t.code) v.append(blk(t.cat === "Security" || t.cat === "Cloud" || t.cat === "Method" || t.cat === "Career" ? "Example" : "Code", "C++ unless noted", el("pre", {}, el("code", {}, t.code))));
   if (t.pit.length) v.append(blk("Common mistakes", null, el("ul", {class: "pts pit"}, t.pit.map(p => el("li", {}, p)))));
   if (t.ask.length) {
-    const askTitle = t.cat === "Problems" ? "Follow-up questions" : "Interview questions";
+    const askTitle = t.cat === "Problems" ? "Follow-up questions" : t.cat === "Companies" ? "Reported questions" : "Interview questions";
     store.q = store.q || {};
     v.append(blk(askTitle, "tick when you can answer cold",
       el("div", {class: "qs"}, t.ask.map((q, i) => { const k = t.id + ":" + i; const on = !!store.q[k];
@@ -203,7 +203,7 @@ function topic(t) {
   }
   const lk = arr => el("div", {class: "links"}, arr.map(([n, u]) => el("a", {href: u, target: "_blank", rel: "noopener"}, n, el("span", {}, host(u)))));
   if (t.prac.length) v.append(blk("Practise", "solve these", lk(t.prac)));
-  if (t.learn.length) v.append(blk("Learn from", "free unless noted", lk(t.learn)));
+  if (t.learn.length) v.append(blk(t.cat === "Companies" ? "Sources" : "Learn from", t.cat === "Companies" ? "candidate reports and official pages" : "free unless noted", lk(t.learn)));
   if (t.rel.length) v.append(blk("Related topics", null, el("div", {class: "rel"}, t.rel.map(r => el("a", {href: "#" + r}, el("span", {class: "chip", style: kvar(byId[r].lvl)}, byId[r].title))))));
   const same = TOPICS.filter(x => x.cat === t.cat), i = same.indexOf(t);
   const btn = el("button", {class: "btn pri", type: "button", "aria-pressed": String(done(t.id))}, done(t.id) ? "✓ Learned" : "Mark as learned");
