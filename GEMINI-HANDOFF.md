@@ -17,7 +17,7 @@ A senior warned that DSA + cyber + AI + cloud at once would burn me out. We chec
 - **Checkpoint 1, 30 Jan:** Striver core done on time; LeetCode Mediums in about 25 minutes.
 - **Checkpoint 2, the HFT gate, 31 Mar:** Codeforces 1400+ or LeetCode contest rating 1800+. Pass: open the **Elite HFT track** from 8 Apr (1 to 1.5 h a day, 16 weeks: probability, puzzles, mental maths, low-latency C++); cyber drops to 3 days a week and the AI project to 2 weeks. Miss: stay on Path A. All HFT material lives only in the Elite section.
 - **Cut order when time is short:** the Elite track (if open), the CP habit, the AI-security project, cyber down to Sundays. Never cut DSA, revision or Core CS. Burnout signs (dread, falling solve rate, under 7 h sleep, irritation): take a lighter week: half the hours, revision only. One rest half-day every week.
-- **Tools I now have:** a Google Sheet revision tracker (1-3-7-21 dates fill in automatically, a Due today tab); the Placement Knowledge Base (147 pages, including 43 tested worked solutions and model answers for Core CS and security); the Playbook re-dated to these dates; three PDFs with clickable indexes.
+- **Tools I now have:** a Google Sheet revision tracker (1-3-7-21 dates fill in automatically, a Due today tab); the Placement Knowledge Base (167 pages: 43 tested worked solutions, model answers for Core CS and security, 8 ready-to-run mock interviews with answer keys, and company files for Amazon, Microsoft, Google, Atlassian, Flipkart, Razorpay, Goldman Sachs, JPMorgan, Agoda and the Big Four cyber teams); a Mocks tab in the tracker for scoring mock interviews from 31 May; the Playbook re-dated to these dates; three PDFs with clickable indexes.
 
 ---
 
