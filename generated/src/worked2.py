@@ -44,7 +44,8 @@ table { width: 100%; border-collapse: collapse; } .ix th { font: 600 7pt "JetBra
 .num { font: 600 10pt "JetBrains Mono"; color: #c2410c; } .back { margin-left: auto; font: 600 7.5pt "JetBrains Mono"; border: 1px solid #fdba74; background: #fff7ed; border-radius: 99px; padding: 0 7px; white-space: nowrap; }
 .meta { color: #475569; font-size: 8.5pt; } h3 { font: 700 9.5pt "Space Grotesk"; color: #1d4ed8; margin: 3mm 0 1mm; } p { margin: 0 0 1.5mm; } ol, ul { margin: 0; padding-left: 5mm; }
 pre { font: 400 7.6pt/1.4 "JetBrains Mono"; background: #f8fafc; border: 1px solid #e2e8f0; border-left: 3px solid #1d4ed8; padding: 2mm 3mm; white-space: pre-wrap; margin: 0; break-inside: avoid; }
-pre.t { border-left-color: #16a34a; font-size: 7pt; } .grid { display: grid; grid-template-columns: 1fr 1.2fr 1.4fr; gap: 4mm; break-inside: avoid; } .grid ul { font-size: 8.3pt; }"""
+pre.t { border-left-color: #16a34a; font-size: 7pt; } .grid { display: grid; grid-template-columns: 1fr 1.2fr 1.4fr; gap: 4mm; break-inside: avoid; } .grid ul { font-size: 8.3pt; }
+pre { font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0; }"""
 def render(pages, name):
     (SRC / "w2.html").write_text(f'<!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"><style>{CSS}</style></head><body><div id="top"></div>{body(pages)}</body></html>')
     js = SRC / "r.js"; js.write_text("const { chromium } = require('playwright'); (async () => { const b = await chromium.launch(); const p = await b.newPage(); await p.goto('file://' + __dirname + '/w2.html', { waitUntil: 'networkidle' }); await p.evaluate(() => document.fonts.ready); await p.pdf({ path: __dirname + '/" + name + "', format: 'A4', printBackground: true, preferCSSPageSize: true }); await b.close(); })();")
