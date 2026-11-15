@@ -41,6 +41,7 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/anki-decks-guide.pdf` | One page: importing the decks into AnkiDroid, AnkiMobile or Anki desktop, and a daily routine |
 | `generated/security-lab-notebook.pdf` | CTF and PortSwigger write-up templates with worked examples, a STRIDE threat model of TenantWall, a lab command sheet, and web security by vulnerability class (linked to the free PortSwigger topics) |
 | `generated/weekly-planner.pdf` | 28 printable week pages (16 Nov 2026 – 30 May 2027): phase and goal, fixed dates (OA sets, TenantWall deadline, exams, AWS exam), daily tick boxes and a weekly review |
+| `generated/company-files-2.pdf` | Six more company files (Uber, Salesforce AMTS, Adobe MTS-1, Walmart Global Tech, PhonePe, Zscaler): reported process, how the plan prepares you, mistakes, likely questions, sources |
 | `agent/` | Instructions, backlog and log for the scheduled agent |
 | `generated/` | Documents the agent builds |
 
