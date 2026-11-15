@@ -23,6 +23,8 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/worked-solutions-2.pdf` | Worked Solutions II: 40 more most-asked LeetCode problems (not in the Knowledge Base set), each with idea, steps, tested C++17 code, traps and follow-ups; clickable index by pattern |
 | `generated/oa-simulation-packs.pdf` | 8 timed online-assessment sets (3 LeetCode problems, 90 minutes each, 24 problems with no repeats), dated to the plan, with a scoring guide, a record table and a solution page per set (sketch, edge cases, tested C++17) |
 | `generated/core-cs-mcq-bank.pdf` | 150 OA-style MCQs (30 each on OS, DBMS, CN, OOP, C++ output) with answer keys on separate pages and a reason per answer; C++ outputs, SQL, subnet and page-fault answers machine-checked |
+| `generated/sql-pack.pdf` | 40 interview SQL questions (basics, joins, aggregation, subqueries, window functions, indexing) on one sample database, each with the query, its real output and an explanation |
+| `generated/sql-pack.sql` | The sample database and all 40 queries in one file: load it into SQLite or any SQL playground to practise |
 | `agent/` | Instructions, backlog and log for the scheduled agent |
 | `generated/` | Documents the agent builds |
 
