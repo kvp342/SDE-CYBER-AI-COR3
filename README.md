@@ -33,6 +33,7 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/backend-starter/` | Study-tracker REST API (FastAPI, SQLite, JWT login, rate limiting) with 10 security-focused tests, an architecture diagram and a security checklist in its README |
 | `generated/lld-pack.pdf` | Six LLD designs (parking lot, library, Splitwise, elevator, rate limiter, LRU cache): requirements, class diagrams, decisions, follow-ups and full C++17 code |
 | `generated/lld/` | The six C++17 programs; each runs a demo that checks its own behaviour |
+| `generated/core-cs-one-pagers.pdf` | One A4 revision page each for OS, DBMS, CN, OOP, SQL and System Design: 10 definitions, a diagram and the 10 most-asked questions |
 | `agent/` | Instructions, backlog and log for the scheduled agent |
 | `generated/` | Documents the agent builds |
 
