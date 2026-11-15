@@ -21,6 +21,13 @@ for si, root in enumerate(o["roots"]):
     if loose: subs.insert(0, ("", loose))
     sections.append((si + 1, sec["label"].strip(), subs))
 
+def first_url(it):
+    if it.get("layoutType") == "practice": return f"{BASE}/practice/dsa/{it['slug']}"
+    b = it.get("free_blog_link")
+    if b: return b if b.startswith("http") else BASE + b
+    return it.get("leetcode_link") or it.get("yt_video") or f"{BASE}/prep-hub/strivers-a2z-dsa-sheet"
+def name_link(it):
+    return f'<a class="nm" href="{E(first_url(it))}">{E(it["label"])}</a>'
 def links(it):
     out = []
     if it.get("type") == "contest": return '<span class="muted">Timed contest on the site</span>'
@@ -66,7 +73,7 @@ def body(pages):
                 tag = (f'<span class="lv" style="--k:{lvl[1]}">{lvl[0]}</span>' if lvl else
                        ('<span class="lv" style="--k:#64748b">Lesson</span>' if it.get("layoutType") == "learning" else '<span class="lv" style="--k:#7c3aed">Contest</span>' if kind == "contest" else ""))
                 plus = '<span class="plus">Plus</span>' if it.get("isPremium") else ""
-                out.append(f'<tr><td class="box">☐</td><td class="k">{k}</td><td class="t">{E(it["label"])} {plus}</td><td class="l">{tag}</td><td class="a">{links(it)}</td><td class="d">{E(it.get("duration") or "")}</td></tr>')
+                out.append(f'<tr><td class="box">☐</td><td class="k">{k}</td><td class="t">{name_link(it)} {plus}</td><td class="l">{tag}</td><td class="a">{links(it)}</td><td class="d">{E(it.get("duration") or "")}</td></tr>')
             out.append('</tbody></table>')
         out.append('</section>')
     return "".join(out)
@@ -99,7 +106,7 @@ table { width: 100%; border-collapse: collapse; }
 h3 { font: 700 10pt "Space Grotesk"; color: #1d4ed8; margin: 3mm 0 1mm; break-after: avoid; }
 .it tr { break-inside: avoid; } .it td { padding: 1mm 1.5mm; border-bottom: 1px solid #eef2f7; vertical-align: top; }
 .it .box { width: 5mm; font-size: 10pt; color: #94a3b8; } .it .k { width: 8mm; font: 500 7.4pt "JetBrains Mono"; color: #94a3b8; }
-.it .t { font-weight: 600; color: #0f172a; } .it .l { width: 17mm; } .it .a { width: 62mm; font-size: 7.8pt; } .it .d { width: 16mm; white-space: nowrap; font: 500 7pt "JetBrains Mono"; color: #94a3b8; text-align: right; }"""
+.it .t { font-weight: 600; color: #0f172a; } .it .t a.nm { color: #0f172a; border-bottom: 1px dotted #c2410c; } .it .l { width: 17mm; } .it .a { width: 62mm; font-size: 7.8pt; } .it .d { width: 16mm; white-space: nowrap; font: 500 7pt "JetBrains Mono"; color: #94a3b8; text-align: right; }"""
 
 def render(pages, out):
     doc = f'''<!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet"><style>{CSS}</style></head><body><div id="top"></div>{body(pages)}</body></html>'''

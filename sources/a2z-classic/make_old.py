@@ -58,6 +58,10 @@ def links(x):
     if x.get("leetcode"): out.append(f'<a href="{E(x["leetcode"])}">LeetCode</a>')
     if x.get("youtube"): out.append(f'<a href="{E(x["youtube"])}">Video</a>')
     return " · ".join(out) or '<span class="muted">Removed from the new site</span>'
+def name_link(x):
+    slug = NEWP.get(_norm(x["name"])) or (NEWLC.get(x["leetcode"].rstrip("/")) if x.get("leetcode") else None)
+    u = f"https://takeuforward.org/practice/dsa/{slug}" if slug else (x.get("leetcode") or x.get("youtube"))
+    return f'<a class="nm" href="{E(u)}">{E(x["name"])}</a>' if u else E(x["name"])
 def gone(x):
     return not (NEWP.get(_norm(x["name"])) or (NEWLC.get(x["leetcode"].rstrip("/")) if x.get("leetcode") else None))
 def body(pages):
@@ -79,13 +83,13 @@ def body(pages):
             out.append(f'<h3>Lec {li}: {E(L)}</h3><table class="it"><tbody>')
             for x in items:
                 k += 1
-                out.append(f'<tr><td class="box">☐</td><td class="k">{k}</td><td class="t">{E(x["name"])}</td><td class="l"><span class="lv" style="--k:{COL[x["difficulty"]]}">{x["difficulty"]}</span></td><td class="a">{links(x)}</td></tr>')
+                out.append(f'<tr><td class="box">☐</td><td class="k">{k}</td><td class="t">{name_link(x)}</td><td class="l"><span class="lv" style="--k:{COL[x["difficulty"]]}">{x["difficulty"]}</span></td><td class="a">{links(x)}</td></tr>')
             out.append('</tbody></table>')
         out.append('</section>')
     miss = [(n, t, L, x) for n, t, lectures in STEPS for L in lectures for x in data[n][L] if gone(x)]
     out.append(f'<section class="sec" id="gone"><h2><span class="sn">APPENDIX</span>Not found in the new sheet <a class="back" href="#top">↑ Index</a></h2><p class="sub">{len(miss)} items from this classic sheet have no match in the current version by name or LeetCode link. Most were removed; a few may only have been renamed. If you use the new sheet, solve these too.</p><table class="it"><tbody>')
     for n, t, L, x in miss:
-        out.append(f'<tr><td class="box">☐</td><td class="k">S{n:02d}</td><td class="t">{E(x["name"])}<br><span class="muted">{E(L)}</span></td><td class="l"><span class="lv" style="--k:{COL[x["difficulty"]]}">{x["difficulty"]}</span></td><td class="a">{links(x)}</td></tr>')
+        out.append(f'<tr><td class="box">☐</td><td class="k">S{n:02d}</td><td class="t">{name_link(x)}<br><span class="muted">{E(L)}</span></td><td class="l"><span class="lv" style="--k:{COL[x["difficulty"]]}">{x["difficulty"]}</span></td><td class="a">{links(x)}</td></tr>')
     out.append('</tbody></table></section>')
     return "".join(out)
 CSS = (A.parent / "a2z" / "make_a2z.py").read_text().split('CSS = """')[1].split('"""')[0]
