@@ -1,0 +1,31 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ListOnlyOwnTenantPrefix",
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::tenantwall-data-EXAMPLE",
+      "Condition": { "StringLike": { "s3:prefix": ["${aws:PrincipalTag/tenant}/*"] } }
+    },
+    {
+      "Sid": "ReadWriteOwnTenantObjects",
+      "Effect": "Allow",
+      "Action": ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"],
+      "Resource": "arn:aws:s3:::tenantwall-data-EXAMPLE/${aws:PrincipalTag/tenant}/*"
+    },
+    {
+      "Sid": "DescribeInstancesHasNoResourceLevelControl",
+      "Effect": "Allow",
+      "Action": "ec2:DescribeInstances",
+      "Resource": "*"
+    },
+    {
+      "Sid": "OperateOwnTenantInstances",
+      "Effect": "Allow",
+      "Action": ["ec2:StartInstances", "ec2:StopInstances", "ec2:RebootInstances"],
+      "Resource": "arn:aws:ec2:ap-south-1:111122223333:instance/*",
+      "Condition": { "StringEquals": { "aws:ResourceTag/tenant": "${aws:PrincipalTag/tenant}" } }
+    }
+  ]
+}

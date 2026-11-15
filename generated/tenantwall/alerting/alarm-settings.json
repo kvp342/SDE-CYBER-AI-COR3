@@ -1,0 +1,21 @@
+{
+  "MetricFilter": {
+    "LogGroup": "/tenantwall/cloudtrail",
+    "FilterName": "tenantwall-access-denied",
+    "FilterPattern": "{ ($.errorCode = \"*UnauthorizedOperation\") || ($.errorCode = \"AccessDenied*\") }",
+    "MetricNamespace": "TenantWall",
+    "MetricName": "AccessDeniedCount",
+    "MetricValue": "1",
+    "DefaultValue": 0
+  },
+  "Alarm": {
+    "AlarmName": "tenantwall-access-denied",
+    "Statistic": "Sum",
+    "PeriodSeconds": 300,
+    "EvaluationPeriods": 1,
+    "Threshold": 1,
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+    "TreatMissingData": "notBreaching",
+    "Action": "SNS topic tenantwall-alerts (email subscription)"
+  }
+}

@@ -26,6 +26,8 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/sql-pack.pdf` | 40 interview SQL questions (basics, joins, aggregation, subqueries, window functions, indexing) on one sample database, each with the query, its real output and an explanation |
 | `generated/sql-pack.sql` | The sample database and all 40 queries in one file: load it into SQLite or any SQL playground to practise |
 | `generated/aws-saa-c03-study-pack.pdf` | AWS SAA-C03 final revision: notes for the four domains, a service-for-need table, 60 original scenario questions with explained answers, and a day-by-day plan for 5–18 Apr 2027 |
+| `generated/tenantwall-helpers.pdf` | TenantWall: architecture diagram, method flowchart, IAM and bucket policies explained, alerting setup, isolation test plan and a checklist for the paper's audit and alerting section |
+| `generated/tenantwall/` | The TenantWall files themselves: diagrams (SVG and PNG), policy JSON, CloudTrail and alarm setup script, and an offline policy check script |
 | `agent/` | Instructions, backlog and log for the scheduled agent |
 | `generated/` | Documents the agent builds |
 
