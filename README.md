@@ -15,6 +15,7 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `Placement-Knowledge-Base.pdf` | The Knowledge Base as a PDF, works offline |
 | `DSA-Placement-Playbook.pdf` | The Playbook (Café theme) as a PDF |
 | `Tier3-to-Top-Offer-Placement-Guide.pdf` | The guide on its own |
+| `Striver-A2Z-DSA-Sheet-Classic.pdf` | The older 18-step A2Z sheet (474 items) the plan is built on, with an appendix of items missing from the new version |
 | `Striver-A2Z-DSA-Sheet-2026.pdf` | The current takeuforward A2Z sheet (20 sections, 453 problems), clickable |
 | `GEMINI-HANDOFF.md` | Full context to paste into another AI assistant |
 | `sources/` | Scripts that build all of the above |
