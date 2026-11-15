@@ -1,0 +1,105 @@
+#separator:Semicolon
+#html:false
+#notetype:Basic
+#deck:Placement::AWS SAA-C03
+#tags:placement aws
+Which AWS service? Give an EC2 app access to S3 without keys;IAM role (instance profile)
+Which AWS service? Limit what member accounts can do;SCPs in AWS Organizations
+Which AWS service? Block one IP at the subnet level;Network ACL deny rule
+Which AWS service? Private subnet needs outbound internet;NAT gateway
+Which AWS service? Reach S3 privately from a VPC;Gateway VPC endpoint
+Which AWS service? Rotate database passwords;Secrets Manager
+Which AWS service? Block SQL injection and XSS;AWS WAF
+Which AWS service? Detect threats from logs;GuardDuty
+Which AWS service? Find personal data in S3;Macie
+Which AWS service? Scan EC2 and containers for CVEs;Inspector
+Which AWS service? Audit API calls;CloudTrail
+Which AWS service? Track configuration changes and compliance;AWS Config
+Which AWS service? App sign-up and social login;Cognito
+Which AWS service? Write-once storage for logs;S3 Object Lock
+Which AWS service? Decouple producers and consumers;SQS
+Which AWS service? Fan out one message to many;SNS (with SQS subscribers)
+Which AWS service? Automatic database failover;RDS Multi-AZ
+Which AWS service? Scale relational reads;Read replicas or Aurora replicas
+Which AWS service? Multi-Region active-active NoSQL;DynamoDB global tables
+Which AWS service? Shared Linux file system;EFS
+Which AWS service? Shared Windows file system;FSx for Windows File Server
+Which AWS service? Workflow with retries;Step Functions
+Which AWS service? Edge caching for websites;CloudFront
+Which AWS service? Static IPs and fast global failover for TCP/UDP;Global Accelerator
+Which AWS service? Cache database queries;ElastiCache
+Which AWS service? Microsecond DynamoDB reads;DAX
+Which AWS service? SQL over files in S3;Athena
+Which AWS service? Real-time stream with replay;Kinesis Data Streams
+Which AWS service? Data warehouse;Redshift
+Which AWS service? Containers without managing servers;Fargate (ECS or EKS)
+Which AWS service? Interruptible batch at lowest cost;Spot Instances
+Which AWS service? Steady 24/7 compute for years;Savings Plans or Reserved Instances
+Which AWS service? Unknown access pattern storage;S3 Intelligent-Tiering
+Which AWS service? Cheapest long-term archive;S3 Glacier Deep Archive
+Which AWS service? Spend alerts;AWS Budgets
+Which AWS service? Hybrid private link to on-premises;Site-to-Site VPN (quick) or Direct Connect (dedicated)
+An application on EC2 must read objects from an S3 bucket. What is the most secure way to give it credentials?;"Attach an IAM role to the instance through an instance profile. Roles give temporary credentials that rotate automatically; nothing long-lived is stored on the instance."
+Compliance requires that CloudTrail log files in S3 cannot be deleted or changed by anyone, including administrators, for one year. What meets this?;"S3 Object Lock in compliance mode with a one-year retention period. Compliance mode cannot be shortened or removed by any user; a bucket policy can be edited by an administrator."
+A company with many AWS accounts must stop every account from launching resources outside one Region. What is the simplest central control?;A service control policy in AWS Organizations that denies other Regions. SCPs set the maximum permissions for all accounts in an organisational unit.
+EC2 instances in a private subnet must download patches from the internet but must not accept inbound connections from it. What should be added?;A NAT gateway in a public subnet and a route to it from the private subnet. NAT allows outbound-initiated traffic only.
+Instances in a private subnet upload large amounts of data to S3 and NAT gateway charges are high. What reduces cost while keeping traffic private?;A gateway VPC endpoint for S3. Gateway endpoints for S3 have no hourly or data processing charge and keep traffic on the AWS network.
+A single malicious IP address must be blocked from reaching any instance in a subnet. What should be used?;"A deny rule in the subnet's network ACL. Security groups have allow rules only; network ACLs support explicit deny."
+Data in S3 must be encrypted at rest with a key whose use is logged and whose rotation the company controls. Which option fits?;SSE-KMS with a customer managed key. KMS key use appears in CloudTrail and customer managed keys have company-controlled policies and rotation.
+An application needs database credentials that rotate automatically without code changes. Which service?;AWS Secrets Manager. Secrets Manager has built-in rotation, including for RDS.
+A public web application behind an Application Load Balancer must be protected from SQL injection and cross-site scripting. What should be used?;AWS WAF attached to the load balancer. WAF inspects HTTP requests with managed rule groups for these attacks.
+The security team wants alerts when an EC2 instance talks to known malicious IP addresses. Which service?;Amazon GuardDuty. GuardDuty analyses VPC Flow Logs, DNS logs and CloudTrail for threats.
+A company must find buckets that contain personal data such as ID numbers. Which service?;Amazon Macie. Macie uses pattern matching and machine learning to find sensitive data in S3.
+A mobile app needs customer sign-up, sign-in and login with social identity providers. What should be used?;Amazon Cognito user pools. IAM users are for people and systems that manage AWS, not app customers.
+A partner company's AWS account needs temporary access to one S3 bucket. What is the recommended approach?;Create an IAM role that the partner account can assume. Cross-account roles give temporary credentials and can be revoked at any time.
+A static site in S3 must be reachable only through CloudFront, not directly. What should be configured?;"Origin access control with a bucket policy that allows only the distribution. S3 has no security groups; OAC plus a bucket policy restricts access to CloudFront."
+Administrators must use MFA before they can stop production EC2 instances. How can this be enforced?;An IAM policy condition on aws:MultiFactorAuthPresent. The condition key checks that the request was authenticated with MFA.
+The team needs to know who modified a security group yesterday. Where should they look?;AWS CloudTrail. CloudTrail records API calls with the identity, time and source.
+All new EBS volumes in a Region must be encrypted without relying on each engineer. What should be done?;Enable EBS encryption by default for the Region. Encryption by default applies to every new volume and snapshot copy in that Region.
+A user's identity policy allows s3:* and the bucket policy explicitly denies s3:DeleteObject for that user. Can the user delete objects?;No, the explicit deny wins. In policy evaluation, any explicit deny overrides allows.
+A web tier must keep running if one Availability Zone fails. What design meets this?;An Auto Scaling group across at least two AZs behind an Application Load Balancer. Spreading across AZs removes the single point of failure.
+An RDS MySQL database must fail over automatically to another AZ with no data loss. What should be enabled?;Multi-AZ deployment. Multi-AZ keeps a synchronous standby and fails over automatically.
+An order service sometimes sends bursts faster than the processing service can handle, and orders must not be lost. What should be placed between them?;An Amazon SQS queue. The queue buffers messages until consumers catch up.
+One event must be delivered to three independent processing services, each at its own pace. What design fits?;"An SNS topic with an SQS queue subscribed for each service. SNS fans out; each queue buffers for its own consumer."
+A small company needs a disaster recovery plan at the lowest cost and can accept an RTO of 24 hours. Which strategy?;Backup and restore. Restoring from backups is cheapest and slowest.
+A company keeps a scaled-down but fully working copy of production always running in a second Region and scales it up during a disaster. What is this strategy?;"Warm standby. Pilot light keeps only core pieces such as the database running; warm standby runs the whole stack at small scale."
+Traffic must go to a secondary Region only when health checks on the primary fail. Which Route 53 routing policy?;Failover routing. Failover routing uses health checks to switch to the secondary record.
+An application needs a NoSQL table that accepts writes in two Regions at once. Which feature?;DynamoDB global tables. Global tables replicate across Regions with multi-active writes.
+Objects in an S3 bucket must be copied automatically to a bucket in another Region. What must be enabled on both buckets?;Versioning. Cross-Region Replication requires versioning on source and destination.
+Users are logged out whenever Auto Scaling removes an instance. What fixes this?;Store session data in ElastiCache or DynamoDB. External session storage makes the web tier stateless.
+A Lambda function processes messages from SQS and some messages always fail. They must be kept for analysis without blocking the queue. What should be configured?;A dead-letter queue with a redrive policy. After the maximum receives, messages move to the DLQ.
+How does Amazon Aurora store data for durability?;Six copies across three Availability Zones. Aurora's storage layer replicates six ways across three AZs.
+Which storage loses its data when the EC2 instance is stopped?;Instance store. Instance store is physically attached to the host and is temporary.
+Many Linux EC2 instances in several AZs need the same shared file system. Which service?;Amazon EFS. EFS is a regional NFS file system usable across AZs.
+An Auto Scaling group should replace instances that the load balancer reports as unhealthy. What should be set?;The ASG health check type to ELB. By default the ASG uses EC2 status checks only.
+A multi-step order workflow across several Lambda functions needs retries, branching and visible state. Which service?;AWS Step Functions. Step Functions is a managed state machine with built-in retries.
+Users worldwide load images and videos slowly from an S3 bucket in one Region. What improves latency most?;Amazon CloudFront in front of the bucket. Edge locations cache content close to users.
+Reporting queries slow down an RDS MySQL primary that also serves the application. What helps most?;"Send reports to a read replica. Read replicas take read load; a classic Multi-AZ standby does not serve reads."
+A read-heavy DynamoDB application needs microsecond read latency with minimal code changes. What should be added?;DynamoDB Accelerator (DAX). DAX is an in-memory cache built for DynamoDB's API.
+Users on other continents upload 5 GB files to S3 and uploads are slow. What helps most?;"S3 Transfer Acceleration with multipart upload. Uploads enter at the nearest edge location and travel on the AWS backbone; multipart uploads parts in parallel."
+A tightly coupled HPC application needs the lowest network latency between instances. Which placement group?;Cluster. Cluster packs instances close together in one AZ.
+A database needs the highest sustained IOPS from block storage. Which EBS type?;Provisioned IOPS SSD (io2). io2 is designed for I/O-intensive databases.
+Analysts want to run SQL on CSV and Parquet files in S3 without managing servers. Which service?;Amazon Athena. Athena is serverless and charges per data scanned.
+A clickstream must be ingested in real time and read by several consumers that may need to replay data. Which service?;Amazon Kinesis Data Streams. Streams keep records for a retention period and support many consumers.
+A company needs a data warehouse for complex analytical queries on terabytes of structured data. Which service?;Amazon Redshift. Redshift is columnar and built for analytics.
+An API has unpredictable spiky traffic and the team does not want to manage servers. What fits best?;Amazon API Gateway with AWS Lambda. Both scale automatically and charge per request.
+A global multiplayer game over UDP needs static IP addresses and fast failover between Regions. Which service?;AWS Global Accelerator. Global Accelerator gives anycast static IPs and supports TCP and UDP.
+An application needs a key-value database with single-digit millisecond latency at any scale. Which service?;Amazon DynamoDB. DynamoDB is a managed key-value and document store.
+A latency-sensitive Lambda function suffers from cold starts at peak hours. What helps?;Provisioned concurrency. Provisioned concurrency keeps environments initialised.
+A popular product page runs the same expensive database query thousands of times a minute. What reduces database load most?;Cache the result in Amazon ElastiCache. A cache serves repeated reads from memory.
+A web application runs steadily 24/7 and will for the next three years. Which purchase option costs least?;"3-year Savings Plan or Reserved Instances. Long commitments give the biggest discounts for steady use; Spot can be interrupted."
+Nightly image-processing jobs can be stopped and restarted without harm. Which option costs least?;"Spot Instances. Spot uses spare capacity at a large discount; interruptions are acceptable here."
+Data in S3 has an unknown and changing access pattern. Which storage class lowers cost automatically?;S3 Intelligent-Tiering. It moves objects between tiers based on access.
+Records must be kept for 10 years, are almost never read, and a 12-hour retrieval time is acceptable. Which class is cheapest?;S3 Glacier Deep Archive. Deep Archive is the lowest-cost class, with retrieval in hours.
+Data is read about once a quarter but must be available in milliseconds when needed. Which class is the best fit?;S3 Glacier Instant Retrieval. Instant Retrieval suits rarely accessed data that still needs immediate access.
+Log objects should move to a cheaper class after 30 days and be deleted after a year, automatically. What should be used?;An S3 Lifecycle configuration. Lifecycle rules handle transitions and expiration.
+Finance wants an email when the monthly bill is forecast to exceed a set amount. Which tool?;AWS Budgets. Budgets sends alerts on actual or forecast spend.
+Development EC2 instances are idle at night and on weekends. What is the simplest saving?;Stop them on a schedule (for example EventBridge with a Lambda function or Instance Scheduler). Stopped instances do not incur compute charges (EBS storage still does).
+The team wants recommendations to resize over-provisioned EC2 instances based on actual usage. Which service?;AWS Compute Optimizer. It analyses utilisation metrics and suggests instance types.
+Which data transfer is generally free?;"Data transferred into AWS from the internet. Inbound transfer is free; outbound, inter-Region and cross-AZ transfer are charged."
+Small container jobs run a few times a day, and the EC2 cluster sits idle most of the time. What reduces cost and management?;Run them on AWS Fargate. Fargate charges for the resources a task uses while it runs.
+Which change cuts NAT gateway data charges for heavy traffic from private subnets to DynamoDB?;A gateway VPC endpoint for DynamoDB. DynamoDB, like S3, supports free gateway endpoints.
+SAA-C03 domain 'Design secure architectures' (30%): key points?;"IAM: users, groups, roles, policies. Prefer roles with temporary credentials (STS) to long-lived access keys. Never use the root user for daily work; enable MFA on it. • Policy evaluation: an explicit Deny anywhere wins; otherwise access needs an Allow; the default is deny. SCPs in AWS Organizations set the maximum permissions for member accounts. • Cross-account access: an IAM role whose trust policy names the other account, assumed through STS. • Network: security groups are stateful and allow-only, attached to ENIs; network ACLs are stateless, have allow and deny rules, and apply to subnets. • Private subnets reach the internet through a NAT gateway in a public subnet. Gateway endpoints (S3, DynamoDB) and interface endpoints (PrivateLink) keep traffic inside AWS. • Encryption at rest: KMS keys (AWS managed or customer managed); SSE-S3, SSE-KMS, client-side. In transit: TLS, ACM certificates on ALB and CloudFront. • Secrets Manager stores and rotates secrets; Systems Manager Parameter Store holds configuration and SecureString values. • Edge protection: AWS WAF (layer 7 rules such as SQL injection and XSS), Shield Standard (automatic DDoS protection), Shield Advanced (paid, with response team). • Detection: GuardDuty (threat detection from logs), Inspector (vulnerability scanning), Macie (sensitive data in S3), Security Hub (findings in one place), CloudTrail (API audit), Config (resource configuration history and rules). • S3 security: Block Public Access, bucket policies, Object Lock (WORM), origin access control for CloudFront, presigned URLs for temporary access. • Identity for app users: Cognito user pools (sign-up and sign-in, social login) and identity pools (temporary AWS credentials)."
+SAA-C03 domain 'Design resilient architectures' (26%): key points?;"Spread across Availability Zones: Auto Scaling groups over several AZs behind an Elastic Load Balancer. • Decouple with SQS (buffer, at-least-once; FIFO for ordering and exactly-once processing), SNS (pub/sub fan-out), EventBridge (event routing). • RDS Multi-AZ gives synchronous standby and automatic failover; read replicas scale reads (asynchronous). Aurora keeps six copies of data across three AZs. • DynamoDB global tables give multi-Region, multi-active replication; S3 Cross-Region Replication needs versioning on both buckets. • Route 53 routing policies: simple, weighted, latency, failover (with health checks), geolocation, geoproximity, multivalue. • Disaster recovery, cheapest to most expensive: backup and restore, pilot light, warm standby, multi-site active-active. Lower RTO and RPO cost more. • Stateless tiers: keep sessions in ElastiCache or DynamoDB so instances can be replaced at any time. • Storage durability: EBS is in one AZ (use snapshots); instance store is lost when the instance stops; EFS is regional and multi-AZ; S3 is designed for eleven nines of durability. • Step Functions orchestrate multi-step workflows with retries; dead-letter queues catch messages that keep failing."
+SAA-C03 domain 'Design high-performing architectures' (24%): key points?;"Caching: CloudFront at the edge, ElastiCache (Redis or Memcached) for databases, DAX for DynamoDB. • Global performance: CloudFront for HTTP content, Global Accelerator for TCP/UDP with static anycast IPs, Route 53 latency routing. • EBS types: gp3 general purpose SSD; io2 provisioned IOPS for demanding databases; st1 throughput HDD for big sequential data; sc1 cold HDD for infrequent access. • EC2 placement groups: cluster (low latency, one AZ), spread (separate hardware), partition (large distributed systems). • Databases by need: RDS and Aurora (relational), DynamoDB (key-value, any scale), Redshift (data warehouse), OpenSearch (search), Neptune (graph). • Analytics: Athena (SQL on S3, serverless), Kinesis Data Streams (real-time ingestion, replay), Data Firehose (load streams into S3, Redshift, OpenSearch), Glue (ETL and data catalogue), EMR (Hadoop and Spark). • S3 performance: multipart upload for large objects, Transfer Acceleration for distant clients, spread work across prefixes. • Serverless: Lambda scales automatically; provisioned concurrency removes cold starts; API Gateway fronts APIs."
+SAA-C03 domain 'Design cost-optimised architectures' (20%): key points?;"EC2 pricing: On-Demand (flexible), Savings Plans and Reserved Instances (1 or 3 years, steady use), Spot (up to large discounts, can be interrupted), Dedicated Hosts (licensing, compliance). • S3 storage classes: Standard, Intelligent-Tiering (unknown patterns), Standard-IA and One Zone-IA, Glacier Instant Retrieval (quarterly access, milliseconds), Glacier Flexible Retrieval (minutes to hours), Glacier Deep Archive (cheapest, hours). • Lifecycle rules move or expire objects automatically. • Cost tools: Cost Explorer (analyse), AWS Budgets (alerts), Cost and Usage Report (detail), Compute Optimizer and Trusted Advisor (right-sizing and checks), cost allocation tags. • Data transfer: inbound from the internet is free; outbound to the internet, between Regions and between AZs is charged. Gateway endpoints for S3 and DynamoDB avoid NAT gateway processing charges. • Serverless and managed services (Lambda, Fargate, Aurora Serverless) avoid paying for idle capacity. • Stop or schedule non-production resources outside working hours."

@@ -1,0 +1,39 @@
+#separator:Semicolon
+#html:false
+#notetype:Basic
+#deck:Placement::Complexity facts
+#tags:placement complexity
+vector<T>: push_back / pop_back / back;O(1) amortised
+vector<T>: operator[] / at;O(1)
+vector<T>: insert / erase in the middle;O(n)
+vector<T>: reserve(n);avoids reallocations
+vector<T>: sort(v.begin(), v.end());O(n log n)
+vector<T>: lower_bound / upper_bound (sorted);O(log n)
+string: s.substr(pos, len);O(len), copies
+string: s.find(t);O(n·m) worst
+string: to_string(x) / stoi(s) / stoll(s);conversions
+string: s += c / s.push_back(c);O(1) amortised
+deque<T>: push_front / push_back / pop_front / pop_back;O(1)
+deque<T>: operator[];O(1)
+stack<T> / queue<T>: push / pop / top / front;O(1)
+stack<T> / queue<T>: empty() before top()/front();required
+priority_queue<T>: push / pop;O(log n)
+priority_queue<T>: top;O(1), largest by default
+set / map (red-black tree): insert / erase / find / count;O(log n)
+set / map (red-black tree): lower_bound(x) / upper_bound(x);O(log n)
+set / map (red-black tree): iterate in sorted order;O(n)
+set / map (red-black tree): multiset: erase(s.find(x)) removes one copy;erase(x) removes all
+unordered_set / unordered_map: insert / erase / find / count;O(1) average, O(n) worst
+unordered_set / unordered_map: m[key] inserts a default if missing;use find/count to check
+unordered_set / unordered_map: reserve(n);fewer rehashes
+<algorithm>: sort / stable_sort;O(n log n)
+<algorithm>: reverse / rotate;O(n)
+<algorithm>: next_permutation;O(n)
+<algorithm>: accumulate (<numeric>), use 0LL for long long;O(n)
+<algorithm>: min_element / max_element;O(n)
+<algorithm>: unique (after sort) + erase;O(n)
+<algorithm>: binary_search;O(log n)
+<algorithm>: __gcd / gcd (C++17 <numeric>);O(log n)
+Others: bitset<N>: count, set, test;O(N/64)
+Others: iota(v.begin(), v.end(), 0);fill 0,1,2…
+Others: __builtin_popcount / __builtin_popcountll;GCC bit count

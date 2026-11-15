@@ -1,0 +1,62 @@
+#separator:Semicolon
+#html:false
+#notetype:Basic
+#deck:Placement::DSA patterns and C++
+#tags:placement patterns
+Problem signal: Find a pair or triple with a target sum. Which pattern?;Two pointers (Is the input sorted, or can you sort it?)
+Problem signal: Find a value, first/last position, or insert point. Which pattern?;Binary search (Is the input sorted, or can you sort it?)
+Problem signal: Minimise the maximum / 'smallest X such that …' with a monotone check. Which pattern?;Binary search on the answer (Is the input sorted, or can you sort it?)
+Problem signal: Merge or count overlapping ranges. Which pattern?;Sort + sweep (intervals) (Is the input sorted, or can you sort it?)
+Problem signal: Longest/shortest window with a condition. Which pattern?;Sliding window (variable) (Contiguous subarray or substring?)
+Problem signal: Every window of size k. Which pattern?;"Sliding window (fixed); monotonic deque for max/min (Contiguous subarray or substring?)"
+Problem signal: Subarray sum equals k, with negatives. Which pattern?;Prefix sum + hash map (Contiguous subarray or substring?)
+Problem signal: Maximum subarray sum. Which pattern?;Kadane (Contiguous subarray or substring?)
+Problem signal: Next greater element, stock span, daily temperatures. Which pattern?;Monotonic stack (Next greater/smaller, spans, histograms?)
+Problem signal: Matching brackets, undo, expression evaluation. Which pattern?;Stack (Next greater/smaller, spans, histograms?)
+Problem signal: Need repeated min/max. Which pattern?;Heap (priority_queue) (Top k, k-th largest, running median, merge k lists?)
+Problem signal: Running median. Which pattern?;Two heaps (Top k, k-th largest, running median, merge k lists?)
+Problem signal: Shortest path, unweighted / levels. Which pattern?;BFS (Graph or grid?)
+Problem signal: Shortest path, non-negative weights. Which pattern?;Dijkstra (Graph or grid?)
+Problem signal: Connected components, islands, cycle in undirected graph. Which pattern?;DFS / BFS / DSU (Graph or grid?)
+Problem signal: Ordering with prerequisites, cycle in directed graph. Which pattern?;Topological sort (Graph or grid?)
+Problem signal: Minimum spanning tree. Which pattern?;Kruskal (sort + DSU) (Graph or grid?)
+Problem signal: Depth, diameter, path sums, LCA. Which pattern?;DFS returning values up (Tree?)
+Problem signal: Level by level. Which pattern?;BFS by levels (Tree?)
+Problem signal: Sorted order or k-th smallest in a BST. Which pattern?;Inorder traversal (Tree?)
+Problem signal: Generate everything, n ≤ 20. Which pattern?;Backtracking (All combinations, permutations, subsets, boards?)
+Problem signal: n ≤ 20 and states of a subset. Which pattern?;Bitmask DP (All combinations, permutations, subsets, boards?)
+Problem signal: Choices at each index or cell. Which pattern?;1-D / 2-D DP (Count ways, min/max cost, overlapping subproblems?)
+Problem signal: Two strings: LCS, edit distance. Which pattern?;String DP (Count ways, min/max cost, overlapping subproblems?)
+Problem signal: Pick items under a capacity. Which pattern?;Knapsack DP (Count ways, min/max cost, overlapping subproblems?)
+Problem signal: Many words sharing prefixes. Which pattern?;Trie (Prefix lookups, autocomplete, word search?)
+Problem signal: Intervals, jumps, scheduling. Which pattern?;Greedy (prove with exchange argument) (Local best choice provably leads to global best?)
+C++ bug: int overflow. What goes wrong?;"a * b with ints near 1e9; sums of 1e5 numbers up to 1e9. Fix: Use long long; write 1LL * a * b"
+C++ bug: accumulate with 0. What goes wrong?;accumulate(v.begin(), v.end(), 0) on long longs truncates. Fix: Pass 0LL
+C++ bug: Signed/unsigned loop. What goes wrong?;"for (int i = 0; i < v.size() - 1; i++) with an empty v: size() − 1 wraps to a huge value. Fix: Cast: (int)v.size() - 1"
+C++ bug: Out-of-bounds index. What goes wrong?;"a[i + 1] at the last index; grid neighbours off the edge. Fix: Check bounds before indexing"
+C++ bug: Uninitialised variables. What goes wrong?;"int ans; then ans = max(ans, x). Fix: Initialise every variable"
+C++ bug: Global vs local arrays. What goes wrong?;Large local array (1e6 ints) overflows the stack. Fix: Make it global or use vector
+C++ bug: Reset between test cases. What goes wrong?;Globals or containers keep old data across t test cases. Fix: Clear or re-create per test
+C++ bug: endl in loops. What goes wrong?;endl flushes every line: slow output. Fix: Use '\n'
+C++ bug: Slow I/O. What goes wrong?;"cin/cout without sync off on 1e6 numbers. Fix: ios::sync_with_stdio(false); cin.tie(nullptr);"
+C++ bug: Mixing scanf and cin after sync off. What goes wrong?;Undefined interleaving once sync is off. Fix: Use one style
+C++ bug: map[key] creates keys. What goes wrong?;if (m[x]) inserts x and can grow the map in a loop. Fix: Use m.count(x) or m.find(x)
+C++ bug: Iterator invalidation. What goes wrong?;Erasing from a vector or map while iterating with the same iterator. Fix: it = v.erase(it), or collect then erase
+C++ bug: Modifying a container in range-for. What goes wrong?;push_back while iterating a vector. Fix: Iterate by index over the old size
+C++ bug: Comparator not strict. What goes wrong?;sort with a <= b crashes or misorders. Fix: Comparators must be strict: a < b
+C++ bug: priority_queue order. What goes wrong?;"Expecting smallest on top. Fix: Default is max-heap; use greater<> for min"
+C++ bug: multiset erase(value). What goes wrong?;Removes every copy. Fix: erase(s.find(x)) to remove one
+C++ bug: Integer division and modulo with negatives. What goes wrong?;-7 / 2 == -3 and -7 % 2 == -1. Fix: For a positive mod: ((a % m) + m) % m
+C++ bug: Modular arithmetic. What goes wrong?;"Forgetting % after each multiply. Fix: Reduce after every operation; use long long"
+C++ bug: Floating point equality. What goes wrong?;if (x == 0.3). Fix: Compare with an epsilon, or use integers
+C++ bug: pow() for integers. What goes wrong?;pow(10, 9) returns double and can round down. Fix: Write a binary exponentiation for integers
+C++ bug: Wrong INF. What goes wrong?;INT_MAX + 1 overflows during relaxations. Fix: Use 1e18 as long long or check before adding
+C++ bug: memset with non-zero values. What goes wrong?;"memset(a, 1, sizeof a) sets bytes, not ints. Fix: Only 0 and -1 are safe; use fill"
+C++ bug: Recursion depth. What goes wrong?;DFS 1e6 deep overflows the stack. Fix: Iterative DFS or BFS
+C++ bug: Passing big containers by value. What goes wrong?;void f(vector<int> v) copies on every call. Fix: Pass by const reference
+C++ bug: string += in a loop with s = s + c. What goes wrong?;s = s + c copies each time: O(n²). Fix: Use s += c or s.push_back(c)
+C++ bug: substr in a loop. What goes wrong?;s.substr inside a loop copies: hidden O(n²). Fix: Use indices or string_view
+C++ bug: Off-by-one in binary search. What goes wrong?;while (lo < hi) with mid rounding the wrong way loops forever. Fix: Pick one template and stick to it
+C++ bug: Shadowed variables. What goes wrong?;Declaring n again inside a block hides the outer n. Fix: Compile with -Wall -Wshadow
+C++ bug: Edge cases. What goes wrong?;n = 1, empty input, all equal, all negative, maximum values. Fix: Test them before submitting
+C++ bug: Reading the wrong constraints. What goes wrong?;O(n²) for n = 2e5. Fix: From n, decide the target complexity first

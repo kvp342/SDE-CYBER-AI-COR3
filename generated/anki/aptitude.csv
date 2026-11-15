@@ -1,0 +1,115 @@
+#separator:Semicolon
+#html:false
+#notetype:Basic
+#deck:Placement::Aptitude shortcuts
+#tags:placement aptitude
+What is 25% of 480?;120. 0.25 × 480 = 120.
+A price rises by 20% and then falls by 20%. The net change is:;4% decrease. 1.2 × 0.8 = 0.96, so 4% lower.
+Simple interest on ₹5,000 at 8% a year for 3 years:;₹1200. SI = PRT/100 = 5000 × 8 × 3 / 100.
+Compound interest on ₹10,000 at 10% a year for 2 years (yearly compounding):;₹2100. 10000 × 1.1² − 10000 = 2100.
+If a:b = 2:3 and b:c = 4:5, then a:b:c is:;8:12:15. Make b equal: 2:3 = 8:12 and 4:5 = 12:15.
+The average of the first 10 natural numbers is:;5.5. Sum 55 ÷ 10.
+A 150 m train at 54 km/h passes a pole in:;"10 s. 54 km/h = 15 m/s; 150 ÷ 15."
+A 200 m train at 72 km/h crosses a 300 m platform in:;25 s. Distance 500 m at 20 m/s.
+A finishes a job in 10 days and B in 15 days. Together they take:;6 days. 1/10 + 1/15 = 1/6.
+"Two pipes fill a tank in 6 h and 8 h; an outlet empties it in 12 h. With all three open, the tank fills in:";4.8 h. 1/6 + 1/8 − 1/12 = 5/24 per hour, so 24/5 h.
+Bought for ₹400, sold for ₹500. Profit percentage:;25%. 100/400 × 100.
+Marked price ₹1,000 with two successive discounts of 10%. Selling price:;₹810. 1000 × 0.9 × 0.9.
+"A boat goes 10 km/h in still water; the stream flows at 2 km/h. Time to go 36 km downstream:";3 h. Downstream speed 12 km/h.
+LCM of 12, 18 and 30:;180. 2² × 3² × 5.
+HCF of 84 and 126:;42. 84 = 2²·3·7, 126 = 2·3²·7.
+Number of distinct arrangements of the letters of LEVEL:;30. 5! / (2! × 2!).
+Number of ways to choose 3 people from 7:;35. 7C3.
+Two fair dice are thrown. Probability the sum is 7:;1/6. 6 favourable of 36.
+Three coins are tossed. Probability of at least one head:;7/8. 1 − (1/2)³.
+You drive 60 km at 30 km/h and come back at 60 km/h. Average speed for the trip:;40 km/h. 120 km in 3 h (harmonic mean, not 45).
+"A father is three times his son's age; in 10 years he will be twice the son's age. The son's age now:";10. 3x + 10 = 2(x + 10).
+"20 L of milk and water in ratio 3:1; 5 L of water is added. New ratio:";3:2. Milk 15, water 10.
+Sum of the interior angles of a hexagon:;720°. (n − 2) × 180.
+Area of a circle of radius 7 cm (π = 22/7):;154 cm². 22/7 × 49.
+Angle between the clock hands at 3:30:;75°. |30·3 − 5.5·30| = 75.
+30 is what percentage of 120?;25%. 30/120 × 100.
+Successive increases of 10% and 20% equal a single increase of:;32%. 1.1 × 1.2 = 1.32.
+Unit digit of 7^95:;"3. Cycle 7, 9, 3, 1; 95 mod 4 = 3."
+Remainder when 2^100 is divided by 7:;"2. 2³ ≡ 1 (mod 7); 100 = 3·33 + 1."
+Number of trailing zeros in 100!:;24. ⌊100/5⌋ + ⌊100/25⌋.
+1 + 2 + … + 100 =;5050. n(n + 1)/2.
+A invests ₹3,000 for 12 months and B ₹4,000 for 6 months. Profit ₹6,000. A's share:;₹3600. 36000 : 24000 = 3 : 2.
+"Salary ₹20,000; 75% is spent. Savings:";₹5000. 25% of 20000.
+Cost ₹600, marked 25% above cost, sold at a 10% discount. Profit percentage:;12.5%. Sold for 675.
+"Walking at 5 km/h a man is 10 minutes late; at 6 km/h he is 5 minutes early. The distance is:";7.5 km. d/5 − d/6 = 15/60.
+The average of 5 numbers is 20. After removing one, the average is 18. The removed number:;28. 100 − 72.
+Ratio of the areas of two circles with radii 3 and 4:;9:16. Area ∝ r².
+Volume of a cube of side 4 cm:;64 cm³. 4³.
+If 3x + 7 = 22, then x =;5. 3x = 15.
+Roots of x² − 5x + 6 = 0:;2 and 3. (x − 2)(x − 3).
+Passing needs 40%. A student scores 160 and fails by 40 marks. Maximum marks:;500. Pass mark 200 = 40%.
+15 August 1947 was a:;Friday. Check with any calendar algorithm (odd days).
+1 January 2027 falls on a:;Friday. 1 Jan 2026 is a Thursday and 2026 is not a leap year: one odd day.
+Ways to arrange 5 people in a row:;120. 5!.
+Ways to seat 6 people around a round table:;120. (n − 1)!.
+Probability of drawing a king from a 52-card deck:;1/13. 4/52.
+Two cards are drawn without replacement. Probability both are aces:;1/221. 4/52 × 3/51.
+Number of diagonals of an octagon:;20. n(n − 3)/2.
+12 men finish a job in 8 days. 16 men finish it in:;6 days. 96 man-days.
+Trains of 120 m and 180 m run in opposite directions at 60 and 40 km/h. Time to cross each other:;10.8 s. 300 m at 100 km/h = 250/9 m/s.
+A sum doubles in 8 years at simple interest. The rate is:;12.5%. Interest = principal in 8 years: 100/8.
+Difference between CI and SI on ₹5,000 for 2 years at 10%:;₹50. P(r/100)².
+Price rises 25%. To keep spending the same, consumption must fall by:;20%. 25/125.
+Mean of 4, 8, 15, 16, 23, 42:;18. 108 ÷ 6.
+Median of 3, 1, 4, 1, 5, 9, 2:;3. Sorted: 1 1 2 3 4 5 9.
+1 + 2 + 4 + … + 2⁹ =;1023. 2¹⁰ − 1.
+20th term of 5, 8, 11, …:;62. 5 + 19 × 3.
+Number of positive factors of 360:;24. 360 = 2³·3²·5: (3 + 1)(2 + 1)(1 + 1).
+72 km/h in metres per second:;20 m/s. Multiply by 5/18.
+Two items are sold for ₹1,200 each, one at 20% profit and one at 20% loss. Overall:;"4% loss. Costs 1000 and 1500; 2400 vs 2500."
+Next in the series: 2, 6, 12, 20, 30, ?;42. n(n + 1).
+Next: 1, 1, 2, 3, 5, 8, ?;13. Fibonacci.
+Next: 3, 9, 27, 81, ?;243. ×3.
+Next: 2, 3, 5, 7, 11, 13, ?;17. Primes.
+Next: 1, 4, 9, 16, 25, ?;36. Squares.
+Next: 5, 11, 23, 47, ?;95. ×2 + 1.
+Next: 100, 96, 88, 76, 60, ?;40. Differences −4, −8, −12, −16, −20.
+Next: 1, 8, 27, 64, ?;125. Cubes.
+Next letter: A, C, F, J, O, ?;U. Gaps 2, 3, 4, 5, 6.
+Next letter: Z, X, V, T, ?;R. Back 2 each time.
+If CAT is coded DBU, DOG is coded:;EPH. Each letter +1.
+If COMPUTER is DPNQVUFS, SCIENCE is:;TDJFODF. Each letter +1.
+If A = 1, B = 2, …, the sum for BAD is:;7. 2 + 1 + 4.
+If TRAIN is written NIART, PLANE is written:;ENALP. Reversed.
+If MANGO is OCPIQ, APPLE is:;CRRNG. Each letter +2.
+Walk 5 km north, turn right and walk 3 km, turn right and walk 5 km. How far and which way from the start?;3 km East. You end 3 km east of where you began.
+Facing north, you turn 90° right twice, then 90° left once. You now face:;East. N → E → S → E.
+Go 3 km east then 4 km north. Straight-line distance from the start:;5 km. 3-4-5 triangle.
+In the morning Ravi's shadow falls to his right. He is facing:;"South. Morning sun is in the east, so shadows point west; west on your right means you face south."
+Walk 10 m south, 10 m west, then 10 m north. Position relative to the start:;10 m West. South and north cancel.
+Angle between the clock hands at 4:20:;10°. |120 − 110|.
+How many times do the hour and minute hands overlap in 12 hours?;11. Once every 12/11 hours.
+1 January 2026 is a Thursday. 1 January 2027 is a:;Friday. 365 days = 52 weeks + 1 day.
+How many odd days are there in a leap year?;2. 366 mod 7.
+A clock seen in a mirror shows 8:00. The actual time is:;4:00. Mirror time = 12:00 − shown time.
+A is B's brother, C is A's mother and D is C's father. B is D's:;"Grandchild. B is C's child; D is C's father."
+Pointing at a man, Meena says: 'He is the son of my mother's only son.' The man is Meena's:;"Nephew. Her mother's only son is her brother; his son is her nephew."
+X's father is Y's only son. Y is X's:;Grandparent. Y's son is X's father.
+P is Q's husband and R is Q's mother. R is P's:;Mother-in-law. Wife's mother.
+A's mother's brother's son is A's:;Cousin. Maternal uncle's son.
+All roses are flowers. All flowers fade. Therefore all roses fade. This conclusion:;Follows. Rose ⊂ flower ⊂ fades.
+All A are B. Some B are C. Therefore some A are C. This conclusion:;Does not follow. The B's that are C need not be A's.
+No fish are mammals. All whales are mammals. Therefore no whales are fish. This conclusion:;Follows. Whales are inside mammals, which share nothing with fish.
+Some students are athletes. All athletes are disciplined. Therefore some students are disciplined. This conclusion:;Follows. The student-athletes are disciplined.
+All engineers are graduates. Ravi is a graduate. Therefore Ravi is an engineer. This conclusion:;Does not follow. Affirming the consequent: graduates need not be engineers.
+Five people sit in a row. D is at the left end, A is immediately right of D, B is in the middle and E is at the right end. Who is fourth from the left?;C. D A B _ E: only C is left.
+Ravi is 7th from the top and 12th from the bottom of a class. How many students are there?;18. 7 + 12 − 1.
+In a class of 40, Asha is 15th from the top. Her rank from the bottom is:;26. 40 − 15 + 1.
+A is taller than B, B is taller than C, and D is taller than A. Who is the shortest?;C. Order: D > A > B > C.
+P is taller than Q, R is shorter than Q, and S is taller than P. Who is the tallest?;S. S > P > Q > R.
+Odd one out: 2, 3, 5, 9, 11;9. 9 is not prime.
+Odd one out: Apple, Mango, Potato, Banana;Potato. The others are fruits.
+Odd one out: 121, 144, 169, 196, 200;200. Not a perfect square.
+Odd one out: Square, Triangle, Circle, Cube;Cube. The only 3-D shape.
+Odd one out: 8, 27, 64, 100, 125;100. Not a perfect cube.
+Pen : Write :: Knife : ?;Cut. Tool : what it does.
+4 : 16 :: 7 : ?;49. Square.
+Doctor : Hospital :: Teacher : ?;School. Person : workplace.
+3 : 27 :: 5 : ?;125. Cube.
+Of 50 people, 30 like tea, 25 like coffee and 10 like both. How many like neither?;5. 50 − (30 + 25 − 10).
