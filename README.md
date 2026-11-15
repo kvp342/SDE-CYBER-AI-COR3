@@ -19,6 +19,7 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `Striver-A2Z-DSA-Sheet-2026.pdf` | The current takeuforward A2Z sheet (20 sections, 453 problems), clickable |
 | `GEMINI-HANDOFF.md` | Full context to paste into another AI assistant |
 | `sources/` | Scripts that build all of the above |
+| `generated/roadmapsh-checklists.pdf` | roadmap.sh maps (Backend, Cyber Security, AWS, CS, System Design, DevOps) as checklists, mapped to the kit with gaps marked |
 | `agent/` | Instructions, backlog and log for the scheduled agent |
 | `generated/` | Documents the agent builds |
 
