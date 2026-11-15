@@ -30,6 +30,7 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/tenantwall/` | The TenantWall files themselves: diagrams (SVG and PNG), policy JSON, CloudTrail and alarm setup script, and an offline policy check script |
 | `generated/ai-security-starter-guide.pdf` | Guide to the AI-security project starter: how it works, the four defence layers, how to run it, offline results per attack, and a 4-week May plan |
 | `generated/ai-security-starter/` | The starter itself: a RAG assistant over security notes, 20 evaluation questions, 12 prompt-injection attacks, defence module, 8 offline tests; one flag switches to Claude |
+| `generated/backend-starter/` | Study-tracker REST API (FastAPI, SQLite, JWT login, rate limiting) with 10 security-focused tests, an architecture diagram and a security checklist in its README |
 | `agent/` | Instructions, backlog and log for the scheduled agent |
 | `generated/` | Documents the agent builds |
 
