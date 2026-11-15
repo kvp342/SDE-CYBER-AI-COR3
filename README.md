@@ -20,6 +20,7 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `GEMINI-HANDOFF.md` | Full context to paste into another AI assistant |
 | `sources/` | Scripts that build all of the above |
 | `generated/roadmapsh-checklists.pdf` | roadmap.sh maps (Backend, Cyber Security, AWS, CS, System Design, DevOps) as checklists, mapped to the kit with gaps marked |
+| `generated/worked-solutions-2.pdf` | Worked Solutions II: 40 more most-asked LeetCode problems (not in the Knowledge Base set), each with idea, steps, tested C++17 code, traps and follow-ups; clickable index by pattern |
 | `agent/` | Instructions, backlog and log for the scheduled agent |
 | `generated/` | Documents the agent builds |
 
