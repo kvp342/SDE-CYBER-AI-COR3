@@ -42,6 +42,8 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/security-lab-notebook.pdf` | CTF and PortSwigger write-up templates with worked examples, a STRIDE threat model of TenantWall, a lab command sheet, and web security by vulnerability class (linked to the free PortSwigger topics) |
 | `generated/weekly-planner.pdf` | 28 printable week pages (16 Nov 2026 – 30 May 2027): phase and goal, fixed dates (OA sets, TenantWall deadline, exams, AWS exam), daily tick boxes and a weekly review |
 | `generated/company-files-2.pdf` | Six more company files (Uber, Salesforce AMTS, Adobe MTS-1, Walmart Global Tech, PhonePe, Zscaler): reported process, how the plan prepares you, mistakes, likely questions, sources |
+| `generated/resume-kit.pdf` | One-page ATS-safe resume template (placeholders only), bullet formula with weak-to-strong examples for TenantWall, the AI-security and backend projects, where each number comes from, and a 12-point review checklist |
+| `generated/resume/` | The template as Markdown and HTML, to paste into Google Docs or Word |
 | `agent/` | Instructions, backlog and log for the scheduled agent |
 | `generated/` | Documents the agent builds |
 
