@@ -39,6 +39,7 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/aptitude-pack.pdf` | 150 aptitude questions (60 quant, 50 logical, 40 verbal) with timing guidance and worked answers on separate pages; every computable answer checked in Python |
 | `generated/anki/*.csv` | 571 flashcards in 6 Anki decks (Core CS, patterns and C++ bugs, complexity, security, AWS, aptitude), built from material already checked in the kit |
 | `generated/anki-decks-guide.pdf` | One page: importing the decks into AnkiDroid, AnkiMobile or Anki desktop, and a daily routine |
+| `generated/security-lab-notebook.pdf` | CTF and PortSwigger write-up templates with worked examples, a STRIDE threat model of TenantWall, a lab command sheet, and web security by vulnerability class (linked to the free PortSwigger topics) |
 | `agent/` | Instructions, backlog and log for the scheduled agent |
 | `generated/` | Documents the agent builds |
 
