@@ -1,0 +1,2 @@
+# Only needed for --llm anthropic. The offline stub, tests and defences use the standard library only.
+anthropic>=2.8

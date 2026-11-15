@@ -28,6 +28,8 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/aws-saa-c03-study-pack.pdf` | AWS SAA-C03 final revision: notes for the four domains, a service-for-need table, 60 original scenario questions with explained answers, and a day-by-day plan for 5–18 Apr 2027 |
 | `generated/tenantwall-helpers.pdf` | TenantWall: architecture diagram, method flowchart, IAM and bucket policies explained, alerting setup, isolation test plan and a checklist for the paper's audit and alerting section |
 | `generated/tenantwall/` | The TenantWall files themselves: diagrams (SVG and PNG), policy JSON, CloudTrail and alarm setup script, and an offline policy check script |
+| `generated/ai-security-starter-guide.pdf` | Guide to the AI-security project starter: how it works, the four defence layers, how to run it, offline results per attack, and a 4-week May plan |
+| `generated/ai-security-starter/` | The starter itself: a RAG assistant over security notes, 20 evaluation questions, 12 prompt-injection attacks, defence module, 8 offline tests; one flag switches to Claude |
 | `agent/` | Instructions, backlog and log for the scheduled agent |
 | `generated/` | Documents the agent builds |
 

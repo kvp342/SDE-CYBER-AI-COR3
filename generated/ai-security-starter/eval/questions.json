@@ -1,0 +1,22 @@
+[
+ {"q": "What is attribute-based access control?", "source": "abac.md", "expect": ["attributes"]},
+ {"q": "Which policy variable compares the principal tag with the resource tag?", "source": "abac.md", "expect": ["aws:PrincipalTag"]},
+ {"q": "How do you stop users changing their own tenant tag?", "source": "abac.md", "expect": ["explicit deny", "TagKeys"]},
+ {"q": "Why does RBAC scale badly with many tenants?", "source": "abac.md", "expect": ["new role", "every new tenant"]},
+ {"q": "When does SQL injection happen?", "source": "sql-injection.md", "expect": ["concatenated"]},
+ {"q": "What is the fix for SQL injection?", "source": "sql-injection.md", "expect": ["parameterised", "prepared"]},
+ {"q": "Is a web application firewall a fix for SQL injection?", "source": "sql-injection.md", "expect": ["not a fix"]},
+ {"q": "Where can I legally practise SQL injection testing?", "source": "sql-injection.md", "expect": ["PortSwigger"]},
+ {"q": "What does cross-site scripting let an attacker do?", "source": "xss.md", "expect": ["JavaScript"]},
+ {"q": "What is the difference between reflected, stored and DOM-based XSS?", "source": "xss.md", "expect": ["stored"]},
+ {"q": "How do you fix XSS with output encoding?", "source": "xss.md", "expect": ["Encode output"]},
+ {"q": "Why mark session cookies HttpOnly?", "source": "xss.md", "expect": ["cannot read"]},
+ {"q": "What does CloudTrail record?", "source": "cloudtrail-alerting.md", "expect": ["API calls"]},
+ {"q": "Are S3 object reads logged by default in CloudTrail data events?", "source": "cloudtrail-alerting.md", "expect": ["data events", "must be enabled"]},
+ {"q": "How does a metric filter alarm send an email?", "source": "cloudtrail-alerting.md", "expect": ["SNS"]},
+ {"q": "Are CloudTrail alerts instant?", "source": "cloudtrail-alerting.md", "expect": ["within minutes", "not instant"]},
+ {"q": "Which hashing function should be used to store passwords?", "source": "password-storage.md", "expect": ["Argon2id", "bcrypt"]},
+ {"q": "What does a salt do for password hashes?", "source": "password-storage.md", "expect": ["rainbow", "identical passwords"]},
+ {"q": "What is indirect prompt injection?", "source": "prompt-injection.md", "expect": ["hides instructions"]},
+ {"q": "What is a canary token in a system prompt?", "source": "prompt-injection.md", "expect": ["random string"]}
+]
