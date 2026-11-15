@@ -34,6 +34,8 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/lld-pack.pdf` | Six LLD designs (parking lot, library, Splitwise, elevator, rate limiter, LRU cache): requirements, class diagrams, decisions, follow-ups and full C++17 code |
 | `generated/lld/` | The six C++17 programs; each runs a demo that checks its own behaviour |
 | `generated/core-cs-one-pagers.pdf` | One A4 revision page each for OS, DBMS, CN, OOP, SQL and System Design: 10 definitions, a diagram and the 10 most-asked questions |
+| `generated/patterns-stl-card.pdf` | One-page pattern decision tree (problem signal → pattern → Knowledge Base page), a C++ STL card with complexities, and 30 common C++ contest bugs with fixes |
+| `generated/stl_check.cpp` | Compiles and runs every STL call on the card (proof the card is correct) |
 | `agent/` | Instructions, backlog and log for the scheduled agent |
 | `generated/` | Documents the agent builds |
 
