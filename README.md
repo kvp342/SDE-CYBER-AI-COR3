@@ -22,6 +22,7 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/roadmapsh-checklists.pdf` | roadmap.sh maps (Backend, Cyber Security, AWS, CS, System Design, DevOps) as checklists, mapped to the kit with gaps marked |
 | `generated/worked-solutions-2.pdf` | Worked Solutions II: 40 more most-asked LeetCode problems (not in the Knowledge Base set), each with idea, steps, tested C++17 code, traps and follow-ups; clickable index by pattern |
 | `generated/oa-simulation-packs.pdf` | 8 timed online-assessment sets (3 LeetCode problems, 90 minutes each, 24 problems with no repeats), dated to the plan, with a scoring guide, a record table and a solution page per set (sketch, edge cases, tested C++17) |
+| `generated/core-cs-mcq-bank.pdf` | 150 OA-style MCQs (30 each on OS, DBMS, CN, OOP, C++ output) with answer keys on separate pages and a reason per answer; C++ outputs, SQL, subnet and page-fault answers machine-checked |
 | `agent/` | Instructions, backlog and log for the scheduled agent |
 | `generated/` | Documents the agent builds |
 
