@@ -36,6 +36,7 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/core-cs-one-pagers.pdf` | One A4 revision page each for OS, DBMS, CN, OOP, SQL and System Design: 10 definitions, a diagram and the 10 most-asked questions |
 | `generated/patterns-stl-card.pdf` | One-page pattern decision tree (problem signal → pattern → Knowledge Base page), a C++ STL card with complexities, and 30 common C++ contest bugs with fixes |
 | `generated/stl_check.cpp` | Compiles and runs every STL call on the card (proof the card is correct) |
+| `generated/aptitude-pack.pdf` | 150 aptitude questions (60 quant, 50 logical, 40 verbal) with timing guidance and worked answers on separate pages; every computable answer checked in Python |
 | `agent/` | Instructions, backlog and log for the scheduled agent |
 | `generated/` | Documents the agent builds |
 
