@@ -1,0 +1,11 @@
+Item,Offer A,Offer B,Notes
+Base salary (annual),1800000,2200000,Fixed pay per year
+Joining bonus (one time),200000,0,Often repayable if you leave within a year
+Performance bonus %,10,0,"Target, not guaranteed"
+Stocks / RSUs (total grant),2400000,0,Value at grant; can change
+Vesting years,4,1,Use 1 if there are no stocks
+First-year cash + stock,=B2+B3+B2*B4/100+B5/B6,=C2+C3+C2*C4/100+C5/C6,What year one is worth
+Recurring yearly,=B2+B2*B4/100+B5/B6,=C2+C2*C4/100+C5/C6,"Year two onwards, before raises"
+Bond (months),0,0,Penalty if you leave early
+City,,,Rent and cost of living differ a lot
+Role and team,,,Learning and growth matter more than a small pay gap

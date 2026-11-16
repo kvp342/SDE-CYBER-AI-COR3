@@ -58,6 +58,8 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/mock-interview-scripts.pdf` | Six mock interview scripts for practising with a friend (2 DSA, Core CS, LLD, security, HR): timed phases, what to say, hints in order, 5-line rubric |
 | `generated/linux-git-debugging-sheet.pdf` | Two pages of daily commands (files and text, processes, Git everyday and safe undo, C++ debugging with sanitizers, gdb, valgrind, strace), every one run and checked |
 | `generated/codeforces-ladder.pdf` | Codeforces ladder 800 → 1600: 10 topics × 5 rating bands (links to the official filtered problem set), a 6-week plan to the 31 March gate, and how rating moves |
+| `generated/interview-day-kit.pdf` | OA-day and interview-day checklists, what to say when stuck, four email templates (referral, thank-you, follow-up, more time) and how to compare offers, with a worked example |
+| `generated/interview-day/` | The email templates (Markdown) and an offer comparison sheet (CSV with formulas, opens in Google Sheets) |
 | `generated/index-of-everything.pdf` | Every file in the repository with what it is, when to use it and a link that opens it on GitHub |
 | `agent/` | Instructions, backlog and log for the scheduled agent |
 | `generated/` | Documents the agent builds |
