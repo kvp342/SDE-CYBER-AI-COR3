@@ -29,5 +29,5 @@ Work top to bottom. One item per run. Tick `[x]` when done and verified. Items a
 - [x] **PortSwigger and OWASP lab map.** A table mapping each OWASP Top 10 category to the free PortSwigger Web Security Academy topic names, what to learn, and a tick box; plus 10 web-security interview questions with answers. Link only to the Academy's topic pages. PDF.
 - [x] **Mock interview scripts.** For practising with a friend: 6 full interviewer scripts (2 DSA, 1 Core CS, 1 LLD, 1 security, 1 HR) with timings, hints to give, and a scoring rubric. PDF.
 - [x] **Linux, Git and debugging cheat sheet.** Commands used daily in labs and projects (files, processes, networking, permissions, git branching and undo, gdb basics), each tested in a shell where possible. PDF.
-- [ ] **Handoff refresh.** Update `GEMINI-HANDOFF.md` section 0 with everything the agent built (file names and what each is for).
+- [x] **Handoff refresh.** Update `GEMINI-HANDOFF.md` section 0 with everything the agent built (file names and what each is for).
 - [ ] **Index of everything.** A single PDF that links to every file in the repo (relative links) with one line each on what it is and when to use it. Regenerate it last.
