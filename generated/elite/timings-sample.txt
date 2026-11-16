@@ -1,0 +1,23 @@
+e1_aos_soa
+  AoS: sum qty                          3.889 ns/op
+  SoA: sum qty                          0.326 ns/op
+e2_traversal
+  row-major traversal                   0.229 ns/op
+  column-major traversal                8.415 ns/op
+e3_spsc
+  SPSC transfer (2 threads)            10.145 ns/op
+e4_pool
+  new/delete                            9.304 ns/op
+  pool make/destroy                     1.516 ns/op
+e5_branchless
+  branchy clamp (if/else)               3.365 ns/op
+  branch-free clamp                     0.923 ns/op
+e6_false_sharing
+  counters on one cache line           22.907 ns/op
+  counters padded to 64 bytes           2.395 ns/op
+e7_parse
+  stringstream >>                      33.409 ns/op
+  hand-written parser                   5.271 ns/op
+e8_book
+  std::map add + best                  59.960 ns/op
+  array book add + best                 1.243 ns/op
