@@ -48,6 +48,8 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/profile-kit.pdf` | LinkedIn checklist, three headline options and an About template, GitHub pinning and project README guide, a profile README template, and a 4-week posting plan |
 | `generated/profile/` | The LinkedIn text and the GitHub profile README as files to copy |
 | `generated/docker-ci-guide.pdf` | One page: the Dockerfiles and GitHub Actions workflows added to both starters, explained line by line, with run commands |
+| `generated/system-design-case-studies.pdf` | Five designs (URL shortener, chat, news feed, notifications, file sync): requirements, computed estimates, API, data model, diagram, design and trade-offs |
+| `generated/sysdesign/` | The five diagrams as SVG and PNG |
 | `agent/` | Instructions, backlog and log for the scheduled agent |
 | `generated/` | Documents the agent builds |
 
