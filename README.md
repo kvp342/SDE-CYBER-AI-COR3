@@ -37,7 +37,7 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/patterns-stl-card.pdf` | One-page pattern decision tree (problem signal → pattern → Knowledge Base page), a C++ STL card with complexities, and 30 common C++ contest bugs with fixes |
 | `generated/stl_check.cpp` | Compiles and runs every STL call on the card (proof the card is correct) |
 | `generated/aptitude-pack.pdf` | 150 aptitude questions (60 quant, 50 logical, 40 verbal) with timing guidance and worked answers on separate pages; every computable answer checked in Python |
-| `generated/anki/*.csv` | 571 flashcards in 6 Anki decks (Core CS, patterns and C++ bugs, complexity, security, AWS, aptitude), built from material already checked in the kit |
+| `generated/anki/*.csv` | 654 flashcards in 7 Anki decks (all 83 worked solutions, Core CS, patterns and C++ bugs, complexity, security, AWS, aptitude), built from material already checked in the kit |
 | `generated/anki-decks-guide.pdf` | One page: importing the decks into AnkiDroid, AnkiMobile or Anki desktop, and a daily routine |
 | `generated/security-lab-notebook.pdf` | CTF and PortSwigger write-up templates with worked examples, a STRIDE threat model of TenantWall, a lab command sheet, and web security by vulnerability class (linked to the free PortSwigger topics) |
 | `generated/weekly-planner.pdf` | 28 printable week pages (16 Nov 2026 – 30 May 2027): phase and goal, fixed dates (OA sets, TenantWall deadline, exams, AWS exam), daily tick boxes and a weekly review |

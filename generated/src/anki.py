@@ -5,13 +5,18 @@ from pypdf import PdfReader, PdfWriter
 from reportlab.pdfgen import canvas
 ROOT = pathlib.Path(__file__).resolve().parents[2]; OUT = ROOT / "generated"; SRC = OUT / "src"; DECKS = OUT / "anki"
 sys.path[:0] = [str(SRC), str(ROOT / "sources" / "kb")]
-import t_qa, t_sec, mcq_data, aws_data, apti_data
+import t_qa, t_sec, mcq_data, aws_data, apti_data, t_probs, t_probs2
 from pattern_stl import TREE, STL, BUGS            # importing builds that PDF too; cheap and keeps one source of truth
 from onepagers import P as ONEPAGERS
 E = html.escape
 def clean(s): return re.sub(r"\s+", " ", str(s)).strip()
 
+def sol_card(p):
+    pattern = p["why"].split(".")[0].replace("Pattern: ", "")
+    cx = next((x.replace("Complexity: ", "") for x in p["points"] if str(x).startswith("Complexity")), "")
+    return (f"{p['title']}: which pattern, and what is the key idea?", f"Pattern: {pattern}. {' '.join(p['core'])}" + (f" Complexity: {cx}." if cx else ""))
 decks = {
+ "solutions": ("Worked solutions (83 problems)", [sol_card(p) for p in t_probs.P + t_probs2.P]),
  "core-cs": ("Core CS", [(q, a) for t in t_qa.TOPICS if t["id"] != "qa-security" for q, a in t["qa"]]
              + [(f"{t}: {term}?", d) for k, t, kb, defs, *_ in ONEPAGERS if k != "sysdesign" for term, d in defs]
              + [(q[0] + ("\n" + q[6].split("\n", 2)[2] if len(q) > 6 else ""), f"{q[1]}. {q[5]}") for s in mcq_data.SECTIONS for q in s["qs"]]),
@@ -46,7 +51,7 @@ HTML = f'''<!doctype html><html><head><meta charset="utf-8"><link href="https://
 table {{ border-collapse: collapse; width: 100%; }} th {{ font: 600 7pt "JetBrains Mono"; text-transform: uppercase; color: #64748b; background: #f1f5f9; padding: 1.2mm 2mm; text-align: left; }} td {{ border-bottom: 1px solid #e2e8f0; padding: 1.3mm 2mm; }} .c {{ text-align: right; font-family: "JetBrains Mono"; }}
 code {{ font: 600 8pt "JetBrains Mono"; }} ol {{ padding-left: 5mm; margin: 0; }} li {{ margin-bottom: 1mm; }} .note {{ background: #fff7ed; border-left: 3px solid #c2410c; padding: 2mm 3mm; margin-top: 4mm; }}</style></head><body>
 <p class="eb">SPACED REPETITION · ANKI DECKS</p><h1>{TOTAL} flashcards, ready to import</h1>
-<p>Six decks made from material already checked elsewhere in this kit (Core CS Q&amp;A, one-pagers, the MCQ bank, the pattern tree, the STL card, the 30 bugs, the security pages, the AWS pack and the aptitude pack). Anki shows each card just before you would forget it, so 15–20 minutes a day keeps everything fresh until placements.</p>
+<p>Seven decks made from material already checked elsewhere in this kit (all 83 worked solutions, Core CS Q&amp;A, one-pagers, the MCQ bank, the pattern tree, the STL card, the 30 bugs, the security pages, the AWS pack and the aptitude pack). Anki shows each card just before you would forget it, so 15–20 minutes a day keeps everything fresh until placements.</p>
 <table><thead><tr><th>File</th><th>Deck</th><th class="c">Cards</th></tr></thead><tbody>{rows}</tbody></table>
 <h2>Android: AnkiDroid (free)</h2><ol><li>Download the .csv files from the repository on your phone (open the file on GitHub, then Raw, then save).</li><li>In AnkiDroid: menu → Import → choose the file. Check that the type is Basic, the separator is semicolon, and Field 1 is Front, Field 2 is Back.</li><li>Repeat for each file. Each lands in its own deck under "Placement".</li></ol>
 <h2>iPhone: AnkiMobile (paid) or AnkiWeb (free in the browser)</h2><ol><li>Easiest: import on a computer with Anki desktop (free), then sync to a free AnkiWeb account, then sync on the phone.</li><li>AnkiMobile can also import the file from the Files app via the share sheet.</li></ol>
