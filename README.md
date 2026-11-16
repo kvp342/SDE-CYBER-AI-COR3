@@ -47,6 +47,7 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/interview-story-bank.pdf` | Six STAR story templates (prompts, no invented stories) mapped to Amazon's 16 Leadership Principles and Google's hiring attributes, a coverage matrix, a fill-in worksheet and 25 HR questions with answer outlines |
 | `generated/profile-kit.pdf` | LinkedIn checklist, three headline options and an About template, GitHub pinning and project README guide, a profile README template, and a 4-week posting plan |
 | `generated/profile/` | The LinkedIn text and the GitHub profile README as files to copy |
+| `generated/docker-ci-guide.pdf` | One page: the Dockerfiles and GitHub Actions workflows added to both starters, explained line by line, with run commands |
 | `agent/` | Instructions, backlog and log for the scheduled agent |
 | `generated/` | Documents the agent builds |
 

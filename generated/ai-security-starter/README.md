@@ -59,3 +59,14 @@ python3 attacks/run_attacks.py --llm anthropic
 ## Safety
 
 Use only your own notes and test documents. The attacks here are standard public examples aimed at your own assistant. Keep API keys in environment variables, never in code or commits.
+
+## Docker and CI
+
+```bash
+docker build -t secrag .
+docker run --rm secrag                                         # offline attack suite
+docker run --rm secrag python3 -m unittest discover -s tests -v
+docker run --rm -e ANTHROPIC_API_KEY secrag python3 attacks/run_attacks.py --llm anthropic
+```
+
+`.github/workflows/tests.yml` runs the offline tests and both suites, then builds the image, on every push once this folder is the root of its own repository. No API key is needed in CI.

@@ -53,6 +53,16 @@ pytest -q                                # 10 tests
 
 1. Spaced-repetition scheduling: a `next_review` date that grows after each revision (1, 3, 7, 21 days).
 2. Pagination and sorting on `/topics`.
-3. A Dockerfile and a GitHub Actions workflow that runs the tests on every push.
+3. Push the image to a registry and deploy it from the CI workflow (done: Dockerfile and test workflow, see below).
 4. Load test with `locust` and report requests per second and p95 latency.
 5. Deploy on AWS (EC2 or App Runner) with RDS, using what you learn for SAA-C03.
+
+## Docker and CI
+
+```bash
+docker build -t study-tracker .
+docker run -p 8000:8000 -e JWT_SECRET=$(python3 -c "import secrets; print(secrets.token_hex(32))") -v study-data:/data study-tracker
+docker run --rm --entrypoint pytest study-tracker -q      # tests inside the image
+```
+
+`.github/workflows/tests.yml` runs the tests and builds the image on every push once this folder is the root of its own GitHub repository. The image runs as a non-root user and keeps the database in the `/data` volume.
