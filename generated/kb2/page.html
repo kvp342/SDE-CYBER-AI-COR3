@@ -1,0 +1,248 @@
+<title>Placement Knowledge Base</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: field-manual reader. Sticky top bar with search; index rail on the left (drawer on phones); one topic per view, routed by #topic-id. */
+:root {
+  --bg: #f6f7f9; --panel: #ffffff; --ink: #121826; --muted: #5b6474; --line: #e1e5ec; --soft: #eef1f6;
+  --brand: #c2410c; --code-bg: #0e1424; --code-ink: #e3e8f2;
+  --l0: #15803d; --l1: #0e7490; --l2: #1d4ed8; --l3: #6d28d9; --l4: #c2410c;
+  --f-display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --f-body: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0d111a; --panel: #141a26; --ink: #e8ecf3; --muted: #9aa4b6; --line: #252e3e; --soft: #1a2232;
+  --brand: #fb923c; --code-bg: #070b14; --code-ink: #dfe6f3;
+  --l0: #4ade80; --l1: #22d3ee; --l2: #60a5fa; --l3: #a78bfa; --l4: #fb923c; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0d111a; --panel: #141a26; --ink: #e8ecf3; --muted: #9aa4b6; --line: #252e3e; --soft: #1a2232;
+  --brand: #fb923c; --code-bg: #070b14; --code-ink: #dfe6f3;
+  --l0: #4ade80; --l1: #22d3ee; --l2: #60a5fa; --l3: #a78bfa; --l4: #fb923c; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 400 15px/1.6 var(--f-body); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--panel); }
+a { color: var(--brand); }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; }
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--panel); border-bottom: 1px solid var(--line);
+  padding-block: 10px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; gap: 12px; align-items: center; }
+.brand { font: 700 17px var(--f-display); color: var(--ink); text-decoration: none; white-space: nowrap; }
+.brand span { color: var(--brand); }
+.search { flex: 1; min-width: 0; position: relative; max-width: 520px; }
+.search input { width: 100%; font: 400 15px var(--f-body); padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); }
+.results { position: absolute; left: 0; right: 0; top: calc(100% + 6px); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 12px 32px rgb(0 0 0 / .18); max-height: 60vh; overflow: auto; }
+.results a { display: flex; gap: 8px; align-items: center; padding: 8px 12px; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+.results a:hover, .results a.on { background: var(--soft); }
+.menu { display: none; font: 600 13px var(--f-mono); background: var(--soft); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; cursor: pointer; }
+.prog { font: 500 12px var(--f-mono); color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.wrap { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 0; min-height: calc(100vh - 60px); }
+.rail { border-right: 1px solid var(--line); background: var(--panel); padding: 14px 10px 40px max(10px, env(safe-area-inset-left, 0px)); position: sticky; top: calc(env(safe-area-inset-top, 0px) + 57px); height: calc(100vh - 57px); overflow: auto; }
+.rail h4 { font: 600 11px var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 14px 8px 4px; }
+.rail a { display: flex; align-items: center; gap: 8px; padding: 5px 8px; border-radius: 6px; color: var(--ink); text-decoration: none; font-size: 14px; line-height: 1.35; }
+.rail a:hover { background: var(--soft); }
+.rail a.cur { background: var(--soft); font-weight: 600; }
+.rail a .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--k); flex: none; }
+.rail a.done::after { content: "✓"; margin-left: auto; color: var(--l0); font-size: 12px; }
+main { padding-block: 26px 70px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); min-width: 0; }
+.col { max-width: 780px; margin: 0 auto; }
+.chip { display: inline-flex; align-items: center; font: 600 11.5px var(--f-mono); color: var(--k); border: 1px solid color-mix(in srgb, var(--k) 45%, transparent); background: color-mix(in srgb, var(--k) 12%, transparent); border-radius: 99px; padding: 1px 9px; white-space: nowrap; }
+.meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
+.cat { font: 600 11.5px var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.t-title { font-size: clamp(28px, 5vw, 40px); line-height: 1.08; letter-spacing: -.01em; }
+.why { margin: 18px 0 8px; padding: 14px 16px; border-radius: 10px; background: color-mix(in srgb, var(--k) 9%, var(--panel)); border: 1px solid color-mix(in srgb, var(--k) 30%, transparent); }
+.why b { display: block; font: 600 11.5px var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--k); margin-bottom: 4px; }
+.why p { margin: 0; }
+section.blk { margin-top: 26px; }
+section.blk h2 { font-size: 19px; margin-bottom: 8px; display: flex; align-items: baseline; gap: 10px; }
+section.blk h2 small { font: 500 11px var(--f-mono); color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+.core p { margin: 0 0 12px; max-width: 68ch; }
+ul.pts { margin: 0; padding-left: 20px; }
+ul.pts li { margin-bottom: 5px; }
+ul.pit li::marker { content: "✗  "; color: #dc2626; }
+pre { background: var(--code-bg); color: var(--code-ink); font: 500 13px/1.55 var(--f-mono); padding: 14px 16px; border-radius: 10px; overflow-x: auto; margin: 0; }
+.qs { display: grid; gap: 6px; }
+.q { display: flex; gap: 10px; align-items: flex-start; padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); cursor: pointer; }
+.q input { margin-top: 4px; accent-color: var(--l0); }
+.q.ok { border-color: color-mix(in srgb, var(--l0) 45%, transparent); }
+.links { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.links a { display: block; padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); text-decoration: none; color: var(--ink); font-weight: 500; min-width: 0; overflow-wrap: anywhere; }
+.links a span { display: block; font: 500 11px var(--f-mono); color: var(--muted); overflow-wrap: anywhere; }
+.links a:hover { border-color: var(--brand); }
+.rel { display: flex; flex-wrap: wrap; gap: 8px; }
+.rel a { text-decoration: none; }
+.bar { display: flex; gap: 10px; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-top: 34px; padding-top: 16px; border-top: 1px solid var(--line); }
+.btn { font: 600 14px var(--f-body); padding: 9px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); cursor: pointer; text-decoration: none; display: inline-flex; gap: 6px; align-items: center; }
+.btn.pri { background: var(--l0); border-color: var(--l0); color: #fff; }
+.btn.pri[aria-pressed="true"] { background: transparent; color: var(--l0); }
+.nav2 { display: flex; gap: 8px; flex-wrap: wrap; }
+/* home */
+.hero h1 { font-size: clamp(30px, 6vw, 48px); line-height: 1.05; letter-spacing: -.02em; }
+.hero p { color: var(--muted); max-width: 64ch; margin: 10px 0 0; font-size: 16px; }
+.lv { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin: 22px 0 6px; }
+.lv div { padding: 10px; border-radius: 10px; border-top: 4px solid var(--k); background: var(--panel); border-left: 1px solid var(--line); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+.lv b { display: block; font: 700 20px var(--f-display); color: var(--k); }
+.lv i { font-style: normal; font-weight: 600; color: var(--ink); display: block; }
+.grp { margin-top: 28px; }
+.grp h2 { font-size: 20px; margin-bottom: 10px; display: flex; gap: 10px; align-items: baseline; }
+.grp h2 small { font: 500 12px var(--f-mono); color: var(--muted); }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 8px; }
+.card { display: block; padding: 11px 13px; border-radius: 10px; background: var(--panel); border: 1px solid var(--line); text-decoration: none; color: var(--ink); position: relative; }
+.card:hover { border-color: var(--k); }
+.card .chip { margin-bottom: 6px; }
+.card b { display: block; font-weight: 600; line-height: 1.3; }
+.card.done::after { content: "✓ learned"; position: absolute; top: 10px; right: 12px; font: 600 11px var(--f-mono); color: var(--l0); }
+details.qa { border: 1px solid var(--line); border-radius: 8px; background: var(--panel); padding: 0; }
+details.qa summary { cursor: pointer; padding: 10px 12px; font-weight: 600; display: flex; gap: 10px; align-items: baseline; list-style: none; }
+details.qa summary::-webkit-details-marker { display: none; }
+details.qa summary::after { content: "Show answer"; margin-left: auto; font: 600 11px var(--f-mono); color: var(--brand); white-space: nowrap; }
+details.qa[open] summary::after { content: "Hide"; }
+details.qa .qn { font: 600 12px var(--f-mono); color: var(--muted); }
+details.qa p { margin: 0; padding: 0 12px 8px 40px; max-width: 72ch; }
+details.qa .can { display: flex; gap: 8px; align-items: center; padding: 0 12px 10px 40px; font-size: 13px; color: var(--muted); cursor: pointer; }
+@media (max-width: 860px) {
+  .wrap { grid-template-columns: minmax(0, 1fr); }
+  .menu { display: inline-block; }
+  .rail { display: none; position: fixed; z-index: 6; left: 0; right: 0; top: calc(env(safe-area-inset-top, 0px) + 57px); bottom: 0; height: auto; border-right: 0; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .rail.open { display: block; }
+  .prog { display: none; }
+  .lv { gap: 5px; } .lv div { padding: 7px 6px; font-size: 0; } .lv b { font-size: 17px; } .lv i { font-size: 10.5px; line-height: 1.2; }
+}
+@media (max-width: 520px) { .brand b { display: none; } }
+@media (prefers-reduced-motion: no-preference) { .view { animation: in .18s ease-out; } @keyframes in { from { transform: translateY(4px); } to { transform: none; } } }
+</style>
+
+<header class="top">
+  <button class="menu" id="menu" type="button" aria-expanded="false" aria-controls="rail">Topics</button>
+  <a class="brand" href="#"><b>Placement </b><span>Knowledge Base</span></a>
+  <div class="search"><input id="q" type="search" placeholder="Search a topic: deadlock, sliding window, IAM…" autocomplete="off" aria-label="Search topics"><div class="results" id="res" hidden></div></div>
+  <span class="prog" id="prog"></span>
+</header>
+<div class="wrap">
+  <nav class="rail" id="rail" aria-label="All topics"></nav>
+  <main id="main"><div class="col view" id="view"></div></main>
+</div>
+
+<script>
+const TOPICS = /*DATA*/[];
+const LV = [["L0","Foundation","--l0"],["L1","Core","--l1"],["L2","Interview-ready","--l2"],["L3","Advanced","--l3"],["L4","Elite","--l4"]];
+const CATS = ["Method","DSA","Problems","Core CS","Q&A","Design","Security","Cloud","AI","Elite","Career","Mocks","Companies"];
+const CAT_NOTE = {Method:"How to learn faster", DSA:"Data structures and algorithms", "Core CS":"OS, DBMS, networks, OOP, SQL", Design:"LLD and system design", Security:"Your edge", Cloud:"AWS and TenantWall", AI:"May: the AI-security project", Elite:"HFT: opens only through the 31 Mar gate", Mocks:"Ready-to-run interviews with answer keys", Companies:"Reported processes, mapped to your plan", Career:"Getting the offer", Problems:"Worked solutions, every one tested", "Q&A":"Model answers to say aloud"};
+const byId = Object.fromEntries(TOPICS.map(t => [t.id, t]));
+const $ = s => document.querySelector(s);
+const el = (tag, attrs = {}, ...kids) => { const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) { if (k === "style") e.style.cssText = v; else if (k.startsWith("on")) e.addEventListener(k.slice(2), v); else e.setAttribute(k, v); }
+  for (const k of kids.flat()) if (k != null && k !== false) e.append(k.nodeType ? k : document.createTextNode(String(k)));
+  return e; };
+const kvar = l => `--k: var(${LV[l][2]})`;
+const chip = l => el("span", {class: "chip", style: kvar(l)}, `${LV[l][0]} · ${LV[l][1]}`);
+
+let store = {};
+try { store = JSON.parse(localStorage.getItem("kb-progress") || "{}"); } catch (e) { store = {}; }
+const save = () => { try { localStorage.setItem("kb-progress", JSON.stringify(store)); } catch (e) {} };
+const done = id => !!(store.done || {})[id];
+
+function rail(cur) {
+  const r = $("#rail"); r.replaceChildren();
+  for (const c of CATS) {
+    const ts = TOPICS.filter(t => t.cat === c); if (!ts.length) continue;
+    r.append(el("h4", {}, c));
+    for (const t of ts) r.append(el("a", {href: "#" + t.id, class: (t.id === cur ? "cur " : "") + (done(t.id) ? "done" : ""), style: kvar(t.lvl)}, el("span", {class: "dot"}), t.title));
+  }
+  const n = TOPICS.filter(t => done(t.id)).length;
+  $("#prog").textContent = `${n} / ${TOPICS.length} learned`;
+}
+
+function home() {
+  const v = $("#view"); v.replaceChildren();
+  v.append(el("div", {class: "hero"},
+    el("p", {class: "cat"}, "Companion to your placement PDF"),
+    el("h1", {}, "Every topic, explained for your plan"),
+    el("p", {}, `${TOPICS.length} topics. Each page covers the concept in depth, why it matters for your targets, key points, code, common mistakes, interview questions you can tick off, practice problems and free resources. Tap any topic name in the PDF to land here.`)));
+  v.append(el("div", {class: "lv"}, LV.map((l, i) => el("div", {style: kvar(i)}, el("b", {}, l[0]), el("i", {}, l[1]), ["Learn the idea", "Do it with notes", "Cold, timed, aloud", "Handle the twist", "Rare proof"][i]))));
+  for (const c of CATS) {
+    const ts = TOPICS.filter(t => t.cat === c); if (!ts.length) continue;
+    v.append(el("section", {class: "grp"}, el("h2", {}, c, el("small", {}, `${ts.length} · ${CAT_NOTE[c]}`)),
+      el("div", {class: "cards"}, ts.map(t => el("a", {href: "#" + t.id, class: "card" + (done(t.id) ? " done" : ""), style: kvar(t.lvl)}, chip(t.lvl), el("b", {}, t.title))))));
+  }
+  document.title = "Placement Knowledge Base";
+}
+
+function blk(title, sub, ...body) { return el("section", {class: "blk"}, el("h2", {}, title, sub ? el("small", {}, sub) : null), ...body); }
+const host = u => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch (e) { return ""; } };
+
+function topic(t) {
+  const v = $("#view"); v.replaceChildren();
+  v.append(el("div", {class: "meta"}, chip(t.lvl), el("span", {class: "cat"}, t.cat)));
+  v.append(el("h1", {class: "t-title"}, t.title));
+  v.append(el("div", {class: "why", style: kvar(t.lvl)}, el("b", {}, "Why it matters for you"), el("p", {}, t.why)));
+  v.append(blk(t.cat === "Problems" ? "The idea" : t.cat === "Companies" ? "The process" : t.cat === "Mocks" ? "The mock" : "The concept", t.cat === "Problems" ? "how to think about it" : t.cat === "Companies" ? "as candidates report it" : t.cat === "Mocks" ? "read this first" : "in depth", el("div", {class: "core"}, t.core.map(p => el("p", {}, p)))));
+  if (t.qa && t.qa.length) {
+    store.qa = store.qa || {};
+    v.append(blk(t.cat === "Mocks" ? "Interviewer's material" : "Questions and model answers", t.cat === "Mocks" ? "only the interviewer opens these" : "answer aloud first, then open", el("div", {class: "qs"}, t.qa.map(([q, a], i) => {
+      const k = t.id + ":" + i, box = el("input", {type: "checkbox", id: "qa-" + t.id + "-" + i}); box.checked = !!store.qa[k];
+      box.addEventListener("change", () => { store.qa[k] = box.checked; save(); });
+      return el("details", {class: "qa"}, el("summary", {}, el("span", {class: "qn"}, String(i + 1).padStart(2, "0")), q),
+        el("p", {}, a), el("label", {class: "can", for: "qa-" + t.id + "-" + i}, box, " I can answer this cold")); }))));
+  }
+  if (t.points.length) v.append(blk(t.cat === "Problems" ? "Steps" : t.cat === "Mocks" ? "Scoring" : t.cat === "Companies" ? "How your plan prepares you" : "Key points", t.cat === "Problems" ? "the algorithm" : t.cat === "Mocks" ? "fill in the tracker's Mocks tab" : t.cat === "Companies" ? "do these the week before" : "remember these", el("ul", {class: "pts"}, t.points.map(p => el("li", {}, p)))));
+  if (t.code) v.append(blk(t.cat === "Security" || t.cat === "Cloud" || t.cat === "Method" || t.cat === "Career" ? "Example" : "Code", "C++ unless noted", el("pre", {}, el("code", {}, t.code))));
+  if (t.pit.length) v.append(blk("Common mistakes", null, el("ul", {class: "pts pit"}, t.pit.map(p => el("li", {}, p)))));
+  if (t.ask.length) {
+    const askTitle = t.cat === "Problems" ? "Follow-up questions" : t.cat === "Companies" ? "Reported questions" : "Interview questions";
+    store.q = store.q || {};
+    v.append(blk(askTitle, "tick when you can answer cold",
+      el("div", {class: "qs"}, t.ask.map((q, i) => { const k = t.id + ":" + i; const on = !!store.q[k];
+        const box = el("input", {type: "checkbox", id: "q-" + t.id + "-" + i});
+        box.checked = on;
+        const row = el("label", {class: "q" + (on ? " ok" : ""), for: "q-" + t.id + "-" + i}, box, el("span", {}, q));
+        box.addEventListener("change", () => { store.q[k] = box.checked; row.classList.toggle("ok", box.checked); save(); });
+        return row; }))));
+  }
+  const lk = arr => el("div", {class: "links"}, arr.map(([n, u]) => el("a", {href: u, target: "_blank", rel: "noopener"}, n, el("span", {}, host(u)))));
+  if (t.prac.length) v.append(blk("Practise", "solve these", lk(t.prac)));
+  if (t.learn.length) v.append(blk(t.cat === "Companies" ? "Sources" : "Learn from", t.cat === "Companies" ? "candidate reports and official pages" : "free unless noted", lk(t.learn)));
+  if (t.rel.length) v.append(blk("Related topics", null, el("div", {class: "rel"}, t.rel.map(r => el("a", {href: "#" + r}, el("span", {class: "chip", style: kvar(byId[r].lvl)}, byId[r].title))))));
+  const same = TOPICS.filter(x => x.cat === t.cat), i = same.indexOf(t);
+  const btn = el("button", {class: "btn pri", type: "button", "aria-pressed": String(done(t.id))}, done(t.id) ? "✓ Learned" : "Mark as learned");
+  btn.addEventListener("click", () => { store.done = store.done || {}; store.done[t.id] = !done(t.id); save();
+    btn.setAttribute("aria-pressed", String(done(t.id))); btn.textContent = done(t.id) ? "✓ Learned" : "Mark as learned"; rail(t.id); });
+  v.append(el("div", {class: "bar"}, btn, el("div", {class: "nav2"},
+    i > 0 ? el("a", {class: "btn", href: "#" + same[i - 1].id}, "← " + same[i - 1].title) : null,
+    i < same.length - 1 ? el("a", {class: "btn", href: "#" + same[i + 1].id}, same[i + 1].title + " →") : null,
+    el("a", {class: "btn", href: "#"}, "All topics"))));
+  document.title = t.title + " · Knowledge Base";
+}
+
+function route() {
+  const id = decodeURIComponent(location.hash.slice(1));
+  const t = byId[id];
+  t ? topic(t) : home();
+  rail(t ? t.id : null);
+  $("#rail").classList.remove("open"); $("#menu").setAttribute("aria-expanded", "false");
+  window.scrollTo(0, 0);
+}
+
+// search
+const q = $("#q"), res = $("#res"); let hits = [], sel = 0;
+function draw() { res.replaceChildren(...hits.map((t, i) => el("a", {href: "#" + t.id, class: i === sel ? "on" : "", style: kvar(t.lvl)}, chip(t.lvl), t.title))); res.hidden = !hits.length; }
+q.addEventListener("input", () => {
+  const s = q.value.trim().toLowerCase(); sel = 0;
+  if (!s) { hits = []; return draw(); }
+  const score = t => { const T = t.title.toLowerCase(); if (T.startsWith(s)) return 3; if (T.includes(s)) return 2; return (t.core.join(" ") + t.points.join(" ") + t.why + (t.qa || []).flat().join(" ")).toLowerCase().includes(s) ? 1 : 0; };
+  hits = TOPICS.map(t => [score(t), t]).filter(x => x[0]).sort((a, b) => b[0] - a[0]).slice(0, 10).map(x => x[1]); draw();
+});
+q.addEventListener("keydown", e => {
+  if (e.key === "ArrowDown") { sel = Math.min(sel + 1, hits.length - 1); draw(); e.preventDefault(); }
+  else if (e.key === "ArrowUp") { sel = Math.max(sel - 1, 0); draw(); e.preventDefault(); }
+  else if (e.key === "Enter" && hits[sel]) { location.hash = hits[sel].id; q.value = ""; hits = []; draw(); q.blur(); }
+  else if (e.key === "Escape") { q.value = ""; hits = []; draw(); }
+});
+res.addEventListener("click", () => { q.value = ""; hits = []; draw(); });
+document.addEventListener("click", e => { if (!e.target.closest(".search")) { hits = []; draw(); } });
+$("#menu").addEventListener("click", () => { const o = $("#rail").classList.toggle("open"); $("#menu").setAttribute("aria-expanded", String(o)); });
+window.addEventListener("hashchange", route);
+route();
+</script>
