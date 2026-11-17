@@ -10,7 +10,7 @@ TREE = "https://github.com/kvp342/intrusion-detection-and-prevention/tree/ccr-ca
 KBURL = "https://claude.ai/artifact/McuS723LTAb16Q6SpdUsAT"
 
 # builder → the HTML file it renders the PDF from (its last write of that name is the final pass)
-BUILDERS = {"ai_starter": "ai.html", "anki": "anki.html", "apti": "apti.html", "aws_pack": "aws.html", "awslab": "awslab.html", "cli_sheet": "cli.html",
+BUILDERS = {"ai_starter": "ai.html", "anki": "anki.html", "apti": "apti.html", "apti2": "apti2.html", "aws_pack": "aws.html", "awslab": "awslab.html", "cli_sheet": "cli.html",
  "company2": "co.html", "company3": "co3.html", "cp_ladder": "cp.html", "docker_ci": "dc.html", "elite_pack": "el.html", "final_plan": "final_plan.html",
  "index_all": "ia.html", "interview_day": "id.html", "lab_map": "lm.html", "lab_notebook": "lab.html", "lld_pack": "lld.html", "mcq": "mcq.html", "mcq2": "mcq2.html",
  "mock_scripts": "ms.html", "mock_scripts2": "ms2.html", "oa_packs": "oa.html", "oa_packs2": "oa2.html", "oa_packs3": "oa3.html", "revision_tests": "rv.html", "onepagers": "op.html", "paper_outline": "po.html",

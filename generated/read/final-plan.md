@@ -198,6 +198,7 @@ Use the first column. Add the second only if you have time. The third wastes tim
 | Saturday OA, sets 17–24 (placement season) | [oa-simulation-packs-3.pdf](oa-simulation-packs-3.md) |
 | Codeforces 1400 gate                       | [codeforces-ladder.pdf](codeforces-ladder.md)         |
 | Aptitude rounds                            | [aptitude-pack.pdf](aptitude-pack.md)                 |
+| More aptitude and data interpretation      | [aptitude-pack-2.pdf](aptitude-pack-2.md)             |
 
 ### Core CS and design
 
