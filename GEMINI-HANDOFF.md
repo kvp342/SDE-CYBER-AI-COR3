@@ -40,6 +40,7 @@ How to use them with the plan: daily DSA from the Playbook, with the weekly plan
 - `generated/patterns-stl-card.pdf`: One-page pattern decision tree (problem signal → pattern → Knowledge Base page), a C++ STL card with complexities, and 30 common C++ contest bugs with fixes
 - `generated/stl_check.cpp`: Compiles and runs every STL call on the card (proof the card is correct)
 - `generated/aptitude-pack.pdf`: 150 aptitude questions (60 quant, 50 logical, 40 verbal) with timing guidance and worked answers on separate pages; every computable answer checked in Python
+- `generated/aptitude-pack-2.pdf`: 90 more aptitude questions: 40 quant on new topics, 30 logical (incl. syllogisms, seating, cubes) and a new data-interpretation section (4 sets × 5); none repeated from pack I; every one of the 90 answers recomputed in Python
 - `generated/elite-track-pack.pdf`: Elite (HFT) checkpoint pack: 40 probability questions with worked answers (all checked exactly, 27 also by simulation) and 8 low-latency C++ exercises with measured timings
 - `generated/elite/`: The 8 C++ exercises, the timing harness and a sample of measured timings
 - `generated/codeforces-ladder.pdf`: Codeforces ladder 800 → 1600: 10 topics × 5 rating bands (links to the official filtered problem set), a 6-week plan to the 31 March gate, and how rating moves
