@@ -60,6 +60,8 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/codeforces-ladder.pdf` | Codeforces ladder 800 → 1600: 10 topics × 5 rating bands (links to the official filtered problem set), a 6-week plan to the 31 March gate, and how rating moves |
 | `generated/interview-day-kit.pdf` | OA-day and interview-day checklists, what to say when stuck, four email templates (referral, thank-you, follow-up, more time) and how to compare offers, with a worked example |
 | `generated/interview-day/` | The email templates (Markdown) and an offer comparison sheet (CSV with formulas, opens in Google Sheets) |
+| `generated/tenantwall-paper-outline.pdf` | TenantWall paper: what to write in each section, figures and tables, a 7-week writing plan to 21 March, submission checklist and references |
+| `generated/tenantwall/paper/` | IEEE-format LaTeX skeleton (main.tex with prompts, refs.bib, compiled main.pdf); upload to Overleaf to write |
 | `generated/index-of-everything.pdf` | Every file in the repository with what it is, when to use it and a link that opens it on GitHub |
 | `agent/` | Instructions, backlog and log for the scheduled agent |
 | `generated/` | Documents the agent builds |
