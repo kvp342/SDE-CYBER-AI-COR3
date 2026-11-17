@@ -183,6 +183,7 @@ Use the first column. Add the second only if you have time. The third wastes tim
 | Daily DSA order             | [Striver-A2Z-DSA-Sheet-Classic.pdf](a2z/classic.md) |
 | Week plan and Sunday review | [weekly-planner.pdf](weekly-planner.md)                     |
 | Sunday 30-minute self-test  | [weekly-revision-tests.pdf](weekly-revision-tests.md)       |
+| Everything on one page      | [one-page-overview.pdf](one-page-overview.md)               |
 | Find any file               | [index-of-everything.pdf](index-of-everything.md)           |
 | Look up any topic           | [knowledge-base-v2.html](knowledge-base/README.md)             |
 
@@ -203,18 +204,19 @@ Use the first column. Add the second only if you have time. The third wastes tim
 
 ### Core CS and design
 
-| When                              | Open                                                                                                                                                                 |
-|-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Night before a Core CS round      | [core-cs-one-pagers.pdf](core-cs-one-pagers.md)                     |
-| MCQ rounds                        | [core-cs-mcq-bank.pdf](core-cs-mcq-bank.md)                         |
-| More MCQs and numericals          | [core-cs-mcq-bank-2.pdf](core-cs-mcq-bank-2.md)                     |
-| SQL questions                     | [sql-pack.pdf](sql-pack.md)                                         |
-| Harder SQL (analytics, recursion) | [sql-pack-2.pdf](sql-pack-2.md)                                     |
-| LLD round                         | [lld-pack.pdf](lld-pack.md)                                         |
-| More LLD designs                  | [lld-pack-2.pdf](lld-pack-2.md)                                     |
-| System design                     | [system-design-case-studies.pdf](system-design-case-studies.md)     |
-| More system design                | [system-design-case-studies-2.pdf](system-design-case-studies-2.md) |
-| Linux, Git, gdb                   | [linux-git-debugging-sheet.pdf](linux-git-debugging-sheet.md)       |
+| When                                          | Open                                                                                                                                                                 |
+|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Night before a Core CS round                  | [core-cs-one-pagers.pdf](core-cs-one-pagers.md)                     |
+| MCQ rounds                                    | [core-cs-mcq-bank.pdf](core-cs-mcq-bank.md)                         |
+| More MCQs and numericals                      | [core-cs-mcq-bank-2.pdf](core-cs-mcq-bank-2.md)                     |
+| SQL questions                                 | [sql-pack.pdf](sql-pack.md)                                         |
+| Harder SQL (analytics, recursion)             | [sql-pack-2.pdf](sql-pack-2.md)                                     |
+| LLD round                                     | [lld-pack.pdf](lld-pack.md)                                         |
+| More LLD designs                              | [lld-pack-2.pdf](lld-pack-2.md)                                     |
+| ATM, machine coding, segment trees, Instagram | [gap-fill-pack.pdf](gap-fill-pack.md)                               |
+| System design                                 | [system-design-case-studies.pdf](system-design-case-studies.md)     |
+| More system design                            | [system-design-case-studies-2.pdf](system-design-case-studies-2.md) |
+| Linux, Git, gdb                               | [linux-git-debugging-sheet.pdf](linux-git-debugging-sheet.md)       |
 
 ### Security, cloud, research
 

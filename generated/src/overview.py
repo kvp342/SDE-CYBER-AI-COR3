@@ -51,7 +51,7 @@ HTML = f'''<h1>The whole kit <span>on one page</span></h1><p class="sub">Your pl
 <div class="grid"><div><h2>Checkpoints</h2><table><tbody>{"".join(f'<tr><td class="k">{E(d)}</td><td>{E(t)}</td></tr>' for d, t in CHECK)}</tbody></table></div>
 <div><h2>Open these five first</h2><table><tbody>{"".join(f"<tr><td>{K(p, l)}</td></tr>" for p, l in FIRST5)}</tbody></table></div></div>
 <p class="foot">Everything else: {K("generated/index-of-everything.pdf", "index of everything")} · readable on GitHub: {K("generated/read/README.md", "generated/read/")} · deadline now: SRFP research fellowship closes 30 Nov 2026.</p>'''
-for p in USED: assert (ROOT / p).exists(), p
+for p in USED: assert p.startswith("generated/read/") or (ROOT / p).exists(), p   # generated/read/ is built after this
 (SRC / "overview.html").write_text(f'<!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet"><style>{CSS}</style></head><body>{HTML}</body></html>')
 js = SRC / "rov.js"; js.write_text("const { chromium } = require('playwright'); (async () => { const b = await chromium.launch(); const p = await b.newPage(); await p.goto('file://' + __dirname + '/overview.html', { waitUntil: 'networkidle' }); await p.evaluate(() => document.fonts.ready); await p.pdf({ path: __dirname + '/ov.pdf', format: 'A4', printBackground: true, preferCSSPageSize: true }); await b.close(); })();")
 subprocess.run(["node", str(js)], check=True)
