@@ -4,7 +4,7 @@ You are improving a placement-preparation kit for a B.Tech CSE (Cybersecurity) s
 
 ## Every run
 
-1. `git fetch origin ccr-ca7232a7-t7lq94 && git checkout ccr-ca7232a7-t7lq94 && git pull`. Work only on this branch. Never push to any other branch, never open pull requests.
+1. `git fetch origin ccr-ca7232a7-t7lq94 && git checkout ccr-ca7232a7-t7lq94 && git pull`. Work on this branch; after each push, also update `main` to the same commit (fast-forward only). Never push anywhere else, never open pull requests.
 2. If today is after 21 Nov 2026, write nothing and stop.
 3. Open `agent/BACKLOG.md`. Take the **first** item whose box is `[ ]`. If it was started but left unfinished (see `agent/LOG.md`), finish it instead.
 4. Build it completely in one run. Quality bar:
@@ -15,7 +15,7 @@ You are improving a placement-preparation kit for a B.Tech CSE (Cybersecurity) s
    - Plain, direct English. No emoji. No filler.
 5. Save outputs in `generated/` (PDFs and HTML) and the build script in `generated/src/`. Add one line per new file to the table in `README.md`. Then run `python3 generated/src/make_markdown.py` so `generated/read/` (the Markdown copy of everything, readable directly on GitHub) includes the new file; add the new builder and its HTML name to `BUILDERS` in that script first.
 6. Tick the item in `agent/BACKLOG.md`, append a short entry to `agent/LOG.md` (date, item, files, what you verified, anything left).
-7. Commit with a clear message and push: `git push -u origin ccr-ca7232a7-t7lq94` (retry up to 4 times on network errors).
+7. Commit with a clear message and push: `git push -u origin ccr-ca7232a7-t7lq94`, then keep `main` identical: `git push origin ccr-ca7232a7-t7lq94:main` (the student asked for everything on main; retry up to 4 times on network errors).
 
 ## Never
 
