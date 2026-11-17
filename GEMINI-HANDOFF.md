@@ -20,13 +20,13 @@ A senior warned that DSA + cyber + AI + cloud at once would burn me out. We chec
 - **Tools I now have:** a Google Sheet revision tracker (1-3-7-21 dates fill in automatically, a Due today tab); the Placement Knowledge Base (167 pages: 43 tested worked solutions, model answers for Core CS and security, 8 ready-to-run mock interviews with answer keys, and company files for Amazon, Microsoft, Google, Atlassian, Flipkart, Razorpay, Goldman Sachs, JPMorgan, Agoda and the Big Four cyber teams); a Mocks tab in the tracker for scoring mock interviews from 31 May; the Playbook re-dated to these dates; three PDFs with clickable indexes.
 
 
-### 0.1 Built by the scheduled agent, 15 to 16 Nov 2026
+### 0.1 Built by the scheduled agent, 15 to 17 Nov 2026
 
 An hourly agent (instructions in `agent/AGENT.md`, task list in `agent/BACKLOG.md`, what was built and how it was checked in `agent/LOG.md`) added the files below under `generated/`. Everything code-based was compiled and tested; answers were checked by script where possible; nothing personal is in them. Use the newest version of anything listed here over older copies.
 
-How to use them with the plan: daily DSA from the Playbook, with the weekly planner and the Anki decks; OA practice sets on their dates (13 Feb to 3 Jul); one-pagers and the MCQ bank before Core CS rounds; the AWS pack for 5 to 18 Apr; the TenantWall helpers for the paper (deadline 21 Mar); the two starters for the May project and the backend project; resume, story bank, profile kit, company files and mock scripts in the placement sprint (31 May onwards); the Elite pack only if the 31 Mar gate is passed. Two facts changed since the plan was written: the OWASP Top 10 has a 2025 edition (see the lab map), and the Knowledge Base now has a v2 file with 213 pages (`generated/knowledge-base-v2.html`).
+How to use them with the plan: daily DSA from the Playbook, with the weekly planner and the Anki decks; OA practice sets on their dates (13 Feb to 3 Jul); one-pagers and the MCQ bank before Core CS rounds; the AWS pack for 5 to 18 Apr; the TenantWall helpers for the paper (deadline 21 Mar); the two starters for the May project and the backend project; resume, story bank, profile kit, company files and mock scripts in the placement sprint (31 May onwards); the Elite pack only if the 31 Mar gate is passed; the Codeforces ladder from 8 Feb; the interview day kit from the first OA. Two facts changed since the plan was written: the OWASP Top 10 has a 2025 edition (see the lab map), and the Knowledge Base now has a v2 file with 213 pages (`generated/knowledge-base-v2.html`).
 
-**Practice: DSA and OAs**
+**Practice: DSA, OAs and contests**
 - `generated/worked-solutions-2.pdf`: Worked Solutions II: 40 more most-asked LeetCode problems (not in the Knowledge Base set), each with idea, steps, tested C++17 code, traps and follow-ups; clickable index by pattern
 - `generated/oa-simulation-packs.pdf`: 8 timed online-assessment sets (3 LeetCode problems, 90 minutes each, 24 problems with no repeats), dated to the plan, with a scoring guide, a record table and a solution page per set (sketch, edge cases, tested C++17)
 - `generated/core-cs-mcq-bank.pdf`: 150 OA-style MCQs (30 each on OS, DBMS, CN, OOP, C++ output) with answer keys on separate pages and a reason per answer; C++ outputs, SQL, subnet and page-fault answers machine-checked
@@ -35,6 +35,7 @@ How to use them with the plan: daily DSA from the Playbook, with the weekly plan
 - `generated/aptitude-pack.pdf`: 150 aptitude questions (60 quant, 50 logical, 40 verbal) with timing guidance and worked answers on separate pages; every computable answer checked in Python
 - `generated/elite-track-pack.pdf`: Elite (HFT) checkpoint pack: 40 probability questions with worked answers (all checked exactly, 27 also by simulation) and 8 low-latency C++ exercises with measured timings
 - `generated/elite/`: The 8 C++ exercises, the timing harness and a sample of measured timings
+- `generated/codeforces-ladder.pdf`: Codeforces ladder 800 → 1600: 10 topics × 5 rating bands (links to the official filtered problem set), a 6-week plan to the 31 March gate, and how rating moves
 
 **Core CS, SQL and design**
 - `generated/sql-pack.pdf`: 40 interview SQL questions (basics, joins, aggregation, subqueries, window functions, indexing) on one sample database, each with the query, its real output and an explanation
@@ -67,14 +68,17 @@ How to use them with the plan: daily DSA from the Playbook, with the weekly plan
 - `generated/profile-kit.pdf`: LinkedIn checklist, three headline options and an About template, GitHub pinning and project README guide, a profile README template, and a 4-week posting plan
 - `generated/profile/`: The LinkedIn text and the GitHub profile README as files to copy
 - `generated/mock-interview-scripts.pdf`: Six mock interview scripts for practising with a friend (2 DSA, Core CS, LLD, security, HR): timed phases, what to say, hints in order, 5-line rubric
+- `generated/interview-day-kit.pdf`: OA-day and interview-day checklists, what to say when stuck, four email templates (referral, thank-you, follow-up, more time) and how to compare offers, with a worked example
+- `generated/interview-day/`: The email templates (Markdown) and an offer comparison sheet (CSV with formulas, opens in Google Sheets)
 
-**Revision and planning**
-- `generated/anki/*.csv`: 571 flashcards in 6 Anki decks (Core CS, patterns and C++ bugs, complexity, security, AWS, aptitude), built from material already checked in the kit
+**Revision, planning and finding things**
+- `generated/anki/*.csv`: 654 flashcards in 7 Anki decks (all 83 worked solutions, Core CS, patterns and C++ bugs, complexity, security, AWS, aptitude), built from material already checked in the kit
 - `generated/anki-decks-guide.pdf`: One page: importing the decks into AnkiDroid, AnkiMobile or Anki desktop, and a daily routine
 - `generated/weekly-planner.pdf`: 28 printable week pages (16 Nov 2026 – 30 May 2027): phase and goal, fixed dates (OA sets, TenantWall deadline, exams, AWS exam), daily tick boxes and a weekly review
 - `generated/knowledge-base-v2.html`: The Knowledge Base with 213 pages: the original 167 plus the 40 Worked Solutions II problems and the 6 new company files, all searchable and linked. Open it in a browser
 - `generated/kb2/`: Sources for v2 (a copy of `sources/kb` plus the two new modules); rebuild with `python3 generated/src/kb2_build.py`
 - `generated/linux-git-debugging-sheet.pdf`: Two pages of daily commands (files and text, processes, Git everyday and safe undo, C++ debugging with sanitizers, gdb, valgrind, strace), every one run and checked
+- `generated/index-of-everything.pdf`: Every file in the repository with what it is, when to use it and a link that opens it on GitHub
 
 ---
 

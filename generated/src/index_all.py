@@ -20,7 +20,7 @@ GROUPS = [
  ("start", "Start here", "Open these first; they link to most of the rest.", ["index.html", "playbook.html", "roadmap.html", "generated/knowledge-base-v2.html", "generated/kb2/", "knowledge-base.html", "cheat-sheet.html", "README.md", "GEMINI-HANDOFF.md", "generated/", SELF]),
  ("pdf", "Main PDFs", "For offline reading and printing.", ["Placement-Prep-Complete.pdf", "DSA-Placement-Playbook.pdf", "Placement-Knowledge-Base.pdf", "Tier3-to-Top-Offer-Placement-Guide.pdf", "Striver-A2Z-DSA-Sheet-Classic.pdf", "Striver-A2Z-DSA-Sheet-2026.pdf"]),
  ("dsa", "DSA, OAs and the Elite track", "Daily from 18 Nov; OA sets on their dates (13 Feb to 3 Jul); the Elite pack only if the 31 Mar gate is passed.",
-  ["generated/worked-solutions-2.pdf", "generated/oa-simulation-packs.pdf", "generated/patterns-stl-card.pdf", "generated/stl_check.cpp", "generated/aptitude-pack.pdf", "generated/elite-track-pack.pdf", "generated/elite/"]),
+  ["generated/worked-solutions-2.pdf", "generated/oa-simulation-packs.pdf", "generated/patterns-stl-card.pdf", "generated/stl_check.cpp", "generated/aptitude-pack.pdf", "generated/elite-track-pack.pdf", "generated/elite/", "generated/codeforces-ladder.pdf"]),
  ("cs", "Core CS, SQL and design", "1 hour a day of Core CS; one-pagers the night before any interview; LLD and system design in the placement sprint.",
   ["generated/core-cs-one-pagers.pdf", "generated/core-cs-mcq-bank.pdf", "generated/sql-pack.pdf", "generated/sql-pack.sql", "generated/lld-pack.pdf", "generated/lld/", "generated/system-design-case-studies.pdf", "generated/sysdesign/"]),
  ("sec", "Cloud, security and research", "AWS 30 minutes a day, final revision 5 to 18 Apr; TenantWall before 21 Mar; labs in the cyber track.",
@@ -28,7 +28,7 @@ GROUPS = [
  ("proj", "Projects", "Backend project when the plan schedules it; AI-security project in May.",
   ["generated/backend-starter/", "generated/ai-security-starter/", "generated/ai-security-starter-guide.pdf", "generated/docker-ci-guide.pdf"]),
  ("jobs", "Interviews and applications", "From the placement sprint (31 May); resume and profiles a month earlier.",
-  ["generated/resume-kit.pdf", "generated/resume/", "generated/interview-story-bank.pdf", "generated/profile-kit.pdf", "generated/profile/", "generated/company-files-2.pdf", "generated/mock-interview-scripts.pdf"]),
+  ["generated/resume-kit.pdf", "generated/resume/", "generated/interview-story-bank.pdf", "generated/profile-kit.pdf", "generated/profile/", "generated/company-files-2.pdf", "generated/mock-interview-scripts.pdf", "generated/interview-day-kit.pdf", "generated/interview-day/"]),
  ("rev", "Revision and planning", "Every day (flashcards) and every Sunday (planner and weekly review).",
   ["generated/anki/*.csv", "generated/anki-decks-guide.pdf", "generated/weekly-planner.pdf", "generated/linux-git-debugging-sheet.pdf"]),
 ]
