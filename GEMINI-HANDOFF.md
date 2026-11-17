@@ -54,6 +54,7 @@ How to use them with the plan: daily DSA from the Playbook, with the weekly plan
 **Cloud, security and research**
 - `generated/roadmapsh-checklists.pdf`: roadmap.sh maps (Backend, Cyber Security, AWS, CS, System Design, DevOps) as checklists, mapped to the kit with gaps marked
 - `generated/aws-saa-c03-study-pack.pdf`: AWS SAA-C03 final revision: notes for the four domains, a service-for-need table, 60 original scenario questions with explained answers, and a day-by-day plan for 5–18 Apr 2027
+- `generated/aws-lab-workbook.pdf`: AWS hands-on lab workbook: 10 labs for SAA-C03 (budget and MFA, IAM roles, S3 versioning, VPC, EC2 with IMDSv2, ALB with Auto Scaling, private RDS, Lambda with an HTTP API, CloudTrail root-login alarm, KMS) plus a teardown checklist; console steps, CLI commands checked against the AWS service models and the CLI's parser, cost notes and cleanup for each
 - `generated/tenantwall-helpers.pdf`: TenantWall: architecture diagram, method flowchart, IAM and bucket policies explained, alerting setup, isolation test plan and a checklist for the paper's audit and alerting section
 - `generated/tenantwall-paper-outline.pdf`: TenantWall paper: what to write in each section, figures and tables, a 7-week writing plan to 21 March, submission checklist and references
 - `generated/tenantwall/paper/`: IEEE-format LaTeX skeleton (main.tex with prompts, refs.bib, compiled main.pdf); upload to Overleaf to write
