@@ -14,7 +14,7 @@ BUILDERS = {"ai_starter": "ai.html", "anki": "anki.html", "apti": "apti.html", "
  "company2": "co.html", "company3": "co3.html", "cp_ladder": "cp.html", "docker_ci": "dc.html", "elite_pack": "el.html", "final_plan": "final_plan.html",
  "index_all": "ia.html", "interview_day": "id.html", "lab_map": "lm.html", "lab_notebook": "lab.html", "lld_pack": "lld.html", "mcq": "mcq.html", "mcq2": "mcq2.html",
  "mock_scripts": "ms.html", "mock_scripts2": "ms2.html", "oa_packs": "oa.html", "oa_packs2": "oa2.html", "oa_packs3": "oa3.html", "revision_tests": "rv.html", "onepagers": "op.html", "paper_outline": "po.html",
- "pattern_stl": "ps.html", "planner": "pl.html", "profile_kit": "pk.html", "resume_kit": "rk.html", "roadmapsh": "roadmapsh.html", "secbank": "secbank.html",
+ "pattern_stl": "ps.html", "planner": "pl.html", "profile_kit": "pk.html", "resume_kit": "rk.html", "roadmapsh": "roadmapsh.html", "secbank": "secbank.html", "seclabs": "seclabs.html",
  "sql_pack": "sql.html", "sql_pack2": "sql2.html", "story_bank": "sb.html", "sysdesign": "sd.html", "tenantwall": "tw.html", "worked2": "w2.html", "worked3": "w3.html"}
 CAPTURE = '''import pathlib, runpy, sys
 path, name, stash = sys.argv[1], sys.argv[2], pathlib.Path(sys.argv[3])

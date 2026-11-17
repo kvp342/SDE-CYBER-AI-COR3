@@ -113,3 +113,93 @@ Pen : Write :: Knife : ?;Cut. Tool : what it does.
 Doctor : Hospital :: Teacher : ?;School. Person : workplace.
 3 : 27 :: 5 : ?;125. Cube.
 Of 50 people, 30 like tea, 25 like coffee and 10 like both. How many like neither?;5. 50 − (30 + 25 − 10).
+Rice at ₹40/kg is mixed with rice at ₹60/kg to get a mixture worth ₹48/kg. Ratio of cheap to dear:;3:2. Alligation: (60 − 48) : (48 − 40) = 12 : 8.
+"A does a job in 12 days; A and B together in 8 days. B alone takes:";24 days. 1/8 − 1/12 = 1/24.
+A can finish a job in 10 days and B in 15. Working together they earn ₹5,000. A's share:;₹3,000. Shares follow work rates 1/10 : 1/15 = 3 : 2.
+"A pipe fills a tank in 5 h; with a leak it takes 6 h. The leak alone empties a full tank in:";30 h. Leak rate 1/5 − 1/6 = 1/30.
+Trains of 120 m and 180 m run towards each other at 50 and 40 km/h. Time to cross each other:;"12 s. Relative speed 90 km/h = 25 m/s; 300 m / 25."
+Same trains in the same direction at 70 and 40 km/h. Time to cross:;"36 s. Relative speed 30 km/h = 25/3 m/s; 300 ÷ 25/3."
+Equal distances at 40 km/h and 60 km/h. Average speed:;48 km/h. Harmonic mean: 2 × 40 × 60 / 100.
+A boat goes 18 km downstream in 1 hour and 12 km upstream in 1 hour. Speed of the stream:;3 km/h. Stream = (down − up) / 2.
+Compound interest on ₹10,000 at 20% a year, compounded half-yearly, for 1 year:;₹2,100. 10% per half-year twice: 10,000 × 1.1² − 10,000.
+Difference between compound and simple interest on ₹5,000 for 2 years at 10%:;₹50. P × r² = 5,000 × 0.01.
+At simple interest a sum doubles in 8 years. The rate is:;12.5%. Interest = principal in 8 years: 100 / 8.
+Two items each sold for ₹1,200: one at 20% profit, one at 20% loss. Overall:;"₹100 loss. Costs 1,000 and 1,500; total cost 2,500 vs sales 2,400."
+A shopkeeper sells at cost price but uses a 900 g weight for 1 kg. Gain percentage:;11.1%. Gives 900 g for the price of 1,000 g: 100 / 900.
+A's salary is 25% more than B's. B's salary is less than A's by:;20%. 25 / 125.
+A population of 10,000 grows 10% a year. After 2 years:;12,100. 10,000 × 1.1².
+A machine worth ₹50,000 depreciates 20% a year. Value after 2 years:;₹32,000. 50,000 × 0.8².
+₹1,210 is divided among A, B and C in the ratio 2:3:6. C gets:;₹660. 1,210 × 6/11.
+A and B's ages add up to 50. Five years ago their ages were in the ratio 3:2. A's age now:;29. Five years ago the sum was 40, so A was 24.
+The average of 11 numbers is 50. The first six average 49 and the last six average 52. The sixth number is:;56. 6 × 49 + 6 × 52 − 11 × 50.
+Smallest number that leaves remainder 5 when divided by 12, 15 and 20:;65. LCM 60, plus 5.
+Two numbers have HCF 6 and LCM 180. One is 36. The other is:;30. Product of the numbers = HCF × LCM: 1,080 / 36.
+How many factors does 360 have?;24. 360 = 2³ × 3² × 5: (3 + 1)(2 + 1)(1 + 1).
+Remainder when 17^23 is divided by 16:;1. 17 ≡ 1 (mod 16), so any power leaves 1.
+Unit digit of 3^2026:;"9. Units cycle 3, 9, 7, 1; 2026 ≡ 2 (mod 4)."
+Ways to seat 5 people around a round table:;24. (n − 1)! for circular arrangements.
+Distinct arrangements of the letters of LETTER:;180. 6! / (2! × 2!) for the repeated E and T.
+A committee of 2 men from 5 and 2 women from 4 can be formed in how many ways?;60. C(5, 2) × C(4, 2) = 10 × 6.
+Two cards are drawn from a 52-card deck. Probability both are aces:;1/221. C(4, 2) / C(52, 2) = 6 / 1,326.
+A bag has 3 red and 5 blue balls. Two are drawn without replacement. Probability both are red:;3/28. 3/8 × 2/7.
+Two dice are thrown. Probability of at least one six:;11/36. 1 − (5/6)².
+Area of a triangle with sides 13, 14 and 15:;84. Heron: s = 21, √(21 × 8 × 7 × 6).
+Diagonal of an 8 × 6 rectangle:;10. √(64 + 36).
+Volume of a cylinder with radius 7 cm and height 10 cm (π = 22/7):;1540 cm³. 22/7 × 49 × 10.
+Surface area of a sphere of radius 7 cm (π = 22/7):;616 cm². 4 × 22/7 × 49.
+A trip takes 6 h at 40 km/h. Speed needed to do it in 4 h:;60 km/h. Distance 240 km / 4 h.
+40 L of a 20% acid solution: how much water makes it 16%?;10 L. Acid 8 L must be 16%: total 50 L.
+Two numbers add up to 40 and differ by 10. The larger is:;25. (40 + 10) / 2.
+10th term of the progression 3, 7, 11, …:;39. 3 + 9 × 4.
+2 + 4 + 8 + … + 512 =;1022. Geometric series: 2(2⁹ − 1).
+log₂ 1024 =;10. 2¹⁰ = 1,024.
+Next: 2, 5, 10, 17, 26, ?;37. n² + 1.
+Next: 1, 2, 6, 24, 120, ?;720. Factorials: multiply by 2, 3, 4, 5, then 6.
+Next: 4, 6, 9, 13.5, ?;20.25. Multiply by 1.5 each time.
+Next: 7, 10, 8, 11, 9, 12, ?;10. +3, −2 alternately.
+Next letter: B, E, H, K, ?;N. Skip two letters each time (+3).
+Next pair: AZ, BY, CX, ?;DW. First letter moves forward, second backward.
+If PEN = 35 (sum of letter positions), INK = ?;34. I 9 + N 14 + K 11.
+In a code A ↔ Z, B ↔ Y, … (reversed alphabet). CODE becomes:;XLWV. Each letter maps to its mirror: C→X, O→L, D→W, E→V.
+Which is not prime: 13, 17, 19, 21, 23?;"21. 21 = 3 × 7; the rest are prime."
+Which is not a perfect square: 16, 49, 81, 98, 121?;98. 98 lies between 9² and 10².
+Walk 4 km north, 3 km east, then 4 km south. Distance and direction from the start:;3 km east. The north and south legs cancel.
+Facing east, you turn 135° anticlockwise. You now face:;"North-west. East is 90°; anticlockwise means a smaller bearing: 90 − 135 = −45 → 315°."
+A is the father of B. B is C's sister. D is A's mother. C is D's:;Grandchild. C's gender is not given, so only 'grandchild' is certain.
+2 October 1869 was a:;Saturday. Count odd days from a known reference date.
+26 January 1950 was a:;Thursday. Odd-day counting from 1 January 1950 (a Sunday).
+How many Sundays are in February 2027?;4. 2027 is not a leap year, so February has exactly 4 of each weekday.
+1 January 2027 is a Friday. 1 March 2027 is a:;Monday. 31 + 28 = 59 days = 8 weeks + 3 days.
+Angle between the clock hands at 7:20:;100°. |30 × 7 − 5.5 × 20| = 100.
+How many times are the hands of a clock at right angles in 12 hours?;"22. Twice per overlap gap; 11 gaps in 12 hours."
+In a row of 30 people, A is 12th from the left. A's position from the right:;19th. 30 − 12 + 1.
+Ravi is 9th from the top and 21st from the bottom of his class. Class size:;29. 9 + 21 − 1.
+A, B, C, D, E sit in a row. C is in the middle, A is immediately left of C, B is at an end, and D sits next to B. Who is at the left end?;E. B cannot be on the left (A is second), so B is right, D fourth, E first.
+All cats are animals. Some animals are pets. Conclusion: some cats are pets.;Does not follow. The pets may be animals that are not cats.
+All pens are tools. No tools are toys. Conclusion: no pens are toys.;Follows. Pens sit inside tools, which share nothing with toys.
+Some doctors are writers. All writers are readers. Conclusion: some doctors are readers.;Follows. The doctors who write are readers.
+No birds are dogs. Some dogs are pets. Conclusion: some pets are not birds.;Follows. The pets that are dogs cannot be birds.
+A cube painted on all faces is cut into 27 equal cubes. How many have exactly two faces painted?;12. One per edge middle: 12 edges.
+Same 27 cubes: how many have no face painted?;1. Only the centre cube.
+How many squares of any size are in a 4 × 4 grid of unit squares?;30. 16 + 9 + 4 + 1.
+10 people shake hands once with each other. Number of handshakes:;45. C(10, 2).
+Sales (₹ crore) 2022 2023 2024 2025 2026 Company A 120 150 180 165 210 Company B 100 110 140 155 190 Set 1 (table above). Company A's growth from 2025 to 2026:;27.3%. (210 − 165) / 165.
+Sales (₹ crore) 2022 2023 2024 2025 2026 Company A 120 150 180 165 210 Company B 100 110 140 155 190 Set 1. In which year did Company B grow the most in absolute terms?;2026. Increases 10, 30, 15, 35.
+Sales (₹ crore) 2022 2023 2024 2025 2026 Company A 120 150 180 165 210 Company B 100 110 140 155 190 Set 1. Company A's average yearly sales over the five years:;₹165 crore. 825 / 5.
+Sales (₹ crore) 2022 2023 2024 2025 2026 Company A 120 150 180 165 210 Company B 100 110 140 155 190 Set 1. Company A's 2024 sales as a percentage of Company B's 2024 sales:;128.6%. 180 / 140.
+Sales (₹ crore) 2022 2023 2024 2025 2026 Company A 120 150 180 165 210 Company B 100 110 140 155 190 Set 1. Combined sales of both companies in 2025:;₹320 crore. 165 + 155.
+Monthly budget of ₹50,000 Rent 30% · Food 20% · Transport 10% · Savings 25% · Other 15% Set 2 (budget above). Monthly spending on food:;₹10,000. 20% of 50,000.
+Monthly budget of ₹50,000 Rent 30% · Food 20% · Transport 10% · Savings 25% · Other 15% Set 2. In a pie chart, the angle for savings is:;90°. 25% of 360°.
+Monthly budget of ₹50,000 Rent 30% · Food 20% · Transport 10% · Savings 25% · Other 15% Set 2. Rent exceeds transport by:;₹10,000. (30 − 10)% of 50,000.
+Monthly budget of ₹50,000 Rent 30% · Food 20% · Transport 10% · Savings 25% · Other 15% Set 2. If income rises 10% and the savings percentage stays the same, monthly savings become:;₹13,750. 25% of 55,000.
+Monthly budget of ₹50,000 Rent 30% · Food 20% · Transport 10% · Savings 25% · Other 15% Set 2. Ratio of rent to savings:;6:5. 30 : 25.
+Branch Students Placed CSE 150 120 ECE 120 80 ME 90 45 Civil 60 30 Set 3 (placement table above). ECE's placement rate:;66.7%. 80 / 120.
+Branch Students Placed CSE 150 120 ECE 120 80 ME 90 45 Civil 60 30 Set 3. Which branch has the highest placement rate?;CSE. CSE 80%, ECE 66.7%, ME and Civil 50%.
+Branch Students Placed CSE 150 120 ECE 120 80 ME 90 45 Civil 60 30 Set 3. Overall placement rate across all branches:;65.5%. 275 / 420.
+Branch Students Placed CSE 150 120 ECE 120 80 ME 90 45 Civil 60 30 Set 3. Which two branches have the same placement rate?;ME and Civil. Both 50%.
+Branch Students Placed CSE 150 120 ECE 120 80 ME 90 45 Civil 60 30 Set 3. How many CSE students were not placed?;30. 150 − 120.
+App users (lakh) Jan Feb Mar Apr May 2.0 2.4 3.0 2.7 3.6 Set 4 (users above). Growth from February to March:;25%. (3.0 − 2.4) / 2.4.
+App users (lakh) Jan Feb Mar Apr May 2.0 2.4 3.0 2.7 3.6 Set 4. Fall from March to April:;10%. 0.3 / 3.0.
+App users (lakh) Jan Feb Mar Apr May 2.0 2.4 3.0 2.7 3.6 Set 4. Average monthly users over the five months:;2.74 lakh. 13.7 / 5.
+App users (lakh) Jan Feb Mar Apr May 2.0 2.4 3.0 2.7 3.6 Set 4. Which month had the highest growth over the previous month?;May. Feb 20%, Mar 25%, Apr −10%, May 33.3%.
+App users (lakh) Jan Feb Mar Apr May 2.0 2.4 3.0 2.7 3.6 Set 4. Ratio of May users to January users:;9:5. 3.6 : 2.0.

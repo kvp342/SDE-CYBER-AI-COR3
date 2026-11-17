@@ -70,6 +70,7 @@ AWS 30 minutes a day, final revision 5 to 18 Apr; TenantWall before 21 Mar; labs
 | [TenantWall diagrams, policies, alerting](tenantwall-helpers.md) | TenantWall: architecture diagram, method flowchart, IAM and bucket policies explained, alerting setup, isolation test plan and a checklist for the paper's audit and alerting section |
 | [Paper outline](tenantwall-paper-outline.md) | TenantWall paper: what to write in each section, figures and tables, a 7-week writing plan to 21 March, submission checklist and references |
 | [Security lab notebook](security-lab-notebook.md) | CTF and PortSwigger write-up templates with worked examples, a STRIDE threat model of TenantWall, a lab command sheet, and web security by vulnerability class (linked to the free PortSwigger topics) |
+| [6 security labs on your own machine](security-labs-workbook.md) | 6 hands-on security labs on your own machine (permissions and SUID, nmap on localhost, HTTP vs HTTPS packet capture, hashing and cracking test hashes, find and fix SQL injection and XSS in a Flask app, brute-force detection rule); legal note first; every command run and its output captured |
 | [OWASP Top 10 mapped to free PortSwigger labs](owasp-portswigger-lab-map.md) | OWASP Top 10:2025 mapped to free PortSwigger Academy topics (tick boxes), what changed since 2021, a 10-week lab order and 10 web-security interview questions with answers |
 | [97 security questions with model answers](cyber-security-interview-bank.md) | 97 security interview questions with model answers in 8 sections (fundamentals, network, web, cryptography, identity and cloud, incident response and SOC, Linux/Windows/AD, scenarios); computable facts checked by script; official sources per section |
 | [roadmap.sh checklists](roadmapsh-checklists.md) | roadmap.sh maps (Backend, Cyber Security, AWS, CS, System Design, DevOps) as checklists, mapped to the kit with gaps marked |
@@ -104,7 +105,7 @@ Every day (flashcards) and every Sunday (planner and weekly review).
 
 | Read | What it is |
 |---|---|
-| [654 flashcards, ready to import](anki-decks-guide.md) | One page: importing the decks into AnkiDroid, AnkiMobile or Anki desktop, and a daily routine |
+| [1031 flashcards, ready to import](anki-decks-guide.md) | One page: importing the decks into AnkiDroid, AnkiMobile or Anki desktop, and a daily routine |
 | [Weekly planner 16 Nov 2026 – 30 May 2027](weekly-planner.md) | 28 printable week pages (16 Nov 2026 – 30 May 2027): phase and goal, fixed dates (OA sets, TenantWall deadline, exams, AWS exam), daily tick boxes and a weekly review |
 | [34 weekly tests 30 minutes each](weekly-revision-tests.md) | 34 Sunday self-tests (22 Nov 2026 – 25 Jul 2027, none in the exam break), 30 minutes each: 3 pattern questions from that week's A2Z topics (then mixed), 4 Core CS MCQs on a five-week rotation, 1 AWS and 1 security question; answers on the next page; nothing repeats; all drawn from checked kit material |
 | [Linux, Git and debugging](linux-git-debugging-sheet.md) | Two pages of daily commands (files and text, processes, Git everyday and safe undo, C++ debugging with sanitizers, gdb, valgrind, strace), every one run and checked |
