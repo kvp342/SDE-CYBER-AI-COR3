@@ -205,6 +205,7 @@ Use the first column. Add the second only if you have time. The third wastes tim
 |-----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Night before a Core CS round      | [core-cs-one-pagers.pdf](core-cs-one-pagers.md)                 |
 | MCQ rounds                        | [core-cs-mcq-bank.pdf](core-cs-mcq-bank.md)                     |
+| More MCQs and numericals          | [core-cs-mcq-bank-2.pdf](core-cs-mcq-bank-2.md)                 |
 | SQL questions                     | [sql-pack.pdf](sql-pack.md)                                     |
 | Harder SQL (analytics, recursion) | [sql-pack-2.pdf](sql-pack-2.md)                                 |
 | LLD round                         | [lld-pack.pdf](lld-pack.md)                                     |

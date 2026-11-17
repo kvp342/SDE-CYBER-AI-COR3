@@ -4,7 +4,7 @@ AI SECURITY · PROJECT STARTER
 
 A working starting point for the May AI-security project: a small assistant that answers from your security notes, 20 evaluation questions, 12 prompt-injection attacks (6 direct, 6 indirect), and four defence layers you can switch on and measure. Everything runs offline; one flag switches to Claude.
 
-**Where.** `generated/ai-security-starter/` in the repository. Tests: Ran 8 tests in 0.021s · OK. Standard library only, except the optional `anthropic` SDK.
+**Where.** `generated/ai-security-starter/` in the repository. Tests: Ran 8 tests in 0.026s · OK. Standard library only, except the optional `anthropic` SDK.
 
 |                                        |
 |----------------------------------------|
