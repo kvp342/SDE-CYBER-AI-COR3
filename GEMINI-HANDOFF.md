@@ -75,6 +75,7 @@ How to use them with the plan: daily DSA from the Playbook, with the weekly plan
 - `generated/ai-security-starter/`: The starter itself: a RAG assistant over security notes, 20 evaluation questions, 12 prompt-injection attacks, defence module, 8 offline tests; one flag switches to Claude
 - `generated/backend-starter/`: Study-tracker REST API (FastAPI, SQLite, JWT login, rate limiting) with 10 security-focused tests, an architecture diagram and a security checklist in its README
 - `generated/docker-ci-guide.pdf`: One page: the Dockerfiles and GitHub Actions workflows added to both starters, explained line by line, with run commands
+- `generated/open-source-gsoc-guide.pdf` (script in `generated/oss/`): Open source from first PR to GSoC/LFX: which programme fits (official rules: age, beginner status, project sizes, evaluations), a week-by-week plan from December to the March window, finding first issues, the fork–branch–rebase PR workflow (tested end to end), PR and message templates, proposal outline; 8 official sources
 
 **Interviews and applications**
 - `generated/company-files-2.pdf`: Six more company files (Uber, Salesforce AMTS, Adobe MTS-1, Walmart Global Tech, PhonePe, Zscaler): reported process, how the plan prepares you, mistakes, likely questions, sources

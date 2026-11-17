@@ -26,7 +26,7 @@ GROUPS = [
  ("sec", "Cloud, security and research", "AWS 30 minutes a day, final revision 5 to 18 Apr; TenantWall before 21 Mar; labs in the cyber track.",
   ["generated/aws-saa-c03-study-pack.pdf", "generated/aws-lab-workbook.pdf", "generated/tenantwall-helpers.pdf", "generated/tenantwall-paper-outline.pdf", "generated/tenantwall/paper/", "generated/tenantwall/", "generated/security-lab-notebook.pdf", "generated/security-labs-workbook.pdf", "generated/security-labs/", "generated/owasp-portswigger-lab-map.pdf", "generated/cyber-security-interview-bank.pdf", "generated/roadmapsh-checklists.pdf"]),
  ("proj", "Projects", "Backend project when the plan schedules it; AI-security project in May.",
-  ["generated/backend-starter/", "generated/ai-security-starter/", "generated/ai-security-starter-guide.pdf", "generated/docker-ci-guide.pdf"]),
+  ["generated/backend-starter/", "generated/ai-security-starter/", "generated/ai-security-starter-guide.pdf", "generated/docker-ci-guide.pdf", "generated/open-source-gsoc-guide.pdf", "generated/oss/"]),
  ("jobs", "Interviews and applications", "From the placement sprint (31 May); resume and profiles a month earlier.",
   ["generated/resume-kit.pdf", "generated/resume/", "generated/interview-story-bank.pdf", "generated/profile-kit.pdf", "generated/profile/", "generated/company-files-2.pdf", "generated/company-files-3.pdf", "generated/mock-interview-scripts.pdf", "generated/mock-interview-scripts-2.pdf", "generated/interview-day-kit.pdf", "generated/interview-day/"]),
  ("rev", "Revision and planning", "Every day (flashcards) and every Sunday (planner and weekly review).",

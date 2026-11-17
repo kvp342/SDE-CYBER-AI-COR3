@@ -57,7 +57,7 @@ This plan is short on purpose. Each line points to the file in the kit that has 
 |--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|
 | Nov 2026     | A2Z steps 1–3 (about). Set up the tracker and Anki. Apply to the Science Academies research fellowship (SRFP) if research interests you: closes 30 Nov 2026.^([\[5\]](#-sources))               | Arrays, hashing, sorting, binary search basics                 |
 | Dec 2026     | A2Z steps 4–9 (binary search, strings, linked list, recursion). Resume v1 from the resume kit.                                                                                                 | Resume v1; about 200+ problems logged (5–6 a day since 18 Nov) |
-| Jan 2027     | A2Z steps 10–18 (stack, heap, greedy, trees, graphs, DP). Pick open-source orgs for GSoC or LFX and make 2–3 small contributions.                                                              | A2Z core done (30 Jan); GitHub profile clean                   |
+| Jan 2027     | A2Z steps 10–18 (stack, heap, greedy, trees, graphs, DP). Pick open-source orgs for GSoC or LFX and make 2–3 small contributions (see the open-source guide).                                  | A2Z core done (30 Jan); GitHub profile clean                   |
 | Feb 2027     | Hard pass begins. Codeforces ladder. OA sets 1–4 on Saturdays. Write the TenantWall paper. Watch for GSoC orgs (mid-Feb) and IIT summer research calls.^([\[6\]](#-sources)[\[7\]](#-sources))   | Applications sent; 2 mocks done                                |
 | Mar 2027     | Internship season. Apply daily (Section 8). GSoC proposal in the contributor window (2026's was 16–31 Mar). Codeforces 1400 gate on 31 Mar. Paper by 21 Mar.                                   | Paper submitted; gate result known                             |
 | Apr 2027     | Exams until 7 Apr, then AWS final revision; exam in the week of 19 Apr. Keep applying.                                                                                                         | AWS SAA-C03 passed                                             |
@@ -228,11 +228,12 @@ Use the first column. Add the second only if you have time. The third wastes tim
 
 ### Projects
 
-| When                | Open                                                                                                                                                           |
-|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Backend project     | [backend-starter/](https://github.com/kvp342/intrusion-detection-and-prevention/tree/ccr-ca7232a7-t7lq94/generated/backend-starter)                            |
-| AI-security project | [ai-security-starter-guide.pdf](ai-security-starter-guide.md) |
-| Docker and CI       | [docker-ci-guide.pdf](docker-ci-guide.md)                     |
+| When                      | Open                                                                                                                                                           |
+|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Backend project           | [backend-starter/](https://github.com/kvp342/intrusion-detection-and-prevention/tree/ccr-ca7232a7-t7lq94/generated/backend-starter)                            |
+| AI-security project       | [ai-security-starter-guide.pdf](ai-security-starter-guide.md) |
+| Docker and CI             | [docker-ci-guide.pdf](docker-ci-guide.md)                     |
+| Open source, GSoC and LFX | [open-source-gsoc-guide.pdf](open-source-gsoc-guide.md)       |
 
 ### Applying and interviews
 

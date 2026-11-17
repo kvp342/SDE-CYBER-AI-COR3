@@ -83,6 +83,7 @@ Backend project when the plan schedules it; AI-security project in May.
 |---|---|
 | [secrag RAG assistant with prompt-injection defences](ai-security-starter-guide.md) | Guide to the AI-security project starter: how it works, the four defence layers, how to run it, offline results per attack, and a 4-week May plan |
 | [Docker and GitHub Actions for both starters](docker-ci-guide.md) | One page: the Dockerfiles and GitHub Actions workflows added to both starters, explained line by line, with run commands |
+| [Open source from first PR to GSoC](open-source-gsoc-guide.md) | Open source from first PR to GSoC/LFX: which programme fits (official rules: age, beginner status, project sizes, evaluations), a week-by-week plan from December to the March window, finding first issues, the fork–branch–rebase PR workflow (tested end to end), PR and message templates, proposal outline; 8 official sources |
 
 ## Interviews and applications
 

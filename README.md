@@ -60,6 +60,8 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/profile-kit.pdf` | LinkedIn checklist, three headline options and an About template, GitHub pinning and project README guide, a profile README template, and a 4-week posting plan |
 | `generated/profile/` | The LinkedIn text and the GitHub profile README as files to copy |
 | `generated/docker-ci-guide.pdf` | One page: the Dockerfiles and GitHub Actions workflows added to both starters, explained line by line, with run commands |
+| `generated/open-source-gsoc-guide.pdf` | Open source from first PR to GSoC/LFX: which programme fits (official rules: age, beginner status, project sizes, evaluations), a week-by-week plan from December to the March window, finding first issues, the fork–branch–rebase PR workflow (tested end to end), PR and message templates, proposal outline; 8 official sources |
+| `generated/oss/` | git_workflow_check.sh: runs the guide's whole git workflow against local test repositories |
 | `generated/system-design-case-studies.pdf` | Five designs (URL shortener, chat, news feed, notifications, file sync): requirements, computed estimates, API, data model, diagram, design and trade-offs |
 | `generated/sysdesign/` | The five diagrams as SVG and PNG |
 | `generated/elite-track-pack.pdf` | Elite (HFT) checkpoint pack: 40 probability questions with worked answers (all checked exactly, 27 also by simulation) and 8 low-latency C++ exercises with measured timings |
