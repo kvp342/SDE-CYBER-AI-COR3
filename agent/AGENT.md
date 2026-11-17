@@ -13,7 +13,7 @@ You are improving a placement-preparation kit for a B.Tech CSE (Cybersecurity) s
    - PDFs: write HTML, render with Playwright (`require('playwright')`, `page.pdf`, A4, `printBackground: true`), fonts Inter / Space Grotesk / JetBrains Mono from Google Fonts. Every PDF needs a clickable index (internal `#id` links), section back-links, real web links, and page numbers. Use flat colours (no blur, shadows or gradients) so phone viewers open it. Keep each PDF under 5 MB.
    - Match the existing style: see `Tier3-to-Top-Offer-Placement-Guide.pdf` and `sources/` for helpers.
    - Plain, direct English. No emoji. No filler.
-5. Save outputs in `generated/` (PDFs and HTML) and the build script in `generated/src/`. Add one line per new file to the table in `README.md`.
+5. Save outputs in `generated/` (PDFs and HTML) and the build script in `generated/src/`. Add one line per new file to the table in `README.md`. Then run `python3 generated/src/make_markdown.py` so `generated/read/` (the Markdown copy of everything, readable directly on GitHub) includes the new file; add the new builder and its HTML name to `BUILDERS` in that script first.
 6. Tick the item in `agent/BACKLOG.md`, append a short entry to `agent/LOG.md` (date, item, files, what you verified, anything left).
 7. Commit with a clear message and push: `git push -u origin ccr-ca7232a7-t7lq94` (retry up to 4 times on network errors).
 

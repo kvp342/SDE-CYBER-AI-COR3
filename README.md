@@ -1,5 +1,7 @@
 # Placement Prep
 
+**Read everything directly on GitHub:** [generated/read/](generated/read/) has every guide, pack, plan, the knowledge base and both A2Z sheets as plain Markdown (no HTML, no PDF viewer needed). Start with [Your final plan](generated/read/final-plan.md).
+
 My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an SDE profile with security and cloud depth, plus an Elite HFT track that opens only if I pass the 31 March 2027 checkpoint.
 
 ## Open
