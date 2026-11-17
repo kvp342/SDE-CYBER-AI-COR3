@@ -54,6 +54,7 @@ How to use them with the plan: daily DSA from the Playbook, with the weekly plan
 - `generated/sql-pack.sql`: The sample database and all 40 queries in one file: load it into SQLite or any SQL playground to practise
 - `generated/lld-pack.pdf`: Six LLD designs (parking lot, library, Splitwise, elevator, rate limiter, LRU cache): requirements, class diagrams, decisions, follow-ups and full C++17 code
 - `generated/lld/`: The six C++17 programs; each runs a demo that checks its own behaviour
+- `generated/lld-pack-2.pdf` (code in `generated/lld2/`): LLD pack II: six more designs (N×N tic-tac-toe with O(1) win check, vending machine with bounded change-making, movie booking with expiring seat holds and a 16-thread race test, logger with levels and sinks, key–value store with TTL and versioned expiry, snake and ladder with injected dice); requirements, class diagrams, decisions, follow-ups and C++17 code tested under ASan/UBSan
 - `generated/core-cs-one-pagers.pdf`: One A4 revision page each for OS, DBMS, CN, OOP, SQL and System Design: 10 definitions, a diagram and the 10 most-asked questions
 - `generated/system-design-case-studies.pdf`: Five designs (URL shortener, chat, news feed, notifications, file sync): requirements, computed estimates, API, data model, diagram, design and trade-offs
 - `generated/sysdesign/`: The five diagrams as SVG and PNG

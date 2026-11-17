@@ -12,7 +12,7 @@ KBURL = "https://claude.ai/artifact/McuS723LTAb16Q6SpdUsAT"
 # builder → the HTML file it renders the PDF from (its last write of that name is the final pass)
 BUILDERS = {"ai_starter": "ai.html", "anki": "anki.html", "apti": "apti.html", "apti2": "apti2.html", "aws_pack": "aws.html", "awslab": "awslab.html", "cli_sheet": "cli.html",
  "company2": "co.html", "company3": "co3.html", "cp_ladder": "cp.html", "docker_ci": "dc.html", "oss_guide": "oss.html", "netproj": "net.html", "socproj": "soc.html", "elite_pack": "el.html", "final_plan": "final_plan.html",
- "index_all": "ia.html", "interview_day": "id.html", "outreach": "outreach.html", "lab_map": "lm.html", "lab_notebook": "lab.html", "lld_pack": "lld.html", "mcq": "mcq.html", "mcq2": "mcq2.html",
+ "index_all": "ia.html", "interview_day": "id.html", "outreach": "outreach.html", "lab_map": "lm.html", "lab_notebook": "lab.html", "lld_pack": "lld.html", "lld_pack2": "lld2.html", "mcq": "mcq.html", "mcq2": "mcq2.html",
  "mock_scripts": "ms.html", "mock_scripts2": "ms2.html", "oa_packs": "oa.html", "oa_packs2": "oa2.html", "oa_packs3": "oa3.html", "revision_tests": "rv.html", "onepagers": "op.html", "paper_outline": "po.html",
  "pattern_stl": "ps.html", "planner": "pl.html", "profile_kit": "pk.html", "resume_kit": "rk.html", "roadmapsh": "roadmapsh.html", "secbank": "secbank.html", "seclabs": "seclabs.html",
  "sql_pack": "sql.html", "sql_pack2": "sql2.html", "story_bank": "sb.html", "sysdesign": "sd.html", "tenantwall": "tw.html", "worked2": "w2.html", "worked3": "w3.html", "worked4": "w4.html"}
