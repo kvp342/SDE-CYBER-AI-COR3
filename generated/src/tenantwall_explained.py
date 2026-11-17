@@ -76,7 +76,7 @@ sec("terms", "Every AWS term you will hear", T(["Term", "Meaning in one or two l
  ["Encoded authorization message", "EC2 refusals include an encoded blob; sts:DecodeAuthorizationMessage turns it into JSON showing explicitDeny true or false and the matched context." + C(DEC)]]) + C(ELEM))
 
 sec("eval", "How AWS decides every request", "<ol><li>Start with <b>deny by default</b> (implicit).</li><li>Collect every policy that applies: the caller's identity policies, the resource's policy (bucket policy), and any boundaries or organisation rules.</li><li>If <b>any statement with Effect Deny matches</b>, the answer is <b>explicit deny</b>. Stop.</li><li>Otherwise, if an <b>Allow</b> matches (in the same account, an identity policy or the resource policy is enough), the answer is <b>allow</b>.</li><li>Otherwise it stays <b>implicit deny</b>.</li></ol>" + C(EVAL) +
- '<p class="note">Why TenantWall uses both: implicit deny is the quiet default (alpha is simply never allowed to touch beta); explicit Deny statements are a <b>second lock</b> that still holds if someone later adds a too-broad Allow. That is the "something explicit" to show your professor.</p>')
+ '<p class="note">Why TenantWall uses both: implicit deny is the quiet default (alpha is simply never allowed to touch beta); explicit Deny statements are a <b>second lock</b> that still holds if someone later adds a too-broad Allow. This is the explicit vs implicit deny your professor asked for.</p>')
 
 sec("ec2", "TenantABAC_EC2, statement by statement", T(["Sid", "What it says", "Why"], [
  ["ReadOnlyEverywhere", "Allow ec2:Describe* on *", "Describe calls cannot be limited per resource, so every team can see the list of instances (a stated limitation)."],
@@ -132,14 +132,14 @@ sec("evidence", "Tonight's evidence (17 Nov 2026)", T(["Professor's request", "S
  ["2. CloudWatch + email", "Done, fired", "After the run: TenantWall-AccessDenied and TenantWall-TagTampering went to ALARM; PolicyChange stayed OK (no policy edited); alert emails sent to your confirmed address (evidence/alarms.txt; your inbox)"],
  ["3. Diagrams", "Files ready; you export", "diagrams/tenantwall-architecture.drawio and diagrams/tenantwall-flowchart.drawio with official AWS icons: open at app.diagrams.net, check, export PNG"],
  ["4. Policy Generator + Access Analyzer", "Analyzer done; Generator is yours (10 min)", "Access Analyzer: <b>0 findings</b> for TenantABAC_EC2, TenantABAC_S3 and the bucket policy. Policy Generator: rebuild the bucket policy in the web form" + C(GEN) + " and screenshot it"],
- ["5. Something explicit", "Done; confirm meaning", "Every refusal labelled explicit or implicit (scenarios 9, 11, 13 explicit; 2, 3, 4, 6, 8, 12, 14 implicit)"]]) + C(AA) +
+ ["5. Explicit vs implicit deny (confirmed)", "Done", "Every refusal labelled explicit or implicit (scenarios 9, 11, 13 explicit; 2, 3, 4, 6, 8, 12, 14 implicit); EC2 refusals proved with sts decode-authorization-message, S3/IAM refusals by the error message, scenario 14 by the policy simulator (implicitDeny)"]]) + C(AA) +
  "<h3>Screenshots to take tomorrow morning (console, 15 minutes)</h3>" + UL([
  "CloudTrail → Trails → tenantwall-trail (Logging on, data events).", "CloudWatch → Alarms (history showing ALARM at about 23:23 IST on 17 Nov).", "The alert email in Gmail.",
  "CloudWatch → Logs Insights with the refused-calls query.", "IAM → Policies → TenantABAC_EC2 → Edit (Access Analyzer panel with no findings).", "Policy Generator page with your bucket policy.", "The exported diagrams."]))
 
 sec("demo", "Showing your professor (10 minutes)", T(["Minute", "Show", "Say"], [
  ["0–1", "Architecture diagram", "\"Two teams share one account; one tag-based policy set separates them; the right side now detects attempts.\""],
- ["1–3", "Scenario summary (14 of 14) with the deny-type column", "\"Each refusal is labelled explicit or implicit. Was this what you meant by 'something explicit'?\""],
+ ["1–3", "Scenario summary (14 of 14) with the deny-type column", "\"Each refusal is labelled explicit or implicit: explicit means a Deny statement matched, implicit means no Allow matched.\""],
  ["3–5", "Policies + Access Analyzer (0 findings) + Policy Generator screenshot", "\"Policies validate cleanly; the bucket policy matches what the Policy Generator produces.\""],
  ["5–7", "Logs Insights refused calls", "\"CloudTrail now records every call, including object reads, with who, what and when.\""],
  ["7–9", "Alarms in ALARM + email", "\"Refusals and tag changes email the admin within minutes; policy edits have their own alarm.\""],
