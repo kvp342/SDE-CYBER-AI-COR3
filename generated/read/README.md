@@ -36,6 +36,7 @@ Daily from 18 Nov; OA sets on their dates (13 Feb to 3 Jul); the Elite pack only
 |---|---|
 | [40 more tested solutions](worked-solutions-2.md) | Worked Solutions II: 40 more most-asked LeetCode problems (not in the Knowledge Base set), each with idea, steps, tested C++17 code, traps and follow-ups; clickable index by pattern |
 | [40 more tested solutions](worked-solutions-3.md) | Worked Solutions III: 40 more most-asked LeetCode problems (none in Parts I/II or the OA packs), each with idea, steps, tested C++17 code, traps and follow-ups; clickable index by pattern |
+| [25 hard problems tested solutions](worked-solutions-4.md) | Worked Solutions IV: 25 hard (L3) problems for product-company final rounds (wildcard matching, KMP, skyline, bitmask BFS, interval DP, merge-sort counting, trie search and more), none in Parts I–III or the OA packs; tested C++17 with -Wall -Wextra under ASan/UBSan |
 | [8 timed OAs 3 problems · 90 minutes](oa-simulation-packs.md) | 8 timed online-assessment sets (3 LeetCode problems, 90 minutes each, 24 problems with no repeats), dated to the plan, with a scoring guide, a record table and a solution page per set (sketch, edge cases, tested C++17) |
 | [8 more timed OAs sets 9–16 · 90 minutes each](oa-simulation-packs-2.md) | 8 more timed OA sets (9–16), 24 new problems not in the first pack or the worked solutions, dated Mar–Jul 2027, with scoring guide and tested solutions |
 | [8 more timed OAs sets 17–24 · 90 minutes each](oa-simulation-packs-3.md) | 8 more timed OA sets (17–24) for placement season, Saturdays 17 Jul – 4 Sep 2027, each with a company-style theme; 24 new problems not in OA packs I–II or Worked Solutions I–III; scoring guide, question and solution pages, tested C++17 |
@@ -57,7 +58,9 @@ Daily from 18 Nov; OA sets on their dates (13 Feb to 3 Jul); the Elite pack only
 | [40 SQL questions run on a real database](sql-pack.md) | 40 interview SQL questions (basics, joins, aggregation, subqueries, window functions, indexing) on one sample database, each with the query, its real output and an explanation |
 | [30 harder SQL questions every output checked](sql-pack-2.md) | SQL pack II: 30 harder questions (gaps and islands, sessions, running balances, medians, retention, funnels, recursive trees and calendars, pivots, mutual follows, overlapping bookings, dedup, keyset pagination) on one product-analytics database; every query's full output checked against an independent Python answer |
 | [LLD pack with code that runs](lld-pack.md) | Six LLD designs (parking lot, library, Splitwise, elevator, rate limiter, LRU cache): requirements, class diagrams, decisions, follow-ups and full C++17 code |
+| [LLD pack II with code that runs](lld-pack-2.md) | LLD pack II: six more designs (N×N tic-tac-toe with O(1) win check, vending machine with bounded change-making, movie booking with expiring seat holds and a 16-thread race test, logger with levels and sinks, key–value store with TTL and versioned expiry, snake and ladder with injected dice); requirements, class diagrams, decisions, follow-ups and C++17 code tested under ASan/UBSan |
 | [Five designs worked end to end](system-design-case-studies.md) | Five designs (URL shortener, chat, news feed, notifications, file sync): requirements, computed estimates, API, data model, diagram, design and trade-offs |
+| [Five more designs worked end to end](system-design-case-studies-2.md) | System design case studies II: API gateway with distributed rate limiting, ride matching, e-commerce checkout and inventory (no overselling, idempotent payments, sagas, outbox), search autocomplete, video upload and streaming; requirements, computed estimates (checked by asserts), API, data model, design, trade-offs and a diagram each |
 
 ## Cloud, security and research
 
@@ -71,6 +74,7 @@ AWS 30 minutes a day, final revision 5 to 18 Apr; TenantWall before 21 Mar; labs
 | [Paper outline](tenantwall-paper-outline.md) | TenantWall paper: what to write in each section, figures and tables, a 7-week writing plan to 21 March, submission checklist and references |
 | [Security lab notebook](security-lab-notebook.md) | CTF and PortSwigger write-up templates with worked examples, a STRIDE threat model of TenantWall, a lab command sheet, and web security by vulnerability class (linked to the free PortSwigger topics) |
 | [6 security labs on your own machine](security-labs-workbook.md) | 6 hands-on security labs on your own machine (permissions and SUID, nmap on localhost, HTTP vs HTTPS packet capture, hashing and cracking test hashes, find and fix SQL injection and XSS in a Flask app, brute-force detection rule); legal note first; every command run and its output captured |
+| [logsentry detect attacks in logs](soc-log-analysis-project.md) | logsentry, a SOC portfolio project: a standard-library Python tool that detects SSH brute force, success-after-failures (likely compromise), web scanning, scanner user agents and SQLi/XSS/traversal in real log formats, JSON alerts mapped to MITRE ATT&CK; 11 tests incl. false-positive and evasion cases; guide with limits and resume line |
 | [OWASP Top 10 mapped to free PortSwigger labs](owasp-portswigger-lab-map.md) | OWASP Top 10:2025 mapped to free PortSwigger Academy topics (tick boxes), what changed since 2021, a 10-week lab order and 10 web-security interview questions with answers |
 | [97 security questions with model answers](cyber-security-interview-bank.md) | 97 security interview questions with model answers in 8 sections (fundamentals, network, web, cryptography, identity and cloud, incident response and SOC, Linux/Windows/AD, scenarios); computable facts checked by script; official sources per section |
 | [roadmap.sh checklists](roadmapsh-checklists.md) | roadmap.sh maps (Backend, Cyber Security, AWS, CS, System Design, DevOps) as checklists, mapped to the kit with gaps marked |
@@ -83,6 +87,7 @@ Backend project when the plan schedules it; AI-security project in May.
 |---|---|
 | [secrag RAG assistant with prompt-injection defences](ai-security-starter-guide.md) | Guide to the AI-security project starter: how it works, the four defence layers, how to run it, offline results per attack, and a 4-week May plan |
 | [Docker and GitHub Actions for both starters](docker-ci-guide.md) | One page: the Dockerfiles and GitHub Actions workflows added to both starters, explained line by line, with run commands |
+| [Sockets from scratch a chat server and an HTTP server](network-programming-project.md) | C++ network programming project: a poll()-based multi-client chat server and a minimal HTTP/1.1 server (code in generated/netproj/), 11 tests over real localhost sockets under ASan/UBSan, plus a guide to each syscall, TCP framing, HTTP basics, and the interview questions it prepares you for |
 | [Open source from first PR to GSoC](open-source-gsoc-guide.md) | Open source from first PR to GSoC/LFX: which programme fits (official rules: age, beginner status, project sizes, evaluations), a week-by-week plan from December to the March window, finding first issues, the fork–branch–rebase PR workflow (tested end to end), PR and message templates, proposal outline; 8 official sources |
 
 ## Interviews and applications
@@ -107,7 +112,7 @@ Every day (flashcards) and every Sunday (planner and weekly review).
 
 | Read | What it is |
 |---|---|
-| [1031 flashcards, ready to import](anki-decks-guide.md) | One page: importing the decks into AnkiDroid, AnkiMobile or Anki desktop, and a daily routine |
+| [1056 flashcards, ready to import](anki-decks-guide.md) | One page: importing the decks into AnkiDroid, AnkiMobile or Anki desktop, and a daily routine |
 | [Weekly planner 16 Nov 2026 – 30 May 2027](weekly-planner.md) | 28 printable week pages (16 Nov 2026 – 30 May 2027): phase and goal, fixed dates (OA sets, TenantWall deadline, exams, AWS exam), daily tick boxes and a weekly review |
 | [34 weekly tests 30 minutes each](weekly-revision-tests.md) | 34 Sunday self-tests (22 Nov 2026 – 25 Jul 2027, none in the exam break), 30 minutes each: 3 pattern questions from that week's A2Z topics (then mixed), 4 Core CS MCQs on a five-week rotation, 1 AWS and 1 security question; answers on the next page; nothing repeats; all drawn from checked kit material |
 | [Linux, Git and debugging](linux-git-debugging-sheet.md) | Two pages of daily commands (files and text, processes, Git everyday and safe undo, C++ debugging with sanitizers, gdb, valgrind, strace), every one run and checked |

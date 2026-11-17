@@ -193,6 +193,7 @@ Use the first column. Add the second only if you have time. The third wastes tim
 | Pattern you cannot recognise               | [patterns-stl-card.pdf](patterns-stl-card.md)         |
 | Worked problems, set II                    | [worked-solutions-2.pdf](worked-solutions-2.md)       |
 | Worked problems, set III                   | [worked-solutions-3.pdf](worked-solutions-3.md)       |
+| Hard problems for final rounds             | [worked-solutions-4.pdf](worked-solutions-4.md)       |
 | Saturday OA, sets 1–8                      | [oa-simulation-packs.pdf](oa-simulation-packs.md)     |
 | Saturday OA, sets 9–16                     | [oa-simulation-packs-2.pdf](oa-simulation-packs-2.md) |
 | Saturday OA, sets 17–24 (placement season) | [oa-simulation-packs-3.pdf](oa-simulation-packs-3.md) |
@@ -202,16 +203,18 @@ Use the first column. Add the second only if you have time. The third wastes tim
 
 ### Core CS and design
 
-| When                              | Open                                                                                                                                                             |
-|-----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Night before a Core CS round      | [core-cs-one-pagers.pdf](core-cs-one-pagers.md)                 |
-| MCQ rounds                        | [core-cs-mcq-bank.pdf](core-cs-mcq-bank.md)                     |
-| More MCQs and numericals          | [core-cs-mcq-bank-2.pdf](core-cs-mcq-bank-2.md)                 |
-| SQL questions                     | [sql-pack.pdf](sql-pack.md)                                     |
-| Harder SQL (analytics, recursion) | [sql-pack-2.pdf](sql-pack-2.md)                                 |
-| LLD round                         | [lld-pack.pdf](lld-pack.md)                                     |
-| System design                     | [system-design-case-studies.pdf](system-design-case-studies.md) |
-| Linux, Git, gdb                   | [linux-git-debugging-sheet.pdf](linux-git-debugging-sheet.md)   |
+| When                              | Open                                                                                                                                                                 |
+|-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Night before a Core CS round      | [core-cs-one-pagers.pdf](core-cs-one-pagers.md)                     |
+| MCQ rounds                        | [core-cs-mcq-bank.pdf](core-cs-mcq-bank.md)                         |
+| More MCQs and numericals          | [core-cs-mcq-bank-2.pdf](core-cs-mcq-bank-2.md)                     |
+| SQL questions                     | [sql-pack.pdf](sql-pack.md)                                         |
+| Harder SQL (analytics, recursion) | [sql-pack-2.pdf](sql-pack-2.md)                                     |
+| LLD round                         | [lld-pack.pdf](lld-pack.md)                                         |
+| More LLD designs                  | [lld-pack-2.pdf](lld-pack-2.md)                                     |
+| System design                     | [system-design-case-studies.pdf](system-design-case-studies.md)     |
+| More system design                | [system-design-case-studies-2.pdf](system-design-case-studies-2.md) |
+| Linux, Git, gdb                   | [linux-git-debugging-sheet.pdf](linux-git-debugging-sheet.md)       |
 
 ### Security, cloud, research
 
@@ -222,18 +225,20 @@ Use the first column. Add the second only if you have time. The third wastes tim
 | Web security labs            | [owasp-portswigger-lab-map.pdf](owasp-portswigger-lab-map.md)         |
 | Lab write-ups                | [security-lab-notebook.pdf](security-lab-notebook.md)                 |
 | Hands-on security labs       | [security-labs-workbook.pdf](security-labs-workbook.md)               |
+| SOC portfolio project        | [soc-log-analysis-project.pdf](soc-log-analysis-project.md)           |
 | Security interview questions | [cyber-security-interview-bank.pdf](cyber-security-interview-bank.md) |
 | TenantWall build             | [tenantwall-helpers.pdf](tenantwall-helpers.md)                       |
 | TenantWall paper             | [tenantwall-paper-outline.pdf](tenantwall-paper-outline.md)           |
 
 ### Projects
 
-| When                      | Open                                                                                                                                                           |
-|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Backend project           | [backend-starter/](https://github.com/kvp342/intrusion-detection-and-prevention/tree/ccr-ca7232a7-t7lq94/generated/backend-starter)                            |
-| AI-security project       | [ai-security-starter-guide.pdf](ai-security-starter-guide.md) |
-| Docker and CI             | [docker-ci-guide.pdf](docker-ci-guide.md)                     |
-| Open source, GSoC and LFX | [open-source-gsoc-guide.pdf](open-source-gsoc-guide.md)       |
+| When                      | Open                                                                                                                                                               |
+|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Backend project           | [backend-starter/](https://github.com/kvp342/intrusion-detection-and-prevention/tree/ccr-ca7232a7-t7lq94/generated/backend-starter)                                |
+| AI-security project       | [ai-security-starter-guide.pdf](ai-security-starter-guide.md)     |
+| Docker and CI             | [docker-ci-guide.pdf](docker-ci-guide.md)                         |
+| Open source, GSoC and LFX | [open-source-gsoc-guide.pdf](open-source-gsoc-guide.md)           |
+| C++ networking project    | [network-programming-project.pdf](network-programming-project.md) |
 
 ### Applying and interviews
 

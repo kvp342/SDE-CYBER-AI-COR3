@@ -49,7 +49,7 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/stl_check.cpp` | Compiles and runs every STL call on the card (proof the card is correct) |
 | `generated/aptitude-pack.pdf` | 150 aptitude questions (60 quant, 50 logical, 40 verbal) with timing guidance and worked answers on separate pages; every computable answer checked in Python |
 | `generated/aptitude-pack-2.pdf` | 90 more aptitude questions: 40 quant on new topics, 30 logical (incl. syllogisms, seating, cubes) and a new data-interpretation section (4 sets × 5); none repeated from pack I; every one of the 90 answers recomputed in Python |
-| `generated/anki/*.csv` | 1,031 flashcards in 7 Anki decks (all 123 worked solutions, Core CS, patterns and C++ bugs, complexity, security, AWS, aptitude), built from material already checked in the kit |
+| `generated/anki/*.csv` | 1,056 flashcards in 7 Anki decks (all 148 worked solutions, Core CS, patterns and C++ bugs, complexity, security, AWS, aptitude), built from material already checked in the kit |
 | `generated/anki-decks-guide.pdf` | One page: importing the decks into AnkiDroid, AnkiMobile or Anki desktop, and a daily routine |
 | `generated/security-lab-notebook.pdf` | CTF and PortSwigger write-up templates with worked examples, a STRIDE threat model of TenantWall, a lab command sheet, and web security by vulnerability class (linked to the free PortSwigger topics) |
 | `generated/security-labs-workbook.pdf` | 6 hands-on security labs on your own machine (permissions and SUID, nmap on localhost, HTTP vs HTTPS packet capture, hashing and cracking test hashes, find and fix SQL injection and XSS in a Flask app, brute-force detection rule); legal note first; every command run and its output captured |
@@ -71,6 +71,8 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/oss/` | git_workflow_check.sh: runs the guide's whole git workflow against local test repositories |
 | `generated/system-design-case-studies.pdf` | Five designs (URL shortener, chat, news feed, notifications, file sync): requirements, computed estimates, API, data model, diagram, design and trade-offs |
 | `generated/sysdesign/` | The five diagrams as SVG and PNG |
+| `generated/system-design-case-studies-2.pdf` | System design case studies II: API gateway with distributed rate limiting, ride matching, e-commerce checkout and inventory (no overselling, idempotent payments, sagas, outbox), search autocomplete, video upload and streaming; requirements, computed estimates (checked by asserts), API, data model, design, trade-offs and a diagram each |
+| `generated/sysdesign2/` | The five pack II diagrams (SVG and PNG) |
 | `generated/elite-track-pack.pdf` | Elite (HFT) checkpoint pack: 40 probability questions with worked answers (all checked exactly, 27 also by simulation) and 8 low-latency C++ exercises with measured timings |
 | `generated/elite/` | The 8 C++ exercises, the timing harness and a sample of measured timings |
 | `generated/knowledge-base-v2.html` | The Knowledge Base with 213 pages: the original 167 plus the 40 Worked Solutions II problems and the 6 new company files, all searchable and linked. Open it in a browser |

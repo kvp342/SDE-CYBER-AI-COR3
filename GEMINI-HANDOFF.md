@@ -57,6 +57,7 @@ How to use them with the plan: daily DSA from the Playbook, with the weekly plan
 - `generated/lld-pack-2.pdf` (code in `generated/lld2/`): LLD pack II: six more designs (N×N tic-tac-toe with O(1) win check, vending machine with bounded change-making, movie booking with expiring seat holds and a 16-thread race test, logger with levels and sinks, key–value store with TTL and versioned expiry, snake and ladder with injected dice); requirements, class diagrams, decisions, follow-ups and C++17 code tested under ASan/UBSan
 - `generated/core-cs-one-pagers.pdf`: One A4 revision page each for OS, DBMS, CN, OOP, SQL and System Design: 10 definitions, a diagram and the 10 most-asked questions
 - `generated/system-design-case-studies.pdf`: Five designs (URL shortener, chat, news feed, notifications, file sync): requirements, computed estimates, API, data model, diagram, design and trade-offs
+- `generated/system-design-case-studies-2.pdf` (diagrams in `generated/sysdesign2/`): System design case studies II: API gateway with distributed rate limiting, ride matching, e-commerce checkout and inventory (no overselling, idempotent payments, sagas, outbox), search autocomplete, video upload and streaming; requirements, computed estimates (checked by asserts), API, data model, design, trade-offs and a diagram each
 - `generated/sysdesign/`: The five diagrams as SVG and PNG
 
 **Cloud, security and research**
@@ -96,7 +97,7 @@ How to use them with the plan: daily DSA from the Playbook, with the weekly plan
 - `generated/interview-day/`: The email templates (Markdown) and an offer comparison sheet (CSV with formulas, opens in Google Sheets)
 
 **Revision, planning and finding things**
-- `generated/anki/*.csv`: 1,031 flashcards in 7 Anki decks (all 123 worked solutions, Core CS, patterns and C++ bugs, complexity, security, AWS, aptitude), built from material already checked in the kit
+- `generated/anki/*.csv`: 1,056 flashcards in 7 Anki decks (all 148 worked solutions, Core CS, patterns and C++ bugs, complexity, security, AWS, aptitude), built from material already checked in the kit
 - `generated/anki-decks-guide.pdf`: One page: importing the decks into AnkiDroid, AnkiMobile or Anki desktop, and a daily routine
 - `generated/weekly-planner.pdf`: 28 printable week pages (16 Nov 2026 – 30 May 2027): phase and goal, fixed dates (OA sets, TenantWall deadline, exams, AWS exam), daily tick boxes and a weekly review
 - `generated/weekly-revision-tests.pdf`: 34 Sunday self-tests (22 Nov 2026 – 25 Jul 2027, none in the exam break), 30 minutes each: 3 pattern questions from that week's A2Z topics (then mixed), 4 Core CS MCQs on a five-week rotation, 1 AWS and 1 security question; answers on the next page; nothing repeats; all drawn from checked kit material
