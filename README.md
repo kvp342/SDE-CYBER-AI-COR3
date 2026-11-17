@@ -23,6 +23,7 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `sources/` | Scripts that build all of the above |
 | `generated/roadmapsh-checklists.pdf` | roadmap.sh maps (Backend, Cyber Security, AWS, CS, System Design, DevOps) as checklists, mapped to the kit with gaps marked |
 | `generated/final-plan.pdf` | Final plan: the plan, seven rules, month-by-month actions to placements, opportunity windows (SRFP, GSoC, LFX, IIT research, hiring challenges), daily system, checkpoints, filtered resources seniors used, internship hunt playbook, and a 'when X, open Y' map of the kit; 19 cited sources |
+| `generated/one-page-overview.pdf` | One-page overview of the whole kit: timeline, daily routine, the 7 DSA phases (same structure as the external 6-month roadmap) mapped to your dates and files, system design / LLD / machine coding, other tracks, checkpoints, five files to open first |
 | `generated/worked-solutions-2.pdf` | Worked Solutions II: 40 more most-asked LeetCode problems (not in the Knowledge Base set), each with idea, steps, tested C++17 code, traps and follow-ups; clickable index by pattern |
 | `generated/worked-solutions-3.pdf` | Worked Solutions III: 40 more most-asked LeetCode problems (none in Parts I/II or the OA packs), each with idea, steps, tested C++17 code, traps and follow-ups; clickable index by pattern |
 | `generated/worked-solutions-4.pdf` | Worked Solutions IV: 25 hard (L3) problems for product-company final rounds (wildcard matching, KMP, skyline, bitmask BFS, interval DP, merge-sort counting, trie search and more), none in Parts I–III or the OA packs; tested C++17 with -Wall -Wextra under ASan/UBSan |
@@ -44,6 +45,8 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/lld/` | The six C++17 programs; each runs a demo that checks its own behaviour |
 | `generated/lld-pack-2.pdf` | LLD pack II: six more designs (N×N tic-tac-toe with O(1) win check, vending machine with bounded change-making, movie booking with expiring seat holds and a 16-thread race test, logger with levels and sinks, key–value store with TTL and versioned expiry, snake and ladder with injected dice); requirements, class diagrams, decisions, follow-ups and C++17 code tested under ASan/UBSan |
 | `generated/lld2/` | The six pack II designs as runnable C++17 files |
+| `generated/gap-fill-pack.pdf` | Gap-fill pack: everything the external roadmap lists that the kit lacked: Invert Binary Tree, ATM LLD, food-ordering, pluggable-eviction cache and inventory machine coding, segment tree / Fenwick / sieve / modular maths, and an Instagram-style HLD with checked estimates; all C++ tested under ASan/UBSan |
+| `generated/gaps/` | The six gap-fill programs (C++17, each runs its own tests) |
 | `generated/core-cs-one-pagers.pdf` | One A4 revision page each for OS, DBMS, CN, OOP, SQL and System Design: 10 definitions, a diagram and the 10 most-asked questions |
 | `generated/patterns-stl-card.pdf` | One-page pattern decision tree (problem signal → pattern → Knowledge Base page), a C++ STL card with complexities, and 30 common C++ contest bugs with fixes |
 | `generated/stl_check.cpp` | Compiles and runs every STL call on the card (proof the card is correct) |
