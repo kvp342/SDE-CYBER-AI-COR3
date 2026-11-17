@@ -45,6 +45,7 @@ How to use them with the plan: daily DSA from the Playbook, with the weekly plan
 
 **Core CS, SQL and design**
 - `generated/sql-pack.pdf`: 40 interview SQL questions (basics, joins, aggregation, subqueries, window functions, indexing) on one sample database, each with the query, its real output and an explanation
+- `generated/sql-pack-2.pdf` (and `.sql`): SQL pack II: 30 harder questions (gaps and islands, sessions, running balances, medians, retention, funnels, recursive trees and calendars, pivots, mutual follows, overlapping bookings, dedup, keyset pagination) on one product-analytics database; every query's full output checked against an independent Python answer
 - `generated/sql-pack.sql`: The sample database and all 40 queries in one file: load it into SQLite or any SQL playground to practise
 - `generated/lld-pack.pdf`: Six LLD designs (parking lot, library, Splitwise, elevator, rate limiter, LRU cache): requirements, class diagrams, decisions, follow-ups and full C++17 code
 - `generated/lld/`: The six C++17 programs; each runs a demo that checks its own behaviour

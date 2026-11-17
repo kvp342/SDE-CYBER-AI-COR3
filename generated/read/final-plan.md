@@ -201,14 +201,15 @@ Use the first column. Add the second only if you have time. The third wastes tim
 
 ### Core CS and design
 
-| When                         | Open                                                                                                                                                             |
-|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Night before a Core CS round | [core-cs-one-pagers.pdf](core-cs-one-pagers.md)                 |
-| MCQ rounds                   | [core-cs-mcq-bank.pdf](core-cs-mcq-bank.md)                     |
-| SQL questions                | [sql-pack.pdf](sql-pack.md)                                     |
-| LLD round                    | [lld-pack.pdf](lld-pack.md)                                     |
-| System design                | [system-design-case-studies.pdf](system-design-case-studies.md) |
-| Linux, Git, gdb              | [linux-git-debugging-sheet.pdf](linux-git-debugging-sheet.md)   |
+| When                              | Open                                                                                                                                                             |
+|-----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Night before a Core CS round      | [core-cs-one-pagers.pdf](core-cs-one-pagers.md)                 |
+| MCQ rounds                        | [core-cs-mcq-bank.pdf](core-cs-mcq-bank.md)                     |
+| SQL questions                     | [sql-pack.pdf](sql-pack.md)                                     |
+| Harder SQL (analytics, recursion) | [sql-pack-2.pdf](sql-pack-2.md)                                 |
+| LLD round                         | [lld-pack.pdf](lld-pack.md)                                     |
+| System design                     | [system-design-case-studies.pdf](system-design-case-studies.md) |
+| Linux, Git, gdb                   | [linux-git-debugging-sheet.pdf](linux-git-debugging-sheet.md)   |
 
 ### Security, cloud, research
 
