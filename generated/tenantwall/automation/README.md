@@ -1,4 +1,4 @@
-# TenantWall automation (draft: finish and test on 18 Nov 2026)
+# TenantWall automation
 
 Scripts for the professor's changes 1–4, to be run tomorrow from the student's laptop with the AWS CLI (admin profile):
 
@@ -7,4 +7,4 @@ Scripts for the professor's changes 1–4, to be run tomorrow from the student's
 - `tenantwall_verify.sh`: after running the tests, shows refused calls recorded by CloudTrail and the alarm states
 - `tenantwall_cleanup.sh`: removes only what setup created
 
-Status: syntax checked; a dry run against a local AWS simulator passed the identity check and policy backups. The simulator, Access Analyzer, CloudTrail and CloudWatch steps are still to be tested tomorrow before use.
+Status (17 Nov 2026, night): syntax checked; full dry run against a local AWS simulator (moto 5.2.5) passed: identity check, policy backups, CloudTrail trail with data events and CloudWatch Logs, both metric filters, SNS topic and subscription, both alarms; a second run changes nothing (safe to re-run); verify runs; cleanup removes only what setup created (tenant bucket, users and policies kept). The IAM policy simulator and Access Analyzer steps are not available in the simulator and run for the first time against the real account.
