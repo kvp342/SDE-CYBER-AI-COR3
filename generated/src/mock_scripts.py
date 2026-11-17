@@ -85,8 +85,9 @@ def body(pages):
     for s in SCRIPTS:
         ph = "".join(f"<tr><td class=t>{m} min</td><td class=k>{E(n)}</td><td>{E(d)}</td></tr>" for m, n, d in s["phases"])
         rb = "".join(f"<tr><td class=k>{E(a)}</td><td>{E(b)}</td><td class=sc>1 · 2 · 3 · 4</td></tr>" for a, b in s["rubric"])
+        KBT = __import__('json').loads((OUT / 'kb2' / 'aliases.json').read_text())
         LC = {q["id"]: (q["title"], q["prac"][0][1]) for q in PROBS2}
-        refs = ", ".join(f'<a href="{LC[r][1]}">{E(LC[r][0])}</a> (Worked Solutions II)' if r in LC else f'<a href="{KB}{r}">{r}</a>' for r in s["ref"])
+        refs = ", ".join(f'<a href="{LC[r][1]}">{E(LC[r][0])}</a> (Worked Solutions II)' if r in LC else f'<a href="{KB}{r}">{E(KBT[r][0])}</a> (Knowledge Base)' for r in s["ref"])
         out.append(f'''<section class="sec" id="{s["id"]}"><h2>{E(s["title"])} <span class=m>{s["minutes"]} minutes</span><a class="back" href="#top">↑ Index</a></h2><p class="meta">{E(s["setup"])} Reference answers: {refs}.</p>
 <h3>Script</h3><table class="ph"><tbody>{ph}</tbody></table><h3>Hints, in order</h3><ul>{"".join(f"<li>{E(h)}</li>" for h in s["hints"])}</ul>
 <h3>Rubric</h3><table class="rb"><tbody>{rb}<tr><td class=k>Total</td><td></td><td class=sc>____ / 20</td></tr></tbody></table><p class="meta">Notes and time stamps:</p><div class="notes"></div></section>''')

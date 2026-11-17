@@ -29,6 +29,7 @@ How to use them with the plan: daily DSA from the Playbook, with the weekly plan
 **Practice: DSA, OAs and contests**
 - `generated/worked-solutions-2.pdf`: Worked Solutions II: 40 more most-asked LeetCode problems (not in the Knowledge Base set), each with idea, steps, tested C++17 code, traps and follow-ups; clickable index by pattern
 - `generated/oa-simulation-packs.pdf`: 8 timed online-assessment sets (3 LeetCode problems, 90 minutes each, 24 problems with no repeats), dated to the plan, with a scoring guide, a record table and a solution page per set (sketch, edge cases, tested C++17)
+- `generated/oa-simulation-packs-2.pdf`: 8 more timed OA sets (9–16), 24 new problems not in the first pack or the worked solutions, dated Mar–Jul 2027, with scoring guide and tested solutions
 - `generated/core-cs-mcq-bank.pdf`: 150 OA-style MCQs (30 each on OS, DBMS, CN, OOP, C++ output) with answer keys on separate pages and a reason per answer; C++ outputs, SQL, subnet and page-fault answers machine-checked
 - `generated/patterns-stl-card.pdf`: One-page pattern decision tree (problem signal → pattern → Knowledge Base page), a C++ STL card with complexities, and 30 common C++ contest bugs with fixes
 - `generated/stl_check.cpp`: Compiles and runs every STL call on the card (proof the card is correct)
@@ -50,6 +51,8 @@ How to use them with the plan: daily DSA from the Playbook, with the weekly plan
 - `generated/roadmapsh-checklists.pdf`: roadmap.sh maps (Backend, Cyber Security, AWS, CS, System Design, DevOps) as checklists, mapped to the kit with gaps marked
 - `generated/aws-saa-c03-study-pack.pdf`: AWS SAA-C03 final revision: notes for the four domains, a service-for-need table, 60 original scenario questions with explained answers, and a day-by-day plan for 5–18 Apr 2027
 - `generated/tenantwall-helpers.pdf`: TenantWall: architecture diagram, method flowchart, IAM and bucket policies explained, alerting setup, isolation test plan and a checklist for the paper's audit and alerting section
+- `generated/tenantwall-paper-outline.pdf`: TenantWall paper: what to write in each section, figures and tables, a 7-week writing plan to 21 March, submission checklist and references
+- `generated/tenantwall/paper/`: IEEE-format LaTeX skeleton (main.tex with prompts, refs.bib, compiled main.pdf); upload to Overleaf to write
 - `generated/tenantwall/`: The TenantWall files themselves: diagrams (SVG and PNG), policy JSON, CloudTrail and alarm setup script, and an offline policy check script
 - `generated/security-lab-notebook.pdf`: CTF and PortSwigger write-up templates with worked examples, a STRIDE threat model of TenantWall, a lab command sheet, and web security by vulnerability class (linked to the free PortSwigger topics)
 - `generated/owasp-portswigger-lab-map.pdf`: OWASP Top 10:2025 mapped to free PortSwigger Academy topics (tick boxes), what changed since 2021, a 10-week lab order and 10 web-security interview questions with answers
@@ -62,12 +65,14 @@ How to use them with the plan: daily DSA from the Playbook, with the weekly plan
 
 **Interviews and applications**
 - `generated/company-files-2.pdf`: Six more company files (Uber, Salesforce AMTS, Adobe MTS-1, Walmart Global Tech, PhonePe, Zscaler): reported process, how the plan prepares you, mistakes, likely questions, sources
+- `generated/company-files-3.pdf`: Six more company files (Oracle, Cisco, Swiggy, Zomato/Eternal, CRED, CrowdStrike): reported process, preparation from the kit, mistakes, likely questions, sources
 - `generated/resume-kit.pdf`: One-page ATS-safe resume template (placeholders only), bullet formula with weak-to-strong examples for TenantWall, the AI-security and backend projects, where each number comes from, and a 12-point review checklist
 - `generated/resume/`: The template as Markdown and HTML, to paste into Google Docs or Word
 - `generated/interview-story-bank.pdf`: Six STAR story templates (prompts, no invented stories) mapped to Amazon's 16 Leadership Principles and Google's hiring attributes, a coverage matrix, a fill-in worksheet and 25 HR questions with answer outlines
 - `generated/profile-kit.pdf`: LinkedIn checklist, three headline options and an About template, GitHub pinning and project README guide, a profile README template, and a 4-week posting plan
 - `generated/profile/`: The LinkedIn text and the GitHub profile README as files to copy
 - `generated/mock-interview-scripts.pdf`: Six mock interview scripts for practising with a friend (2 DSA, Core CS, LLD, security, HR): timed phases, what to say, hints in order, 5-line rubric
+- `generated/mock-interview-scripts-2.pdf`: Six more mock scripts (DP on strings, trees and grids, OS and networks deep dive, fresher system design, TenantWall grilling, security scenario round); DSA problems only from tested Worked Solutions II
 - `generated/interview-day-kit.pdf`: OA-day and interview-day checklists, what to say when stuck, four email templates (referral, thank-you, follow-up, more time) and how to compare offers, with a worked example
 - `generated/interview-day/`: The email templates (Markdown) and an offer comparison sheet (CSV with formulas, opens in Google Sheets)
 

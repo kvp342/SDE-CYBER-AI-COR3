@@ -56,6 +56,7 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/kb2/` | Sources for v2 (a copy of `sources/kb` plus the two new modules); rebuild with `python3 generated/src/kb2_build.py` |
 | `generated/owasp-portswigger-lab-map.pdf` | OWASP Top 10:2025 mapped to free PortSwigger Academy topics (tick boxes), what changed since 2021, a 10-week lab order and 10 web-security interview questions with answers |
 | `generated/mock-interview-scripts.pdf` | Six mock interview scripts for practising with a friend (2 DSA, Core CS, LLD, security, HR): timed phases, what to say, hints in order, 5-line rubric |
+| `generated/mock-interview-scripts-2.pdf` | Six more mock scripts (DP on strings, trees and grids, OS and networks deep dive, fresher system design, TenantWall grilling, security scenario round); DSA problems only from tested Worked Solutions II |
 | `generated/linux-git-debugging-sheet.pdf` | Two pages of daily commands (files and text, processes, Git everyday and safe undo, C++ debugging with sanitizers, gdb, valgrind, strace), every one run and checked |
 | `generated/codeforces-ladder.pdf` | Codeforces ladder 800 → 1600: 10 topics × 5 rating bands (links to the official filtered problem set), a 6-week plan to the 31 March gate, and how rating moves |
 | `generated/interview-day-kit.pdf` | OA-day and interview-day checklists, what to say when stuck, four email templates (referral, thank-you, follow-up, more time) and how to compare offers, with a worked example |
