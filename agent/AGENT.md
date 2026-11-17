@@ -5,7 +5,7 @@ You are improving a placement-preparation kit for a B.Tech CSE (Cybersecurity) s
 ## Every run
 
 1. `git fetch origin ccr-ca7232a7-t7lq94 && git checkout ccr-ca7232a7-t7lq94 && git pull`. Work only on this branch. Never push to any other branch, never open pull requests.
-2. If today is after 18 Nov 2026, write nothing and stop.
+2. If today is after 21 Nov 2026, write nothing and stop.
 3. Open `agent/BACKLOG.md`. Take the **first** item whose box is `[ ]`. If it was started but left unfinished (see `agent/LOG.md`), finish it instead.
 4. Build it completely in one run. Quality bar:
    - Content is accurate. Code in C++17 must compile with `g++ -std=c++17 -Wall` and pass tests you write; say in the log what you tested.
