@@ -103,6 +103,7 @@ Every day (flashcards) and every Sunday (planner and weekly review).
 |---|---|
 | [654 flashcards, ready to import](anki-decks-guide.md) | One page: importing the decks into AnkiDroid, AnkiMobile or Anki desktop, and a daily routine |
 | [Weekly planner 16 Nov 2026 – 30 May 2027](weekly-planner.md) | 28 printable week pages (16 Nov 2026 – 30 May 2027): phase and goal, fixed dates (OA sets, TenantWall deadline, exams, AWS exam), daily tick boxes and a weekly review |
+| [34 weekly tests 30 minutes each](weekly-revision-tests.md) | 34 Sunday self-tests (22 Nov 2026 – 25 Jul 2027, none in the exam break), 30 minutes each: 3 pattern questions from that week's A2Z topics (then mixed), 4 Core CS MCQs on a five-week rotation, 1 AWS and 1 security question; answers on the next page; nothing repeats; all drawn from checked kit material |
 | [Linux, Git and debugging](linux-git-debugging-sheet.md) | Two pages of daily commands (files and text, processes, Git everyday and safe undo, C++ debugging with sanitizers, gdb, valgrind, strace), every one run and checked |
 
 ## More

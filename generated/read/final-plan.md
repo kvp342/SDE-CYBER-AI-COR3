@@ -93,7 +93,7 @@ Note: Google STEP is aimed at first- and second-year students, so it is unlikely
 ### Every week
 
 - **Saturday:** one OA set under exam conditions (90 minutes), from the date the set lists. Score it the same day.
-- **Sunday:** weekly review (30 min), redo the week's failed problems, plan next week.
+- **Sunday:** the week's 30-minute self-test ([weekly-revision-tests.pdf](weekly-revision-tests.md)), then weekly review (30 min), redo the week's failed problems, plan next week.
 - **From Feb:** one Codeforces contest a week. **From Mar:** one mock interview a week; two a week from 31 May.
 - **Rest:** one half-day off a week. Burnout costs more days than it saves (a senior's warning in your own plan).
 
@@ -182,6 +182,7 @@ Use the first column. Add the second only if you have time. The third wastes tim
 |-----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Daily DSA order             | [Striver-A2Z-DSA-Sheet-Classic.pdf](a2z/classic.md) |
 | Week plan and Sunday review | [weekly-planner.pdf](weekly-planner.md)                     |
+| Sunday 30-minute self-test  | [weekly-revision-tests.pdf](weekly-revision-tests.md)       |
 | Find any file               | [index-of-everything.pdf](index-of-everything.md)           |
 | Look up any topic           | [knowledge-base-v2.html](knowledge-base/README.md)             |
 

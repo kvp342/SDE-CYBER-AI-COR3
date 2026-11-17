@@ -87,6 +87,7 @@ How to use them with the plan: daily DSA from the Playbook, with the weekly plan
 - `generated/anki/*.csv`: 654 flashcards in 7 Anki decks (all 83 worked solutions, Core CS, patterns and C++ bugs, complexity, security, AWS, aptitude), built from material already checked in the kit
 - `generated/anki-decks-guide.pdf`: One page: importing the decks into AnkiDroid, AnkiMobile or Anki desktop, and a daily routine
 - `generated/weekly-planner.pdf`: 28 printable week pages (16 Nov 2026 – 30 May 2027): phase and goal, fixed dates (OA sets, TenantWall deadline, exams, AWS exam), daily tick boxes and a weekly review
+- `generated/weekly-revision-tests.pdf`: 34 Sunday self-tests (22 Nov 2026 – 25 Jul 2027, none in the exam break), 30 minutes each: 3 pattern questions from that week's A2Z topics (then mixed), 4 Core CS MCQs on a five-week rotation, 1 AWS and 1 security question; answers on the next page; nothing repeats; all drawn from checked kit material
 - `generated/knowledge-base-v2.html`: The Knowledge Base with 213 pages: the original 167 plus the 40 Worked Solutions II problems and the 6 new company files, all searchable and linked. Open it in a browser
 - `generated/kb2/`: Sources for v2 (a copy of `sources/kb` plus the two new modules); rebuild with `python3 generated/src/kb2_build.py`
 - `generated/linux-git-debugging-sheet.pdf`: Two pages of daily commands (files and text, processes, Git everyday and safe undo, C++ debugging with sanitizers, gdb, valgrind, strace), every one run and checked

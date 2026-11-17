@@ -30,7 +30,7 @@ GROUPS = [
  ("jobs", "Interviews and applications", "From the placement sprint (31 May); resume and profiles a month earlier.",
   ["generated/resume-kit.pdf", "generated/resume/", "generated/interview-story-bank.pdf", "generated/profile-kit.pdf", "generated/profile/", "generated/company-files-2.pdf", "generated/company-files-3.pdf", "generated/mock-interview-scripts.pdf", "generated/mock-interview-scripts-2.pdf", "generated/interview-day-kit.pdf", "generated/interview-day/"]),
  ("rev", "Revision and planning", "Every day (flashcards) and every Sunday (planner and weekly review).",
-  ["generated/anki/*.csv", "generated/anki-decks-guide.pdf", "generated/weekly-planner.pdf", "generated/linux-git-debugging-sheet.pdf"]),
+  ["generated/anki/*.csv", "generated/anki-decks-guide.pdf", "generated/weekly-planner.pdf", "generated/weekly-revision-tests.pdf", "generated/linux-git-debugging-sheet.pdf"]),
 ]
 listed = {p for *_, ps in GROUPS for p in ps}
 missing_desc = [p for p in listed if p not in DESC]

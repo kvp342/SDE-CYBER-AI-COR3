@@ -89,7 +89,7 @@ sec("daily", "The daily and weekly system", T(["Block", "Time", "What", "Open"],
  ["Log", "10 min", "Tracker, plus one Anki card for every problem you got wrong", K("generated/weekly-planner.pdf")],
 ]) + "<h3>Every week</h3>" + UL([
  "<b>Saturday:</b> one OA set under exam conditions (90 minutes), from the date the set lists. Score it the same day.",
- "<b>Sunday:</b> weekly review (30 min), redo the week's failed problems, plan next week.",
+ "<b>Sunday:</b> the week's 30-minute self-test (" + K("generated/weekly-revision-tests.pdf") + "), then weekly review (30 min), redo the week's failed problems, plan next week.",
  "<b>From Feb:</b> one Codeforces contest a week. <b>From Mar:</b> one mock interview a week; two a week from 31 May.",
  "<b>Rest:</b> one half-day off a week. Burnout costs more days than it saves (a senior's warning in your own plan)."]))
 
@@ -159,7 +159,7 @@ sec("mistakes", "Mistakes seniors warn about", UL([
 
 # ------------------------------------------------------------------ 12
 KITMAP = [
- ("Planning", [("Daily DSA order", "Striver-A2Z-DSA-Sheet-Classic.pdf"), ("Week plan and Sunday review", "generated/weekly-planner.pdf"), ("Find any file", "generated/index-of-everything.pdf"), ("Look up any topic", "generated/knowledge-base-v2.html")]),
+ ("Planning", [("Daily DSA order", "Striver-A2Z-DSA-Sheet-Classic.pdf"), ("Week plan and Sunday review", "generated/weekly-planner.pdf"), ("Sunday 30-minute self-test", "generated/weekly-revision-tests.pdf"), ("Find any file", "generated/index-of-everything.pdf"), ("Look up any topic", "generated/knowledge-base-v2.html")]),
  ("DSA and OAs", [("Pattern you cannot recognise", "generated/patterns-stl-card.pdf"), ("Worked problems, set II", "generated/worked-solutions-2.pdf"), ("Worked problems, set III", "generated/worked-solutions-3.pdf"), ("Saturday OA, sets 1–8", "generated/oa-simulation-packs.pdf"), ("Saturday OA, sets 9–16", "generated/oa-simulation-packs-2.pdf"), ("Saturday OA, sets 17–24 (placement season)", "generated/oa-simulation-packs-3.pdf"), ("Codeforces 1400 gate", "generated/codeforces-ladder.pdf"), ("Aptitude rounds", "generated/aptitude-pack.pdf")]),
  ("Core CS and design", [("Night before a Core CS round", "generated/core-cs-one-pagers.pdf"), ("MCQ rounds", "generated/core-cs-mcq-bank.pdf"), ("SQL questions", "generated/sql-pack.pdf"), ("LLD round", "generated/lld-pack.pdf"), ("System design", "generated/system-design-case-studies.pdf"), ("Linux, Git, gdb", "generated/linux-git-debugging-sheet.pdf")]),
  ("Security, cloud, research", [("AWS exam", "generated/aws-saa-c03-study-pack.pdf"), ("AWS hands-on labs", "generated/aws-lab-workbook.pdf"), ("Web security labs", "generated/owasp-portswigger-lab-map.pdf"), ("Lab write-ups", "generated/security-lab-notebook.pdf"), ("Security interview questions", "generated/cyber-security-interview-bank.pdf"), ("TenantWall build", "generated/tenantwall-helpers.pdf"), ("TenantWall paper", "generated/tenantwall-paper-outline.pdf")]),
