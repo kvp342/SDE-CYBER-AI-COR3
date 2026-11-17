@@ -63,7 +63,7 @@ This plan is short on purpose. Each line points to the file in the kit that has 
 | Apr 2027     | Exams until 7 Apr, then AWS final revision; exam in the week of 19 Apr. Keep applying.                                                                                                         | AWS SAA-C03 passed                                             |
 | May 2027     | Internship, or the AI-security project. Keep 1 hour of DSA a day either way.                                                                                                                   | Project deployed with tests, or internship started             |
 | Jun–Jul 2027 | Placement sprint: 2 mocks a week, LLD, system design, company files, OA sets 9–16. Watch for Flipkart GRiD and other hiring challenges (2026 registration closed in July).^([\[8\]](#-sources)) | Resume v3; 10+ mocks scored                                    |
-| Aug–Dec 2027 | Placements. Apply to big-tech new-grad and 6-month intern roles as they open. Use the interview day kit every time.                                                                            | Offer                                                          |
+| Aug–Dec 2027 | Placements. Apply to big-tech new-grad and 6-month intern roles as they open. OA sets 17–24 every Saturday from 17 Jul to 4 Sep. Use the interview day kit every time.                         | Offer                                                          |
 | Jan–Jun 2028 | 6-month internship or final semester. Convert the internship into a pre-placement offer (PPO).                                                                                                 | PPO or full-time role                                          |
 
 ## 04. Opportunity windows (confirm each on the official page)
@@ -187,15 +187,16 @@ Use the first column. Add the second only if you have time. The third wastes tim
 
 ### DSA and OAs
 
-| When                         | Open                                                                                                                                                   |
-|------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Pattern you cannot recognise | [patterns-stl-card.pdf](patterns-stl-card.md)         |
-| Worked problems, set II      | [worked-solutions-2.pdf](worked-solutions-2.md)       |
-| Worked problems, set III     | [worked-solutions-3.pdf](worked-solutions-3.md)       |
-| Saturday OA, sets 1–8        | [oa-simulation-packs.pdf](oa-simulation-packs.md)     |
-| Saturday OA, sets 9–16       | [oa-simulation-packs-2.pdf](oa-simulation-packs-2.md) |
-| Codeforces 1400 gate         | [codeforces-ladder.pdf](codeforces-ladder.md)         |
-| Aptitude rounds              | [aptitude-pack.pdf](aptitude-pack.md)                 |
+| When                                       | Open                                                                                                                                                   |
+|--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Pattern you cannot recognise               | [patterns-stl-card.pdf](patterns-stl-card.md)         |
+| Worked problems, set II                    | [worked-solutions-2.pdf](worked-solutions-2.md)       |
+| Worked problems, set III                   | [worked-solutions-3.pdf](worked-solutions-3.md)       |
+| Saturday OA, sets 1–8                      | [oa-simulation-packs.pdf](oa-simulation-packs.md)     |
+| Saturday OA, sets 9–16                     | [oa-simulation-packs-2.pdf](oa-simulation-packs-2.md) |
+| Saturday OA, sets 17–24 (placement season) | [oa-simulation-packs-3.pdf](oa-simulation-packs-3.md) |
+| Codeforces 1400 gate                       | [codeforces-ladder.pdf](codeforces-ladder.md)         |
+| Aptitude rounds                            | [aptitude-pack.pdf](aptitude-pack.md)                 |
 
 ### Core CS and design
 

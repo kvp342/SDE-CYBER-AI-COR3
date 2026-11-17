@@ -13,7 +13,7 @@ KBURL = "https://claude.ai/artifact/McuS723LTAb16Q6SpdUsAT"
 BUILDERS = {"ai_starter": "ai.html", "anki": "anki.html", "apti": "apti.html", "aws_pack": "aws.html", "awslab": "awslab.html", "cli_sheet": "cli.html",
  "company2": "co.html", "company3": "co3.html", "cp_ladder": "cp.html", "docker_ci": "dc.html", "elite_pack": "el.html", "final_plan": "final_plan.html",
  "index_all": "ia.html", "interview_day": "id.html", "lab_map": "lm.html", "lab_notebook": "lab.html", "lld_pack": "lld.html", "mcq": "mcq.html",
- "mock_scripts": "ms.html", "mock_scripts2": "ms2.html", "oa_packs": "oa.html", "oa_packs2": "oa2.html", "onepagers": "op.html", "paper_outline": "po.html",
+ "mock_scripts": "ms.html", "mock_scripts2": "ms2.html", "oa_packs": "oa.html", "oa_packs2": "oa2.html", "oa_packs3": "oa3.html", "onepagers": "op.html", "paper_outline": "po.html",
  "pattern_stl": "ps.html", "planner": "pl.html", "profile_kit": "pk.html", "resume_kit": "rk.html", "roadmapsh": "roadmapsh.html", "secbank": "secbank.html",
  "sql_pack": "sql.html", "story_bank": "sb.html", "sysdesign": "sd.html", "tenantwall": "tw.html", "worked2": "w2.html", "worked3": "w3.html"}
 CAPTURE = '''import pathlib, runpy, sys
@@ -36,7 +36,10 @@ sys.argv = [path]; runpy.run_path(path, run_name="__main__")
 def capture(stash):
     """Run every builder (one at a time: they share temporary file names) in a copy of the repo."""
     tmp = pathlib.Path(tempfile.mkdtemp()); repo = tmp / "repo"; repo.mkdir()
-    subprocess.run(f"git -C {ROOT} archive HEAD | tar -x -C {repo}", shell=True, check=True)
+    files = subprocess.run(["git", "-C", str(ROOT), "ls-files", "-co", "--exclude-standard"], capture_output=True, text=True, check=True).stdout.split("\n")
+    for f in filter(None, files):                                              # the working tree, so new uncommitted files are included
+        if f.startswith("generated/read/") or not (ROOT / f).is_file(): continue
+        (repo / f).parent.mkdir(parents=True, exist_ok=True); shutil.copy2(ROOT / f, repo / f)
     for f in ("to_markdown.py",): shutil.copy(SRC / f, repo / "generated" / "src" / f)
     (tmp / "capture.py").write_text(CAPTURE)
     for b in BUILDERS:

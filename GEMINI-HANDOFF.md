@@ -34,6 +34,7 @@ How to use them with the plan: daily DSA from the Playbook, with the weekly plan
 - `generated/worked-solutions-3.pdf`: Worked Solutions III: 40 more most-asked LeetCode problems (none in Parts I/II or the OA packs), each with idea, steps, tested C++17 code, traps and follow-ups; clickable index by pattern
 - `generated/oa-simulation-packs.pdf`: 8 timed online-assessment sets (3 LeetCode problems, 90 minutes each, 24 problems with no repeats), dated to the plan, with a scoring guide, a record table and a solution page per set (sketch, edge cases, tested C++17)
 - `generated/oa-simulation-packs-2.pdf`: 8 more timed OA sets (9–16), 24 new problems not in the first pack or the worked solutions, dated Mar–Jul 2027, with scoring guide and tested solutions
+- `generated/oa-simulation-packs-3.pdf`: 8 more timed OA sets (17–24) for placement season, Saturdays 17 Jul – 4 Sep 2027, each with a company-style theme; 24 new problems not in OA packs I–II or Worked Solutions I–III; scoring guide, question and solution pages, tested C++17
 - `generated/core-cs-mcq-bank.pdf`: 150 OA-style MCQs (30 each on OS, DBMS, CN, OOP, C++ output) with answer keys on separate pages and a reason per answer; C++ outputs, SQL, subnet and page-fault answers machine-checked
 - `generated/patterns-stl-card.pdf`: One-page pattern decision tree (problem signal → pattern → Knowledge Base page), a C++ STL card with complexities, and 30 common C++ contest bugs with fixes
 - `generated/stl_check.cpp`: Compiles and runs every STL call on the card (proof the card is correct)
