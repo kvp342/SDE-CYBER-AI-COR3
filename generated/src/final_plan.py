@@ -1,5 +1,5 @@
-"""The Placement Bible: one short reference book that ties the whole kit together, from Nov 2026 to placements.
-Run from the repo root: python3 generated/src/bible.py"""
+"""Final plan: one short document that ties the whole kit together, from Nov 2026 to placements.
+Run from the repo root: python3 generated/src/final_plan.py"""
 import html, io, pathlib, re, subprocess
 from pypdf import PdfReader, PdfWriter
 from pypdf.generic import Fit
@@ -37,7 +37,7 @@ sec("rules", "Read this first: the seven rules", UL([
  "<b>Apply early.</b> Internship applications often open 6–8 months before the start date." + S("https://thenewviews.com/sde-internships/", "15+ Top SDE Internships 2026 (apply 6–8 months early)") + " Section 4 lists the windows.",
  "<b>Proof beats claims.</b> Two deployed projects, a GitHub with tests and CI, and write-ups of your security labs. Your resume should point to things a recruiter can open.",
  "<b>Weekly review, every Sunday.</b> 30 minutes: what slipped, what to cut, next week's three priorities (" + K("generated/weekly-planner.pdf") + ")."]) +
- '<p class="note">This book is short on purpose. Each line points to the file in the kit that has the detail. Dates for outside programmes come from the sources listed at the end; always confirm on the official page before applying.</p>')
+ '<p class="note">This plan is short on purpose. Each line points to the file in the kit that has the detail. Dates for outside programmes come from the sources listed at the end; always confirm on the official page before applying.</p>')
 
 # ------------------------------------------------------------------ 2
 sec("phases", "The plan on one page", T(["When", "Phase", "Goal", "Open"], [
@@ -184,8 +184,8 @@ def body(pages):
     pg = lambda k: str(pages.get(k, "00")) if pages else "00"
     ix = "".join(f'<tr><td><a href="#{i}">{n + 1}. {E(t)}</a></td><td class="pg"><a href="#{i}">{pg(i)}</a></td></tr>' for n, (i, t, _) in enumerate(SEC))
     ix += f'<tr><td><a href="#src">Sources ({len(SOURCES)})</a></td><td class="pg"><a href="#src">{pg("src")}</a></td></tr>'
-    out = [f'''<section><p class="eb">PLACEMENT BIBLE · NOV 2026 TO PLACEMENTS</p><h1>The short book<br><span>that runs the kit</span></h1>
-<p class="lead">Internships from March 2027, placements from August 2027. This book is the plan, the rules, the deadlines and the targets on a few pages, filtered from what seniors and guides recommend and tied to the files in this kit. Read Section 1 now, Section 2 every month, and Section 12 whenever you are unsure what to open.</p>
+    out = [f'''<section><p class="eb">FINAL PLAN · NOV 2026 TO PLACEMENTS</p><h1>Your final plan<br><span>to internships and placements</span></h1>
+<p class="lead">Internships from March 2027, placements from August 2027. This is the plan, the rules, the deadlines and the targets on a few pages, filtered from what seniors and guides recommend and tied to the files in this kit. Read Section 1 now, Section 2 every month, and Section 12 whenever you are unsure what to open.</p>
 <table class="ix"><thead><tr><th>Section</th><th class="pg">Page</th></tr></thead><tbody>{ix}</tbody></table>
 <p class="note">Today's action: if research appeals to you, the Science Academies summer research fellowship (SRFP) closes on 30 November 2026 (Section 4). Everything else starts with Striver A2Z on 18 November.</p></section>''']
     for n, (i, t, b) in enumerate(SEC):
@@ -195,8 +195,8 @@ def body(pages):
     return "".join(out)
 js = SRC / "rb.js"
 def render(pages, name):
-    (SRC / "bible.html").write_text(f'<!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet"><style>{CSS}</style></head><body><div id="top"></div>{body(pages)}</body></html>')
-    js.write_text("const { chromium } = require('playwright'); (async () => { const b = await chromium.launch(); const p = await b.newPage(); await p.goto('file://' + __dirname + '/bible.html', { waitUntil: 'networkidle' }); await p.evaluate(() => document.fonts.ready); await p.pdf({ path: __dirname + '/" + name + "', format: 'A4', printBackground: true, preferCSSPageSize: true }); await b.close(); })();")
+    (SRC / "final_plan.html").write_text(f'<!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet"><style>{CSS}</style></head><body><div id="top"></div>{body(pages)}</body></html>')
+    js.write_text("const { chromium } = require('playwright'); (async () => { const b = await chromium.launch(); const p = await b.newPage(); await p.goto('file://' + __dirname + '/final_plan.html', { waitUntil: 'networkidle' }); await p.evaluate(() => document.fonts.ready); await p.pdf({ path: __dirname + '/" + name + "', format: 'A4', printBackground: true, preferCSSPageSize: true }); await b.close(); })();")
     subprocess.run(["node", str(js)], check=True)
     r = PdfReader(str(SRC / name)); return {k.lstrip("/"): r.get_destination_page_number(v) + 1 for k, v in r.named_destinations.items()}, len(r.pages)
 d1, n1 = render(None, "b1.pdf"); d2, n2 = render(d1, "b2.pdf"); assert n1 == n2 and all(d1[i] == d2[i] for i, _, _ in SEC)
@@ -208,6 +208,6 @@ for k, pg in enumerate(w.pages):
     if k == 0: continue
     buf = io.BytesIO(); cv = canvas.Canvas(buf, pagesize=(float(pg.mediabox.width), float(pg.mediabox.height))); cv.setFont("Helvetica", 7.5); cv.setFillGray(.55)
     cv.drawRightString(float(pg.mediabox.width) - 26, 14, f"{k + 1} / {NP}"); cv.save(); buf.seek(0); pg.merge_page(PdfReader(buf).pages[0]); pg.compress_content_streams(level=9)
-w.add_metadata({"/Title": "Placement Bible"}); w.write(str(OUT / "placement-bible.pdf"))
-for f in ("b1.pdf", "b2.pdf", "rb.js", "bible.html"): (SRC / f).unlink()
+w.add_metadata({"/Title": "Final plan"}); w.write(str(OUT / "final-plan.pdf"))
+for f in ("b1.pdf", "b2.pdf", "rb.js", "final_plan.html"): (SRC / f).unlink()
 print(NP, "pages;", len(USED), "kit links;", len(SOURCES), "sources;", d2)

@@ -20,7 +20,7 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `GEMINI-HANDOFF.md` | Full context to paste into another AI assistant |
 | `sources/` | Scripts that build all of the above |
 | `generated/roadmapsh-checklists.pdf` | roadmap.sh maps (Backend, Cyber Security, AWS, CS, System Design, DevOps) as checklists, mapped to the kit with gaps marked |
-| `generated/placement-bible.pdf` | The Placement Bible: the plan, seven rules, month-by-month actions to placements, opportunity windows (SRFP, GSoC, LFX, IIT research, hiring challenges), daily system, checkpoints, filtered resources seniors used, internship hunt playbook, and a 'when X, open Y' map of the kit; 19 cited sources |
+| `generated/final-plan.pdf` | Final plan: the plan, seven rules, month-by-month actions to placements, opportunity windows (SRFP, GSoC, LFX, IIT research, hiring challenges), daily system, checkpoints, filtered resources seniors used, internship hunt playbook, and a 'when X, open Y' map of the kit; 19 cited sources |
 | `generated/worked-solutions-2.pdf` | Worked Solutions II: 40 more most-asked LeetCode problems (not in the Knowledge Base set), each with idea, steps, tested C++17 code, traps and follow-ups; clickable index by pattern |
 | `generated/worked-solutions-3.pdf` | Worked Solutions III: 40 more most-asked LeetCode problems (none in Parts I/II or the OA packs), each with idea, steps, tested C++17 code, traps and follow-ups; clickable index by pattern |
 | `generated/oa-simulation-packs.pdf` | 8 timed online-assessment sets (3 LeetCode problems, 90 minutes each, 24 problems with no repeats), dated to the plan, with a scoring guide, a record table and a solution page per set (sketch, edge cases, tested C++17) |
