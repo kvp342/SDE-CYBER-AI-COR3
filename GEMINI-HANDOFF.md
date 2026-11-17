@@ -26,8 +26,12 @@ An hourly agent (instructions in `agent/AGENT.md`, task list in `agent/BACKLOG.m
 
 How to use them with the plan: daily DSA from the Playbook, with the weekly planner and the Anki decks; OA practice sets on their dates (13 Feb to 3 Jul); one-pagers and the MCQ bank before Core CS rounds; the AWS pack for 5 to 18 Apr; the TenantWall helpers for the paper (deadline 21 Mar); the two starters for the May project and the backend project; resume, story bank, profile kit, company files and mock scripts in the placement sprint (31 May onwards); the Elite pack only if the 31 Mar gate is passed; the Codeforces ladder from 8 Feb; the interview day kit from the first OA. Two facts changed since the plan was written: the OWASP Top 10 has a 2025 edition (see the lab map), and the Knowledge Base now has a v2 file with 213 pages (`generated/knowledge-base-v2.html`).
 
+**Start here**
+- `generated/placement-bible.pdf`: The Placement Bible: the plan, seven rules, month-by-month actions to placements, opportunity windows (SRFP, GSoC, LFX, IIT research, hiring challenges), daily system, checkpoints, filtered resources seniors used, internship hunt playbook, and a 'when X, open Y' map of the kit; 19 cited sources
+
 **Practice: DSA, OAs and contests**
 - `generated/worked-solutions-2.pdf`: Worked Solutions II: 40 more most-asked LeetCode problems (not in the Knowledge Base set), each with idea, steps, tested C++17 code, traps and follow-ups; clickable index by pattern
+- `generated/worked-solutions-3.pdf`: Worked Solutions III: 40 more most-asked LeetCode problems (none in Parts I/II or the OA packs), each with idea, steps, tested C++17 code, traps and follow-ups; clickable index by pattern
 - `generated/oa-simulation-packs.pdf`: 8 timed online-assessment sets (3 LeetCode problems, 90 minutes each, 24 problems with no repeats), dated to the plan, with a scoring guide, a record table and a solution page per set (sketch, edge cases, tested C++17)
 - `generated/oa-simulation-packs-2.pdf`: 8 more timed OA sets (9–16), 24 new problems not in the first pack or the worked solutions, dated Mar–Jul 2027, with scoring guide and tested solutions
 - `generated/core-cs-mcq-bank.pdf`: 150 OA-style MCQs (30 each on OS, DBMS, CN, OOP, C++ output) with answer keys on separate pages and a reason per answer; C++ outputs, SQL, subnet and page-fault answers machine-checked

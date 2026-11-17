@@ -17,7 +17,7 @@ DESC["README.md"] = "What this repository is, with a table of every main file"
 DESC[SELF] = "This index: every file in the repository, what it is and when to use it"
 FILES = sorted(set(subprocess.run(["git", "ls-files"], cwd=ROOT, capture_output=True, text=True).stdout.split()) | {SELF})
 GROUPS = [
- ("start", "Start here", "Open these first; they link to most of the rest.", ["index.html", "playbook.html", "roadmap.html", "generated/knowledge-base-v2.html", "generated/kb2/", "knowledge-base.html", "cheat-sheet.html", "README.md", "GEMINI-HANDOFF.md", "generated/", SELF]),
+ ("start", "Start here", "Open these first; they link to most of the rest.", ["generated/placement-bible.pdf", "index.html", "playbook.html", "roadmap.html", "generated/knowledge-base-v2.html", "generated/kb2/", "knowledge-base.html", "cheat-sheet.html", "README.md", "GEMINI-HANDOFF.md", "generated/", SELF]),
  ("pdf", "Main PDFs", "For offline reading and printing.", ["Placement-Prep-Complete.pdf", "DSA-Placement-Playbook.pdf", "Placement-Knowledge-Base.pdf", "Tier3-to-Top-Offer-Placement-Guide.pdf", "Striver-A2Z-DSA-Sheet-Classic.pdf", "Striver-A2Z-DSA-Sheet-2026.pdf"]),
  ("dsa", "DSA, OAs and the Elite track", "Daily from 18 Nov; OA sets on their dates (13 Feb to 3 Jul); the Elite pack only if the 31 Mar gate is passed.",
   ["generated/worked-solutions-2.pdf", "generated/oa-simulation-packs.pdf", "generated/oa-simulation-packs-2.pdf", "generated/patterns-stl-card.pdf", "generated/stl_check.cpp", "generated/aptitude-pack.pdf", "generated/elite-track-pack.pdf", "generated/elite/", "generated/codeforces-ladder.pdf"]),
