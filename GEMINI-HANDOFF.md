@@ -76,6 +76,7 @@ How to use them with the plan: daily DSA from the Playbook, with the weekly plan
 - `generated/ai-security-starter/`: The starter itself: a RAG assistant over security notes, 20 evaluation questions, 12 prompt-injection attacks, defence module, 8 offline tests; one flag switches to Claude
 - `generated/backend-starter/`: Study-tracker REST API (FastAPI, SQLite, JWT login, rate limiting) with 10 security-focused tests, an architecture diagram and a security checklist in its README
 - `generated/docker-ci-guide.pdf`: One page: the Dockerfiles and GitHub Actions workflows added to both starters, explained line by line, with run commands
+- `generated/network-programming-project.pdf` (code in `generated/netproj/`): C++ network programming project: a poll()-based multi-client chat server and a minimal HTTP/1.1 server (code in generated/netproj/), 11 tests over real localhost sockets under ASan/UBSan, plus a guide to each syscall, TCP framing, HTTP basics, and the interview questions it prepares you for
 - `generated/open-source-gsoc-guide.pdf` (script in `generated/oss/`): Open source from first PR to GSoC/LFX: which programme fits (official rules: age, beginner status, project sizes, evaluations), a week-by-week plan from December to the March window, finding first issues, the fork–branch–rebase PR workflow (tested end to end), PR and message templates, proposal outline; 8 official sources
 
 **Interviews and applications**

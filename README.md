@@ -61,6 +61,8 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/profile-kit.pdf` | LinkedIn checklist, three headline options and an About template, GitHub pinning and project README guide, a profile README template, and a 4-week posting plan |
 | `generated/profile/` | The LinkedIn text and the GitHub profile README as files to copy |
 | `generated/docker-ci-guide.pdf` | One page: the Dockerfiles and GitHub Actions workflows added to both starters, explained line by line, with run commands |
+| `generated/network-programming-project.pdf` | C++ network programming project: a poll()-based multi-client chat server and a minimal HTTP/1.1 server (code in generated/netproj/), 11 tests over real localhost sockets under ASan/UBSan, plus a guide to each syscall, TCP framing, HTTP basics, and the interview questions it prepares you for |
+| `generated/netproj/` | chat_server.cpp, http_server.cpp and test_net.py (python3 test_net.py) |
 | `generated/open-source-gsoc-guide.pdf` | Open source from first PR to GSoC/LFX: which programme fits (official rules: age, beginner status, project sizes, evaluations), a week-by-week plan from December to the March window, finding first issues, the fork–branch–rebase PR workflow (tested end to end), PR and message templates, proposal outline; 8 official sources |
 | `generated/oss/` | git_workflow_check.sh: runs the guide's whole git workflow against local test repositories |
 | `generated/system-design-case-studies.pdf` | Five designs (URL shortener, chat, news feed, notifications, file sync): requirements, computed estimates, API, data model, diagram, design and trade-offs |
