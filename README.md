@@ -75,6 +75,8 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/linux-git-debugging-sheet.pdf` | Two pages of daily commands (files and text, processes, Git everyday and safe undo, C++ debugging with sanitizers, gdb, valgrind, strace), every one run and checked |
 | `generated/codeforces-ladder.pdf` | Codeforces ladder 800 → 1600: 10 topics × 5 rating bands (links to the official filtered problem set), a 6-week plan to the 31 March gate, and how rating moves |
 | `generated/interview-day-kit.pdf` | OA-day and interview-day checklists, what to say when stuck, four email templates (referral, thank-you, follow-up, more time) and how to compare offers, with a worked example |
+| `generated/applications-outreach-kit.pdf` | Applications tracker (CSV with follow-up-date and funnel formulas, checked on example rows) plus five new outreach templates (LinkedIn note, recruiter email, alumnus advice, professor research email, status check; placeholders only) and a weekly 10-applications/5-messages routine |
+| `generated/outreach/` | applications-tracker.csv (import into Google Sheets) and outreach-templates.md |
 | `generated/interview-day/` | The email templates (Markdown) and an offer comparison sheet (CSV with formulas, opens in Google Sheets) |
 | `generated/tenantwall-paper-outline.pdf` | TenantWall paper: what to write in each section, figures and tables, a 7-week writing plan to 21 March, submission checklist and references |
 | `generated/tenantwall/paper/` | IEEE-format LaTeX skeleton (main.tex with prompts, refs.bib, compiled main.pdf); upload to Overleaf to write |

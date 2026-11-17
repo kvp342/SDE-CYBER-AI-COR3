@@ -99,6 +99,7 @@ From the placement sprint (31 May); resume and profiles a month earlier.
 | [Mock interview scripts](mock-interview-scripts.md) | Six mock interview scripts for practising with a friend (2 DSA, Core CS, LLD, security, HR): timed phases, what to say, hints in order, 5-line rubric |
 | [Mock interview scripts II](mock-interview-scripts-2.md) | Six more mock scripts (DP on strings, trees and grids, OS and networks deep dive, fresher system design, TenantWall grilling, security scenario round); DSA problems only from tested Worked Solutions II |
 | [Interview day kit](interview-day-kit.md) | OA-day and interview-day checklists, what to say when stuck, four email templates (referral, thank-you, follow-up, more time) and how to compare offers, with a worked example |
+| [Track every application and every message](applications-outreach-kit.md) | Applications tracker (CSV with follow-up-date and funnel formulas, checked on example rows) plus five new outreach templates (LinkedIn note, recruiter email, alumnus advice, professor research email, status check; placeholders only) and a weekly 10-applications/5-messages routine |
 
 ## Revision and planning
 

@@ -237,15 +237,16 @@ Use the first column. Add the second only if you have time. The third wastes tim
 
 ### Applying and interviews
 
-| When                    | Open                                                                                                                                                         |
-|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Resume                  | [resume-kit.pdf](resume-kit.md)                             |
-| LinkedIn and GitHub     | [profile-kit.pdf](profile-kit.md)                           |
-| Behavioural stories     | [interview-story-bank.pdf](interview-story-bank.md)         |
-| Before a company's test | [company-files-3.pdf](company-files-3.md)                   |
-| Practice with a friend  | [mock-interview-scripts-2.pdf](mock-interview-scripts-2.md) |
-| OA or interview day     | [interview-day-kit.pdf](interview-day-kit.md)               |
-| Daily revision          | [anki-decks-guide.pdf](anki-decks-guide.md)                 |
+| When                               | Open                                                                                                                                                           |
+|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Resume                             | [resume-kit.pdf](resume-kit.md)                               |
+| LinkedIn and GitHub                | [profile-kit.pdf](profile-kit.md)                             |
+| Behavioural stories                | [interview-story-bank.pdf](interview-story-bank.md)           |
+| Before a company's test            | [company-files-3.pdf](company-files-3.md)                     |
+| Practice with a friend             | [mock-interview-scripts-2.pdf](mock-interview-scripts-2.md)   |
+| OA or interview day                | [interview-day-kit.pdf](interview-day-kit.md)                 |
+| Tracking applications and outreach | [applications-outreach-kit.pdf](applications-outreach-kit.md) |
+| Daily revision                     | [anki-decks-guide.pdf](anki-decks-guide.md)                   |
 
 ## ··. Sources
 

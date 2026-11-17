@@ -28,7 +28,7 @@ GROUPS = [
  ("proj", "Projects", "Backend project when the plan schedules it; AI-security project in May.",
   ["generated/backend-starter/", "generated/ai-security-starter/", "generated/ai-security-starter-guide.pdf", "generated/docker-ci-guide.pdf", "generated/open-source-gsoc-guide.pdf", "generated/oss/"]),
  ("jobs", "Interviews and applications", "From the placement sprint (31 May); resume and profiles a month earlier.",
-  ["generated/resume-kit.pdf", "generated/resume/", "generated/interview-story-bank.pdf", "generated/profile-kit.pdf", "generated/profile/", "generated/company-files-2.pdf", "generated/company-files-3.pdf", "generated/mock-interview-scripts.pdf", "generated/mock-interview-scripts-2.pdf", "generated/interview-day-kit.pdf", "generated/interview-day/"]),
+  ["generated/resume-kit.pdf", "generated/resume/", "generated/interview-story-bank.pdf", "generated/profile-kit.pdf", "generated/profile/", "generated/company-files-2.pdf", "generated/company-files-3.pdf", "generated/mock-interview-scripts.pdf", "generated/mock-interview-scripts-2.pdf", "generated/interview-day-kit.pdf", "generated/applications-outreach-kit.pdf", "generated/outreach/", "generated/interview-day/"]),
  ("rev", "Revision and planning", "Every day (flashcards) and every Sunday (planner and weekly review).",
   ["generated/anki/*.csv", "generated/anki-decks-guide.pdf", "generated/weekly-planner.pdf", "generated/weekly-revision-tests.pdf", "generated/linux-git-debugging-sheet.pdf"]),
 ]

@@ -1,0 +1,6 @@
+Company,Role,Link,Applied (YYYY-MM-DD),Referral (who),Status,Next action,Follow up on,Notes,,Summary,Count
+Example Co A,SDE Intern,https://example.com/jobs/1,2027-02-01,,Applied,Ask an alumnus for a referral,"=IF(D2="""","""",IF(OR(F2=""Offer"",F2=""Rejected"",F2=""Withdrawn""),"""",DATEVALUE(D2)+7))",Found on careers page,,Applications,=COUNTA(A2:A200)
+Example Co B,Security Intern,https://example.com/jobs/2,2027-02-03,"Alumnus, batch of 2025",OA,Do OA by 2027-02-10,"=IF(D3="""","""",IF(OR(F3=""Offer"",F3=""Rejected"",F3=""Withdrawn""),"""",DATEVALUE(D3)+7))",OA link came by email,,Referred,"=COUNTIF(F2:F200,""Referred"")+COUNTIF(E2:E200,""?*"")"
+Example Co C,Cloud Intern,https://example.com/jobs/3,2027-02-05,,Rejected,Ask for feedback,"=IF(D4="""","""",IF(OR(F4=""Offer"",F4=""Rejected"",F4=""Withdrawn""),"""",DATEVALUE(D4)+7))",,,Reached OA or later,"=COUNTIF(F2:F200,""OA"")+COUNTIF(F2:F200,""Interview"")+COUNTIF(F2:F200,""Offer"")"
+,,,,,,,,,,Interviews,"=COUNTIF(F2:F200,""Interview"")+COUNTIF(F2:F200,""Offer"")"
+,,,,,,,,,,Offers,"=COUNTIF(F2:F200,""Offer"")"
