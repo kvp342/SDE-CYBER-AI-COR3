@@ -59,6 +59,7 @@ How to use them with the plan: daily DSA from the Playbook, with the weekly plan
 - `generated/tenantwall/paper/`: IEEE-format LaTeX skeleton (main.tex with prompts, refs.bib, compiled main.pdf); upload to Overleaf to write
 - `generated/tenantwall/`: The TenantWall files themselves: diagrams (SVG and PNG), policy JSON, CloudTrail and alarm setup script, and an offline policy check script
 - `generated/security-lab-notebook.pdf`: CTF and PortSwigger write-up templates with worked examples, a STRIDE threat model of TenantWall, a lab command sheet, and web security by vulnerability class (linked to the free PortSwigger topics)
+- `generated/cyber-security-interview-bank.pdf`: 97 security interview questions with model answers in 8 sections (fundamentals, network, web, cryptography, identity and cloud, incident response and SOC, Linux/Windows/AD, scenarios); computable facts checked by script; official sources per section
 - `generated/owasp-portswigger-lab-map.pdf`: OWASP Top 10:2025 mapped to free PortSwigger Academy topics (tick boxes), what changed since 2021, a 10-week lab order and 10 web-security interview questions with answers
 
 **Projects**

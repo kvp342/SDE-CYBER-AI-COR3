@@ -56,6 +56,7 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/elite/` | The 8 C++ exercises, the timing harness and a sample of measured timings |
 | `generated/knowledge-base-v2.html` | The Knowledge Base with 213 pages: the original 167 plus the 40 Worked Solutions II problems and the 6 new company files, all searchable and linked. Open it in a browser |
 | `generated/kb2/` | Sources for v2 (a copy of `sources/kb` plus the two new modules); rebuild with `python3 generated/src/kb2_build.py` |
+| `generated/cyber-security-interview-bank.pdf` | 97 security interview questions with model answers in 8 sections (fundamentals, network, web, cryptography, identity and cloud, incident response and SOC, Linux/Windows/AD, scenarios); computable facts checked by script; official sources per section |
 | `generated/owasp-portswigger-lab-map.pdf` | OWASP Top 10:2025 mapped to free PortSwigger Academy topics (tick boxes), what changed since 2021, a 10-week lab order and 10 web-security interview questions with answers |
 | `generated/mock-interview-scripts.pdf` | Six mock interview scripts for practising with a friend (2 DSA, Core CS, LLD, security, HR): timed phases, what to say, hints in order, 5-line rubric |
 | `generated/mock-interview-scripts-2.pdf` | Six more mock scripts (DP on strings, trees and grids, OS and networks deep dive, fresher system design, TenantWall grilling, security scenario round); DSA problems only from tested Worked Solutions II |
