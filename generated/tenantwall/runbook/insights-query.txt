@@ -1,0 +1,4 @@
+fields @timestamp, eventName, errorCode, userIdentity.arn, requestParameters.bucketName, requestParameters.key
+| filter errorCode like /AccessDenied|UnauthorizedOperation/
+| sort @timestamp desc
+| limit 20

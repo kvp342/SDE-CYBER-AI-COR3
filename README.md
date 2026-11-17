@@ -91,6 +91,8 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/outreach/` | applications-tracker.csv (import into Google Sheets) and outreach-templates.md |
 | `generated/interview-day/` | The email templates (Markdown) and an offer comparison sheet (CSV with formulas, opens in Google Sheets) |
 | `generated/tenantwall-paper-outline.pdf` | TenantWall paper: what to write in each section, figures and tables, a 7-week writing plan to 21 March, submission checklist and references |
+| `generated/tenantwall-one-day-runbook.pdf` | TenantWall one-day runbook: the professor's five changes (explicit vs implicit deny, Policy Generator + Access Analyzer, CloudTrail with S3 data events, CloudWatch alarms with email, AWS-icon architecture diagram and flowchart) step by step with your real names, an hour-by-hour plan, paper changes, a 10-minute demo script with 13 screenshots, troubleshooting, cost and cleanup; 18 CLI commands checked against the AWS models and CLI parser |
+| `generated/tenantwall/runbook/` | CLI commands, metric filter patterns and the Logs Insights query used in the runbook |
 | `generated/tenantwall/paper/` | IEEE-format LaTeX skeleton (main.tex with prompts, refs.bib, compiled main.pdf); upload to Overleaf to write |
 | `generated/oa-simulation-packs-2.pdf` | 8 more timed OA sets (9–16), 24 new problems not in the first pack or the worked solutions, dated Mar–Jul 2027, with scoring guide and tested solutions |
 | `generated/oa-simulation-packs-3.pdf` | 8 more timed OA sets (17–24) for placement season, Saturdays 17 Jul – 4 Sep 2027, each with a company-style theme; 24 new problems not in OA packs I–II or Worked Solutions I–III; scoring guide, question and solution pages, tested C++17 |

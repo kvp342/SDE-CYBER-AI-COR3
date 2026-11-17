@@ -1,0 +1,22 @@
+# Step 1: explicit vs implicit deny (simulator and decoding an EC2 refusal)
+aws iam simulate-principal-policy --policy-source-arn arn:aws:iam::$ACCOUNT:user/$USER_A --action-names s3:GetObject --resource-arns arn:aws:s3:::$BUCKET/$TEAM_B/report.txt
+aws iam simulate-principal-policy --policy-source-arn arn:aws:iam::$ACCOUNT:user/$USER_A --action-names ec2:CreateVpc --resource-arns '*'
+aws sts decode-authorization-message --encoded-message $ENCODED --query DecodedMessage --output text
+# Step 2: validate every policy with IAM Access Analyzer
+aws accessanalyzer validate-policy --policy-type IDENTITY_POLICY --policy-document file://TenantABAC_EC2.json
+aws accessanalyzer validate-policy --policy-type IDENTITY_POLICY --policy-document file://TenantABAC_S3.json
+aws accessanalyzer validate-policy --policy-type RESOURCE_POLICY --validate-policy-resource-type AWS::S3::Bucket --policy-document file://bucket-policy.json
+# Step 3: trail with S3 data events for the tenant bucket only
+aws cloudtrail create-trail --name tenantwall-trail --s3-bucket-name $LOG_BUCKET --cloud-watch-logs-log-group-arn $LOG_GROUP_ARN --cloud-watch-logs-role-arn $TRAIL_ROLE_ARN
+aws cloudtrail put-event-selectors --trail-name tenantwall-trail --event-selectors file://data-event-selectors.json
+aws cloudtrail start-logging --name tenantwall-trail
+aws cloudtrail get-trail-status --name tenantwall-trail
+# Step 4: metric filters, SNS email and alarms
+aws logs put-metric-filter --log-group-name $LOG_GROUP --filter-name tenantwall-access-denied --filter-pattern file://filter-denied.txt --metric-transformations metricName=AccessDeniedCount,metricNamespace=TenantWall,metricValue=1,defaultValue=0
+aws logs put-metric-filter --log-group-name $LOG_GROUP --filter-name tenantwall-tag-tampering --filter-pattern file://filter-tags.txt --metric-transformations metricName=TagChangeCount,metricNamespace=TenantWall,metricValue=1,defaultValue=0
+aws sns create-topic --name tenantwall-alerts
+aws sns subscribe --topic-arn $TOPIC_ARN --protocol email --notification-endpoint $EMAIL
+aws cloudwatch put-metric-alarm --alarm-name tenantwall-access-denied --namespace TenantWall --metric-name AccessDeniedCount --statistic Sum --period 300 --evaluation-periods 1 --threshold 3 --comparison-operator GreaterThanOrEqualToThreshold --treat-missing-data notBreaching --alarm-actions $TOPIC_ARN
+aws cloudwatch put-metric-alarm --alarm-name tenantwall-tag-tampering --namespace TenantWall --metric-name TagChangeCount --statistic Sum --period 300 --evaluation-periods 1 --threshold 1 --comparison-operator GreaterThanOrEqualToThreshold --treat-missing-data notBreaching --alarm-actions $TOPIC_ARN
+aws cloudwatch describe-alarms --alarm-names tenantwall-access-denied tenantwall-tag-tampering
+aws logs start-query --log-group-name $LOG_GROUP --start-time $START --end-time $END --query-string file://insights-query.txt
