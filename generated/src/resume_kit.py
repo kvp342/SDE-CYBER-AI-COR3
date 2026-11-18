@@ -14,8 +14,8 @@ R = dict(
   ("Education", [("B.Tech, Computer Science and Engineering (Cyber Security)", "Your College, City", "2024 – 2028", ["CGPA: X.XX / 10 (only if 7.5 or above; otherwise leave it out)", "Relevant courses: Data Structures, Operating Systems, DBMS, Computer Networks, Cryptography"])]),
   ("Projects", [
    ("TenantWall: tenant isolation on AWS with ABAC", "Research project with Prof. [Name] · github.com/your-handle/tenantwall", "Dec 2026 – Mar 2027",
-    ["Designed attribute-based access control for a shared S3 bucket and EC2 fleet so each tenant reaches only its own resources, using tag-matched IAM policies and explicit denies",
-     "Verified isolation with [N] cross-tenant tests (all denied) and built CloudTrail → CloudWatch → SNS alerting that emailed on denied calls within [M] minutes",
+    ["Designed attribute-based access control for a shared S3 bucket and EC2 fleet so each tenant reaches only its own resources, using tag-matched IAM policies and explicit denies; validated with IAM Access Analyzer (0 findings)",
+     "Verified isolation with 14 scenarios on real AWS (10 refusals, each classified as explicit or implicit deny) and built CloudTrail → CloudWatch → SNS alerting that emailed on refused calls within 3 minutes",
      "Paper [submitted to / accepted at] [venue], [month year]"]),
    ("Secure RAG assistant with prompt-injection defences", "Python, Claude API · github.com/your-handle/secrag", "May 2027",
     ["Built a retrieval-augmented assistant over security notes with four defence layers (input scanning, document sanitising, prompt separation, output checks)",

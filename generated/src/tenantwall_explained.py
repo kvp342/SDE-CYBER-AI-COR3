@@ -137,6 +137,30 @@ sec("evidence", "Tonight's evidence (17 Nov 2026)", T(["Professor's request", "S
  "CloudTrail → Trails → tenantwall-trail (Logging on, data events).", "CloudWatch → Alarms (history showing ALARM at about 23:23 IST on 17 Nov).", "The alert email in Gmail.",
  "CloudWatch → Logs Insights with the refused-calls query.", "IAM → Policies → TenantABAC_EC2 → Edit (Access Analyzer panel with no findings).", "Policy Generator page with your bucket policy.", "The exported diagrams."]))
 
+sec("generator", "Policy Generator: exactly what to type", "<p>Open the AWS Policy Generator" + C(GEN) + ". You rebuild your bucket policy's three statements, generate it, and take a screenshot. <b>Do not paste the generated JSON over your real bucket policy</b>: it is only to show your professor that the generator produces the same rules. Replace YOUR-BUCKET and ACCOUNT-ID with your real values (they are in evidence/bucket-policy.json on your laptop).</p>" +
+ "<h3>Step 1: Select Policy Type</h3><p>S3 Bucket Policy.</p><h3>Step 2: Add Statement(s): three times</h3>" +
+ T(["Field", "Statement A: DenyNonTLS", "Statement B: alpha prefix", "Statement C: beta prefix"], [
+ ["Effect", "Deny", "Deny", "Deny"],
+ ["Principal", "*", "*", "*"],
+ ["AWS Service", "Amazon S3", "Amazon S3", "Amazon S3"],
+ ["Actions", "All Actions ('*')", "All Actions ('*')", "All Actions ('*')"],
+ ["Amazon Resource Name (ARN)", "arn:aws:s3:::YOUR-BUCKET, arn:aws:s3:::YOUR-BUCKET/*", "arn:aws:s3:::YOUR-BUCKET/alpha/*", "arn:aws:s3:::YOUR-BUCKET/beta/*"],
+ ["Add Conditions: 1st", "Bool · aws:SecureTransport · false", "StringNotEquals · aws:PrincipalTag/Team · alpha", "StringNotEquals · aws:PrincipalTag/Team · beta"],
+ ["Add Conditions: 2nd", "—", "ArnNotEquals · aws:PrincipalArn · arn:aws:iam::ACCOUNT-ID:user/twadmin", "ArnNotEquals · aws:PrincipalArn · arn:aws:iam::ACCOUNT-ID:user/twadmin"]]) +
+ "<p>For each statement: fill the fields, click <b>Add Condition</b> once per condition row, then <b>Add Statement</b>. When all three appear in the list, go to Step 3 and click <b>Generate Policy</b>. Screenshot the statement list and the JSON.</p>" +
+ '<p class="note"><b>Compare with your real policy:</b> same Effect, Principal, Action, Resource and Condition in each statement. The generator adds an Id and numbered Sids instead of your names (DenyNonTLS, OnlyAlphaTouchesAlphaPrefix, OnlyBetaTouchesBetaPrefix): that difference is expected. If the Key list does not offer aws:PrincipalTag/Team or aws:PrincipalArn, try typing it; if the form refuses, generate without that condition, screenshot it, and say the tag condition was added by hand, which is what the real policy shows. Then paste the generated JSON into IAM Access Analyzer\'s policy check (bucket policy editor) to show it validates.</p>')
+
+sec("pitch", "Talking about TenantWall in interviews", "<h3>30 seconds</h3><p>\"Teams sharing one AWS account can reach each other's servers and files. I built TenantWall, which isolates them with attribute-based access control: one set of IAM policies compares the Team tag on the user with the Team tag on the resource, and explicit denies stop users from changing their own tags. I tested it with 14 real scenarios on AWS, all as expected, and added CloudTrail and CloudWatch alerting that emailed the admin about refused attempts in under 3 minutes.\"</p>" +
+ "<h3>2 minutes (STAR)</h3>" + T(["Part", "What to say"], [
+ ["Situation", "Several teams in one AWS account; by default anyone with EC2 or S3 rights could touch another team's resources. Role-per-team policies grow with every team."],
+ ["Task", "Isolate teams with a fixed number of policies, prove it works, and detect attempts to break it. Research project with my professor."],
+ ["Action", "Tagged users and resources with Team; wrote two ABAC identity policies (EC2, S3) using ${aws:PrincipalTag/Team}; locked tags after creation; explicit Deny on self-tagging; bucket policy denying other prefixes and plain HTTP; validated with IAM Access Analyzer; CloudTrail with S3 data events into CloudWatch Logs, three metric filters, alarms to SNS email."],
+ ["Result", "14 of 14 scenarios behaved as expected (10 refusals, each classified explicit or implicit); Access Analyzer found nothing; alarms emailed within 104–143 seconds. I also found a limitation: the filter alerts on any refused call in the account, so the next step is scoping it to tenant users."]]) +
+ "<h3>Resume bullets (real numbers)</h3>" + UL([
+ "Designed attribute-based access control for a shared S3 bucket and EC2 fleet so each team reaches only its own resources, using tag-matched IAM policies and explicit denies; validated with IAM Access Analyzer (0 findings)",
+ "Verified isolation with 14 scenarios on real AWS (10 refusals, each classified as explicit or implicit deny) and built CloudTrail → CloudWatch → SNS alerting that emailed on refused calls within 3 minutes"]) +
+ "<h3>Follow-up questions to expect</h3>" + UL(["Why not one AWS account per team? (stronger isolation; TenantWall is for teams that must share one account; accounts are the next step)", "What if an admin tags a resource wrongly? (the model trusts tags; tag changes alarm; tagging is restricted to creation)", "How would you scale to 100 teams? (identity policies stay the same; the bucket policy grows, so move to per-team buckets or accounts)"]))
+
 sec("demo", "Showing your professor (10 minutes)", T(["Minute", "Show", "Say"], [
  ["0–1", "Architecture diagram", "\"Two teams share one account; one tag-based policy set separates them; the right side now detects attempts.\""],
  ["1–3", "Scenario summary (14 of 14) with the deny-type column", "\"Each refusal is labelled explicit or implicit: explicit means a Deny statement matched, implicit means no Allow matched.\""],

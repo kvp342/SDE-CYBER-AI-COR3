@@ -17,8 +17,8 @@ Your College, City
 
 Research project with Prof. \[Name\] · github.com/your-handle/tenantwall
 
-- Designed attribute-based access control for a shared S3 bucket and EC2 fleet so each tenant reaches only its own resources, using tag-matched IAM policies and explicit denies
-- Verified isolation with \[N\] cross-tenant tests (all denied) and built CloudTrail → CloudWatch → SNS alerting that emailed on denied calls within \[M\] minutes
+- Designed attribute-based access control for a shared S3 bucket and EC2 fleet so each tenant reaches only its own resources, using tag-matched IAM policies and explicit denies; validated with IAM Access Analyzer (0 findings)
+- Verified isolation with 14 scenarios on real AWS (10 refusals, each classified as explicit or implicit deny) and built CloudTrail → CloudWatch → SNS alerting that emailed on refused calls within 3 minutes
 - Paper \[submitted to / accepted at\] \[venue\], \[month year\]
 
 **Secure RAG assistant with prompt-injection defences**May 2027

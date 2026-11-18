@@ -14,8 +14,10 @@ Everything about your project in one place: the idea, every AWS term, how AWS de
 | [6. The 14 scenarios and what decides each](#06-the-14-scenarios-and-what-decides-each)                            |
 | [7. Monitoring: CloudTrail, CloudWatch, SNS (what each setting means)](#07-monitoring-cloudtrail-cloudwatch-sns-what-each-setting-means) |
 | [8. Tonight's evidence (17 Nov 2026)](#08-tonights-evidence-17-nov-2026)                                 |
-| [9. Showing your professor (10 minutes)](#09-showing-your-professor-10-minutes)                              |
-| [10. Questions he may ask, with answers](#10-questions-he-may-ask-with-answers)                              |
+| [9. Policy Generator: exactly what to type](#09-policy-generator-exactly-what-to-type)                           |
+| [10. Talking about TenantWall in interviews](#10-talking-about-tenantwall-in-interviews)                          |
+| [11. Showing your professor (10 minutes)](#11-showing-your-professor-10-minutes)                             |
+| [12. Questions he may ask, with answers](#12-questions-he-may-ask-with-answers)                              |
 | [Sources (16)](#-sources)                                                        |
 
 Based on your real setup (account in us-east-1, users alpha_user, beta_user, twadmin; policies TenantABAC_EC2 and TenantABAC_S3; the lab bucket policy) and on the run of 17 Nov 2026: 14 of 14 scenarios, two alarms fired, Access Analyzer 0 findings.
@@ -159,7 +161,57 @@ Two conditions in one statement are joined with AND: the Deny applies only when 
 - Policy Generator page with your bucket policy.
 - The exported diagrams.
 
-## 09. Showing your professor (10 minutes)
+## 09. Policy Generator: exactly what to type
+
+Open the AWS Policy Generator^([\[15\]](#-sources)). You rebuild your bucket policy's three statements, generate it, and take a screenshot. **Do not paste the generated JSON over your real bucket policy**: it is only to show your professor that the generator produces the same rules. Replace YOUR-BUCKET and ACCOUNT-ID with your real values (they are in evidence/bucket-policy.json on your laptop).
+
+### Step 1: Select Policy Type
+
+S3 Bucket Policy.
+
+### Step 2: Add Statement(s): three times
+
+| Field                      | Statement A: DenyNonTLS                               | Statement B: alpha prefix                                              | Statement C: beta prefix                                               |
+|----------------------------|-------------------------------------------------------|------------------------------------------------------------------------|------------------------------------------------------------------------|
+| Effect                     | Deny                                                  | Deny                                                                   | Deny                                                                   |
+| Principal                  | \*                                                    | \*                                                                     | \*                                                                     |
+| AWS Service                | Amazon S3                                             | Amazon S3                                                              | Amazon S3                                                              |
+| Actions                    | All Actions ('\*')                                    | All Actions ('\*')                                                     | All Actions ('\*')                                                     |
+| Amazon Resource Name (ARN) | arn:aws:s3:::YOUR-BUCKET, arn:aws:s3:::YOUR-BUCKET/\* | arn:aws:s3:::YOUR-BUCKET/alpha/\*                                      | arn:aws:s3:::YOUR-BUCKET/beta/\*                                       |
+| Add Conditions: 1st        | Bool · aws:SecureTransport · false                    | StringNotEquals · aws:PrincipalTag/Team · alpha                        | StringNotEquals · aws:PrincipalTag/Team · beta                         |
+| Add Conditions: 2nd        | —                                                     | ArnNotEquals · aws:PrincipalArn · arn:aws:iam::ACCOUNT-ID:user/twadmin | ArnNotEquals · aws:PrincipalArn · arn:aws:iam::ACCOUNT-ID:user/twadmin |
+
+For each statement: fill the fields, click **Add Condition** once per condition row, then **Add Statement**. When all three appear in the list, go to Step 3 and click **Generate Policy**. Screenshot the statement list and the JSON.
+
+**Compare with your real policy:** same Effect, Principal, Action, Resource and Condition in each statement. The generator adds an Id and numbered Sids instead of your names (DenyNonTLS, OnlyAlphaTouchesAlphaPrefix, OnlyBetaTouchesBetaPrefix): that difference is expected. If the Key list does not offer aws:PrincipalTag/Team or aws:PrincipalArn, try typing it; if the form refuses, generate without that condition, screenshot it, and say the tag condition was added by hand, which is what the real policy shows. Then paste the generated JSON into IAM Access Analyzer's policy check (bucket policy editor) to show it validates.
+
+## 10. Talking about TenantWall in interviews
+
+### 30 seconds
+
+"Teams sharing one AWS account can reach each other's servers and files. I built TenantWall, which isolates them with attribute-based access control: one set of IAM policies compares the Team tag on the user with the Team tag on the resource, and explicit denies stop users from changing their own tags. I tested it with 14 real scenarios on AWS, all as expected, and added CloudTrail and CloudWatch alerting that emailed the admin about refused attempts in under 3 minutes."
+
+### 2 minutes (STAR)
+
+| Part      | What to say                                                                                                                                                                                                                                                                                                                                                           |
+|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Situation | Several teams in one AWS account; by default anyone with EC2 or S3 rights could touch another team's resources. Role-per-team policies grow with every team.                                                                                                                                                                                                          |
+| Task      | Isolate teams with a fixed number of policies, prove it works, and detect attempts to break it. Research project with my professor.                                                                                                                                                                                                                                   |
+| Action    | Tagged users and resources with Team; wrote two ABAC identity policies (EC2, S3) using \${aws:PrincipalTag/Team}; locked tags after creation; explicit Deny on self-tagging; bucket policy denying other prefixes and plain HTTP; validated with IAM Access Analyzer; CloudTrail with S3 data events into CloudWatch Logs, three metric filters, alarms to SNS email. |
+| Result    | 14 of 14 scenarios behaved as expected (10 refusals, each classified explicit or implicit); Access Analyzer found nothing; alarms emailed within 104–143 seconds. I also found a limitation: the filter alerts on any refused call in the account, so the next step is scoping it to tenant users.                                                                    |
+
+### Resume bullets (real numbers)
+
+- Designed attribute-based access control for a shared S3 bucket and EC2 fleet so each team reaches only its own resources, using tag-matched IAM policies and explicit denies; validated with IAM Access Analyzer (0 findings)
+- Verified isolation with 14 scenarios on real AWS (10 refusals, each classified as explicit or implicit deny) and built CloudTrail → CloudWatch → SNS alerting that emailed on refused calls within 3 minutes
+
+### Follow-up questions to expect
+
+- Why not one AWS account per team? (stronger isolation; TenantWall is for teams that must share one account; accounts are the next step)
+- What if an admin tags a resource wrongly? (the model trusts tags; tag changes alarm; tagging is restricted to creation)
+- How would you scale to 100 teams? (identity policies stay the same; the bucket policy grows, so move to per-team buckets or accounts)
+
+## 11. Showing your professor (10 minutes)
 
 | Minute | Show                                                                  | Say                                                                                                                        |
 |--------|-----------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
@@ -170,7 +222,7 @@ Two conditions in one statement are joined with AND: the Deny applies only when 
 | 7–9    | Alarms in ALARM + email                                               | "Refusals and tag changes email the admin within minutes; policy edits have their own alarm."                              |
 | 9–10   | Flowchart, limitations, next step                                     | "Next: update the paper and submit by 21 March. Which venue do you suggest?"                                               |
 
-## 10. Questions he may ask, with answers
+## 12. Questions he may ask, with answers
 
 | Question                                                      | Answer                                                                                                                                                                     |
 |---------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
