@@ -12,7 +12,7 @@ GH = "https://github.com/kvp342/intrusion-detection-and-prevention/blob/ccr-ca72
 TREE = "https://github.com/kvp342/intrusion-detection-and-prevention/tree/ccr-ca7232a7-t7lq94/"
 SELF = "generated/index-of-everything.pdf"
 readme = (ROOT / "README.md").read_text()
-DESC = dict(re.findall(r"^\| `([^`]+)` \| (.+?) \|\s*$", readme, re.M))
+DESC = dict(re.findall(r"^\| `([^`]+)` \| (.+?) \|(?: [^|]*\|)?\s*$", readme, re.M))   # 3rd column = clickable Open links
 DESC["README.md"] = "What this repository is, with a table of every main file"
 DESC[SELF] = "This index: every file in the repository, what it is and when to use it"
 FILES = sorted(set(subprocess.run(["git", "ls-files"], cwd=ROOT, capture_output=True, text=True).stdout.split()) | {SELF})

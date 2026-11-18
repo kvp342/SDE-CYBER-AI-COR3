@@ -81,3 +81,4 @@
 - 18 Nov 2026: routine agreed and written into README, GEMINI-HANDOFF, final plan, one-page overview and cloud plan: A2Z tracked on Codolio + same-topic LeetCode, cloud 1 h/day (to ~25 Feb), Core CS 1 h, cyber Saturdays then daily from Feb, AI-security in May. AWS monitoring torn down on request (evidence kept on the laptop).
 - 18 Nov 2026: clean draw.io exports (AWS icons) added as generated/tenantwall/diagrams/tenantwall-{architecture,flowchart}.png; paper uses them (architecture full width); outline and runbook point to them.
 - 18 Nov 2026: generated/weekly-schedule.pdf (week-by-week table to 28 Feb from the Playbook data + cloud 1 h + Saturday cyber + contests; 19 Nov cloud-day plan); linked from README, overview 'open first', final plan kit map, index and readable copy.
+- 19 Nov 2026: README made clickable: 'Start here' table, an Open column (Read · PDF) on every file row; index_all and make_markdown parse the 3-column rows; 176 README links checked.

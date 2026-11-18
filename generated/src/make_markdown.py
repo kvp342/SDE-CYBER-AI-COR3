@@ -148,7 +148,7 @@ def main(stash=None):
     (OUT / "a2z" / "classic.md").write_text(classic); (OUT / "a2z" / "a2z-2026.md").write_text(a2z26)
     # index: the same groups as the index of everything, then everything else
     readme = (ROOT / "README.md").read_text()
-    desc = dict(re.findall(r"^\| `([^`]+)` \| (.*?) \|$", readme, re.M))
+    desc = dict(re.findall(r"^\| `([^`]+)` \| (.*?) \|(?: [^|]*\|)?$", readme, re.M))
     import ast                                                                 # read GROUPS from index_all.py without running its build
     tree = ast.parse((SRC / "index_all.py").read_text())
     node = next(n.value for n in tree.body if isinstance(n, ast.Assign) and getattr(n.targets[0], "id", "") == "GROUPS")
