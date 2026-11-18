@@ -28,10 +28,14 @@ class D:
         s._add(cid, f'<mxCell id="{cid}" value="{escape(label)}" style="{st}" vertex="1" parent="{parent}"><mxGeometry x="{x}" y="{y}" width="{w}" height="{h}" as="geometry"/></mxCell>')
     def box(s, cid, label, x, y, w, h, fill="#ffffff", stroke="#232F3E", shape="rounded=1", parent="1"):
         s._add(cid, f'<mxCell id="{cid}" value="{escape(label)}" style="{shape};whiteSpace=wrap;html=1;fillColor={fill};strokeColor={stroke};fontSize=11;" vertex="1" parent="{parent}"><mxGeometry x="{x}" y="{y}" width="{w}" height="{h}" as="geometry"/></mxCell>')
-    def edge(s, cid, a, b, label="", color="#545B64", dashed=0, parent="1"):
+    def text(s, cid, label, x, y, w, h, parent="1", size=11, color="#232F3E"):
+        st = f"text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize={size};fontColor={color};"
+        s._add(cid, f'<mxCell id="{cid}" value="{escape(label)}" style="{st}" vertex="1" parent="{parent}"><mxGeometry x="{x}" y="{y}" width="{w}" height="{h}" as="geometry"/></mxCell>')
+    def edge(s, cid, a, b, label="", color="#545B64", dashed=0, parent="1", extra="", pts=()):
         assert a in s.ids and b in s.ids, (a, b)
-        st = f"edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor={color};strokeWidth=2;dashed={dashed};fontSize=10;fontColor={color};"
-        s._add(cid, f'<mxCell id="{cid}" value="{escape(label)}" style="{st}" edge="1" parent="{parent}" source="{a}" target="{b}"><mxGeometry relative="1" as="geometry"/></mxCell>')
+        st = f"edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor={color};strokeWidth=2;dashed={dashed};fontSize=10;fontColor={color};labelBackgroundColor=#ffffff;{extra}"
+        geo = ('<mxGeometry relative="1" as="geometry"><Array as="points">' + "".join(f'<mxPoint x="{x}" y="{y}"/>' for x, y in pts) + '</Array></mxGeometry>') if pts else '<mxGeometry relative="1" as="geometry"/>'
+        s._add(cid, f'<mxCell id="{cid}" value="{escape(label)}" style="{st}" edge="1" parent="{parent}" source="{a}" target="{b}">{geo}</mxCell>')
     def save(s, name, title):
         xml = (f'<mxfile host="app.diagrams.net"><diagram name="{escape(title)}" id="{name}"><mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" '
                f'tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0"><root>'
@@ -39,26 +43,31 @@ class D:
         ET.fromstring(xml)                                           # well-formed XML
         (OUT / f"{name}.drawio").write_text(xml); return len(s.cells)
 GREEN, RED, GREY = "#1E8900", "#D13212", "#545B64"
-a = D()
-a.group("cloud", "group_aws_cloud_alt", "AWS account (shared by all teams)", 20, 20, 1540, 900)
-a.group("region", "group_region", "Region us-east-1 (trail is multi-region)", 40, 60, 1500, 840, color="#00A4A6", parent="cloud", dashed=1)
-a.small("teamA", "user", "alpha_user (tag Team=alpha)", 30, 100, "region"); a.small("teamB", "user", "beta_user (tag Team=beta)", 30, 360, "region")
-a.service("iam", "identity_and_access_management", "IAM: TenantABAC_EC2 (7 statements) + TenantABAC_S3, matched on ${aws:PrincipalTag/Team}", 300, 220, "region")
-a.small("deny", "permissions", "Explicit Deny: NoSelfPromotion (IAM), OnlyAlpha/OnlyBeta prefix Deny + DenyNonTLS (bucket policy)", 300, 420, "region")
-a.service("s3", "s3", "Lab S3 bucket (one bucket, two prefixes)", 640, 90, "region"); a.small("pa", "bucket_with_objects", "alpha/", 800, 60, "region"); a.small("pb", "bucket_with_objects", "beta/", 800, 150, "region")
-a.service("ec2", "ec2", "EC2 t2/t3.micro instances tagged Team=alpha / Team=beta", 640, 350, "region")
-a.service("trail", "cloudtrail", "CloudTrail tenantwall-trail: management + S3 data events, log-file validation", 640, 600, "region")
-a.small("logbucket", "bucket_with_objects", "tenantwall-logs-<account> (versioned, encrypted, private)", 400, 640, "region")
-a.small("logs", "logs", "CloudWatch Logs /tenantwall/cloudtrail (30-day retention; role TenantWallCloudTrailToCWL)", 900, 610, "region")
-a.service("cw", "cloudwatch_2", "Metric filters: AccessDenied, TagTampering, PolicyChange", 1080, 600, "region")
-a.small("alarm", "alarm", "Alarms TenantWall-AccessDenied / -TagTampering / -PolicyChange (>=1 in 5 min)", 1250, 610, "region")
-a.service("sns", "sns", "SNS topic tenantwall-alerts", 1250, 380, "region"); a.small("mail", "email", "Admin email", 1260, 200, "region")
-a.edge("e1", "teamA", "iam", "requests", GREY, parent="region"); a.edge("e2", "teamB", "iam", "requests", GREY, parent="region")
-a.edge("e3", "iam", "pa", "allowed: own prefix (TenantABAC_S3)", GREEN, parent="region"); a.edge("e4", "deny", "pb", "refused: beta/ (explicit deny, bucket policy)", RED, parent="region")
-a.edge("e5", "iam", "ec2", "allowed: own-team instances, launch only tagged + micro", GREEN, parent="region"); a.edge("e6", "iam", "deny", "", RED, 1, parent="region")
-a.edge("e7", "s3", "trail", "object reads (data events)", GREY, 1, parent="region"); a.edge("e8", "ec2", "trail", "API calls", GREY, 1, parent="region")
-a.edge("e9", "trail", "logbucket", "", GREY, parent="region"); a.edge("e10", "trail", "logs", "", GREY, parent="region"); a.edge("e11", "logs", "cw", "", GREY, parent="region")
-a.edge("e12", "cw", "alarm", "", GREY, parent="region"); a.edge("e13", "alarm", "sns", "", RED, parent="region"); a.edge("e14", "sns", "mail", "email alert", RED, parent="region")
+a = D(); R = "region"
+a.group("cloud", "group_aws_cloud_alt", "AWS account (shared by all teams)", 20, 20, 1540, 980)
+a.group("region", "group_region", "Region us-east-1 (trail is multi-region)", 40, 60, 1500, 900, color="#00A4A6", parent="cloud", dashed=1)
+a.small("teamA", "user", "alpha_user (Team=alpha)", 50, 110, R); a.small("teamB", "user", "beta_user (Team=beta)", 50, 330, R)
+a.service("iam", "identity_and_access_management", "IAM identity policies", 300, 200, R)
+a.text("iamnote", "TenantABAC_EC2 (7 statements) + TenantABAC_S3, matched on ${aws:PrincipalTag/Team}", 250, 290, 170, 60, R, 10)
+a.small("deny", "permissions", "Explicit Deny", 307, 500, R)
+a.text("denynote", "NoSelfPromotion (IAM) · OnlyAlpha / OnlyBeta prefix · DenyNonTLS (bucket policy)", 240, 580, 190, 60, R, 10)
+a.service("s3", "s3", "Lab S3 bucket", 760, 110, R)
+a.small("pa", "bucket_with_objects", "alpha/", 1000, 70, R); a.small("pb", "bucket_with_objects", "beta/", 1000, 210, R)
+a.service("ec2", "ec2", "EC2 instances (Team tag)", 560, 380, R)
+a.service("trail", "cloudtrail", "CloudTrail trail", 700, 700, R)
+a.small("logbucket", "bucket_with_objects", "Log bucket", 480, 707, R)
+a.small("logs", "logs", "CloudWatch Logs", 900, 707, R)
+a.service("cw", "cloudwatch_2", "Metric filters (3)", 1080, 700, R)
+a.small("alarm", "alarm", "Alarms (3)", 1280, 707, R)
+a.service("sns", "sns", "SNS topic", 1273, 430, R); a.small("mail", "email", "Admin email", 1280, 220, R)
+a.text("mon", "Trail: management + S3 data events, log-file validation → log bucket (versioned, encrypted, private) and CloudWatch Logs (30 days). Filters: AccessDenied, TagTampering, PolicyChange. Alarms: ≥ 1 in 5 min → SNS → email.", 480, 820, 900, 40, R, 10, "#545B64")
+a.edge("e1", "teamA", "iam", "requests", GREY, parent=R); a.edge("e2", "teamB", "iam", "requests", GREY, parent=R)
+a.edge("e3", "iam", "pa", "allowed: own prefix", GREEN, parent=R); a.edge("e5", "iam", "ec2", "allowed: own-team instances", GREEN, parent=R)
+a.edge("e6", "iam", "deny", "", RED, 1, parent=R); a.edge("e4", "deny", "pb", "refused: other team's prefix (explicit)", RED, parent=R)
+a.edge("e7", "s3", "trail", "object calls (data events)", GREY, 1, parent=R, extra="exitX=0.5;exitY=1;entryX=0.75;entryY=0;")
+a.edge("e8", "ec2", "trail", "API calls", GREY, 1, parent=R, extra="exitX=0.5;exitY=1;entryX=0.25;entryY=0;")
+a.edge("e9", "trail", "logbucket", "", GREY, parent=R); a.edge("e10", "trail", "logs", "", GREY, parent=R); a.edge("e11", "logs", "cw", "", GREY, parent=R)
+a.edge("e12", "cw", "alarm", "", GREY, parent=R); a.edge("e13", "alarm", "sns", "", RED, parent=R); a.edge("e14", "sns", "mail", "email alert", RED, parent=R)
 n1 = a.save("tenantwall-architecture", "TenantWall architecture")
 f = D(); Y = 40
 f.box("s", "A team user sends an AWS request", 560, Y, 240, 50, "#E6F2F8", "#147EBA")
@@ -71,6 +80,6 @@ f.box("log", "CloudTrail records every request (allowed and refused)", 900, Y + 
 f.box("cnt", "Metric filters count refusals, tag/membership changes and policy edits", 900, Y + 540, 300, 50, "#F4F4F4", "#545B64")
 f.box("al", "Alarm (any refusal, tag/membership change or policy edit in 5 min) -> SNS -> email", 900, Y + 630, 300, 55, "#FDECEA", "#D13212")
 f.edge("f1", "s", "q1"); f.edge("f2", "q1", "r1", "yes", RED); f.edge("f3", "q1", "q2", "no"); f.edge("f4", "q2", "r2", "no", RED); f.edge("f5", "q2", "ok", "yes", GREEN)
-f.edge("f6", "r1", "log", "", GREY, 1); f.edge("f7", "r2", "log", "", GREY, 1); f.edge("f8", "ok", "log", "", GREY, 1); f.edge("f9", "log", "cnt"); f.edge("f10", "cnt", "al")
+f.edge("f6", "r1", "log", "", GREY, 1, extra="exitX=1;exitY=0.5;entryX=1;entryY=0.5;", pts=((1240, Y + 155), (1240, Y + 475))); f.edge("f7", "r2", "log", "", GREY, 1); f.edge("f8", "ok", "log", "", GREY, 1); f.edge("f9", "log", "cnt"); f.edge("f10", "cnt", "al")
 n2 = f.save("tenantwall-flowchart", "TenantWall method flowchart")
 print(f"architecture: {n1} cells, flowchart: {n2} cells; XML well-formed; every icon name in the verified draw.io list")
