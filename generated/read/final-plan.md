@@ -225,20 +225,21 @@ Use the first column. Add the second only if you have time. The third wastes tim
 
 ### Security, cloud, research
 
-| When                           | Open                                                                                                                                                                   |
-|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AWS exam                       | [aws-saa-c03-study-pack.pdf](aws-saa-c03-study-pack.md)               |
-| AWS hands-on labs              | [aws-lab-workbook.pdf](aws-lab-workbook.md)                           |
-| Web security labs              | [owasp-portswigger-lab-map.pdf](owasp-portswigger-lab-map.md)         |
-| Lab write-ups                  | [security-lab-notebook.pdf](security-lab-notebook.md)                 |
-| Hands-on security labs         | [security-labs-workbook.pdf](security-labs-workbook.md)               |
-| SOC portfolio project          | [soc-log-analysis-project.pdf](soc-log-analysis-project.md)           |
-| Security interview questions   | [cyber-security-interview-bank.pdf](cyber-security-interview-bank.md) |
-| TenantWall build               | [tenantwall-helpers.pdf](tenantwall-helpers.md)                       |
-| TenantWall paper               | [tenantwall-paper-outline.pdf](tenantwall-paper-outline.md)           |
-| TenantWall changes in one day  | [tenantwall-one-day-runbook.pdf](tenantwall-one-day-runbook.md)       |
-| TenantWall explained           | [tenantwall-explained.pdf](tenantwall-explained.md)                   |
-| Solutions Architect, 2 h a day | [cloud-architect-2h-plan.pdf](cloud-architect-2h-plan.md)             |
+| When                          | Open                                                                                                                                                                   |
+|-------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AWS exam                      | [aws-saa-c03-study-pack.pdf](aws-saa-c03-study-pack.md)               |
+| AWS hands-on labs             | [aws-lab-workbook.pdf](aws-lab-workbook.md)                           |
+| Web security labs             | [owasp-portswigger-lab-map.pdf](owasp-portswigger-lab-map.md)         |
+| Lab write-ups                 | [security-lab-notebook.pdf](security-lab-notebook.md)                 |
+| Hands-on security labs        | [security-labs-workbook.pdf](security-labs-workbook.md)               |
+| SOC portfolio project         | [soc-log-analysis-project.pdf](soc-log-analysis-project.md)           |
+| Security interview questions  | [cyber-security-interview-bank.pdf](cyber-security-interview-bank.md) |
+| TenantWall build              | [tenantwall-helpers.pdf](tenantwall-helpers.md)                       |
+| TenantWall paper              | [tenantwall-paper-outline.pdf](tenantwall-paper-outline.md)           |
+| TenantWall changes in one day | [tenantwall-one-day-runbook.pdf](tenantwall-one-day-runbook.md)       |
+| TenantWall explained          | [tenantwall-explained.pdf](tenantwall-explained.md)                   |
+| Solutions Architect plan      | [cloud-architect-2h-plan.pdf](cloud-architect-2h-plan.md)             |
+| What to do each week          | [weekly-schedule.pdf](weekly-schedule.md)                             |
 
 ### Projects
 

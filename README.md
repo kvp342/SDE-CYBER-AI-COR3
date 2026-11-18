@@ -15,6 +15,8 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | Cyber | Saturday 2 h now; 1–1.5 h daily from Feb | Security labs, PortSwigger Web Security Academy; from Feb the SOC project and the TenantWall paper (due 21 Mar) |
 | AI | May 2027 | AI-security project: `generated/ai-security-starter/` |
 
+**Every Monday, open `generated/weekly-schedule.pdf`:** one row per week saying exactly what to finish.
+
 ## Open
 
 | File | What it is |
@@ -106,6 +108,7 @@ My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an
 | `generated/tenantwall-explained.pdf` | TenantWall explained: every AWS term, how AWS decides a request, the three policies statement by statement, what decides each of the 14 scenarios, every CloudTrail/CloudWatch/SNS setting, the 17 Nov 2026 results for the professor's five requests (14/14 scenarios, alarms fired, Access Analyzer 0 findings, S3 data events), a 10-minute demo and 15 viva questions |
 | `generated/cloud-architect-2h-plan.pdf` | Cloud Solutions Architect (AWS SAA-C03) in 10 weeks at 2 hours a day, 18 Nov 2026 to 31 Jan 2027: a fixed learn/do/recall routine, a topic for every day, a lab every Saturday, a review every Sunday, each week's exam rules and checkpoints for when to book the exam |
 | `generated/after-claude/` | Studying after Claude: copy-paste prompts for any free AI (hints not answers, bug finding, viva and cloud quizzes, TenantWall viva, paper language, mock interviews, weekly review) and the safety rules (no keys, account IDs or bucket names) |
+| `generated/weekly-schedule.pdf` | Week by week, 16 Nov 2026 – 28 Feb 2027: which Striver A2Z steps to finish, Core CS topic, cloud topic at 1 h a day, Saturday cyber lab and LeetCode contest (from the Playbook data), plus an hour-by-hour plan for the 19 Nov cloud day |
 | `generated/tenantwall/runbook/` | CLI commands, metric filter patterns and the Logs Insights query used in the runbook |
 | `generated/tenantwall/automation/` | Scripts that apply the professor's changes 1–4 from your laptop (setup with policy backup, verify, cleanup), dry-run tested against a local AWS simulator |
 | `generated/tenantwall/diagrams/` | Architecture diagram and method flowchart as draw.io files with the official AWS icons (open at app.diagrams.net, export PNG) |

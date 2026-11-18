@@ -32,7 +32,7 @@ TRACKS = [
  ("Interviews", "Mocks from March (2/week from 31 May), company files, stories, interview day", [("generated/mock-interview-scripts.pdf", "Mocks I"), ("generated/mock-interview-scripts-2.pdf", "Mocks II"), ("generated/company-files-3.pdf", "Companies"), ("generated/interview-day-kit.pdf", "Day kit")]),
 ]
 CHECK = [("31 Dec", "200+ problems; resume v1"), ("30 Jan", "A2Z core done"), ("31 Mar", "CF 1400; paper submitted; applications out"), ("30 Apr", "AWS passed; WS II–IV done"), ("31 Jul", "Mocks 17+/20; 2 deployed projects")]
-FIRST5 = [("generated/final-plan.pdf", "Final plan"), ("playbook.html", "Playbook (daily)"), ("Striver-A2Z-DSA-Sheet-Classic.pdf", "A2Z sheet"), ("generated/anki-decks-guide.pdf", "Anki decks"), ("generated/weekly-revision-tests.pdf", "Sunday tests")]
+FIRST5 = [("generated/final-plan.pdf", "Final plan"), ("playbook.html", "Playbook (daily)"), ("generated/weekly-schedule.pdf", "Week by week"), ("generated/anki-decks-guide.pdf", "Anki decks"), ("generated/weekly-revision-tests.pdf", "Sunday tests")]
 links = lambda xs: " · ".join(K(p, l) for p, l in xs)
 CSS = """@page { size: A4; margin: 8mm 9mm; } * { box-sizing: border-box; } html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 body { margin: 0; font: 400 7.9pt/1.38 Inter, sans-serif; color: #1e293b; } a { color: #1d4ed8; text-decoration: none; font-weight: 600; }

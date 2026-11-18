@@ -69,7 +69,7 @@ Your plan from 17 Nov 2026 to placements, in the same seven-phase DSA structure 
 |-------------------------------------------------------------------------------------------------------------------------------------------|
 | [Final plan](final-plan.md)              |
 | [Playbook (daily)](playbook.md)                   |
-| [A2Z sheet](a2z/classic.md)      |
+| [Week by week](weekly-schedule.md)       |
 | [Anki decks](anki-decks-guide.md)        |
 | [Sunday tests](weekly-revision-tests.md) |
 
