@@ -1,36 +1,54 @@
 CLOUD SOLUTIONS ARCHITECT · 2 HOURS A DAY
 
-# Solutions Architect in 10 weeks, 2 hours a day
+# Solutions Architect 10 plan weeks, now 1 hour a day
 
 A day-by-day plan for the Cloud Solutions Architect course (AWS SAA-C03): one fixed 2-hour routine, a topic for every day, a lab every Saturday, a review every Sunday, the rules the exam keeps testing, and checkpoints that tell you when to book the exam.
 
 | Section                                                     |
 |-------------------------------------------------------------|
 | [1. What this plan is](#01-what-this-plan-is)                             |
-| [2. The 2-hour routine (every day)](#02-the-2-hour-routine-every-day)                |
-| [3. Day by day, weeks 0–5](#03-day-by-day-weeks-05)                         |
-| [4. Day by day, weeks 6–10](#04-day-by-day-weeks-610)                        |
-| [5. Each week's exam rules (learn these by heart)](#05-each-weeks-exam-rules-learn-these-by-heart) |
-| [6. Checkpoints and how to know you are ready](#06-checkpoints-and-how-to-know-you-are-ready)     |
-| [Sources (6)](#-sources)                                      |
+| [2. Your dates at 1 hour a day (current routine)](#02-your-dates-at-1-hour-a-day-current-routine)  |
+| [3. The 2-hour routine (every day)](#03-the-2-hour-routine-every-day)                |
+| [4. Day by day, weeks 0–5](#04-day-by-day-weeks-05)                         |
+| [5. Day by day, weeks 6–10](#05-day-by-day-weeks-610)                        |
+| [6. Each week's exam rules (learn these by heart)](#06-each-weeks-exam-rules-learn-these-by-heart) |
+| [7. Checkpoints and how to know you are ready](#07-checkpoints-and-how-to-know-you-are-ready)     |
+| [Sources (6)](#-sources)                                     |
 
 Day 1 is Wed 18 Nov 2026 (a 5-day start-up); week 1 starts Mon 23 Nov. Missed a day? Do not double up: move the rest of the table by one day and keep going.
 
 ## 01. What this plan is
 
 - **Course assumed:** AWS Certified Solutions Architect – Associate (exam code SAA-C03). If your sir's course is a different one, keep the daily routine and swap the weekly topics for his modules.^([\[1\]](#-sources))
-- **Length:** 10 weeks, 2 hours every day, from Wed 18 Nov 2026 to Sun 31 Jan 2027. A 5-day start-up (W0), then weeks 1–9 (Monday to Sunday) teach the four exam domains; week 10 is practice.
+- **Length:** written as 10 weeks at 2 hours a day (the tables below); at your current 1 hour a day it runs to about 25 Feb 2027 (Section 2). Original 2-hour dates: Wed 18 Nov 2026 to Sun 31 Jan 2027. A 5-day start-up (W0), then weeks 1–9 (Monday to Sunday) teach the four exam domains; week 10 is practice.
 - **Exam:** 65 questions (50 scored, 15 unscored), 130 minutes, pass mark 720 on a scale of 100–1000. Domains: Secure 30%, Resilient 26%, High-performing 24%, Cost-optimised 20%.^([\[2\]](#-sources))
 - **Your other files:** notes and 60 practice questions are in [the SAA-C03 study pack](aws-saa-c03-study-pack.md); the hands-on labs are in [the AWS lab workbook](aws-lab-workbook.md); your own project is explained in [TenantWall explained](tenantwall-explained.md).
-- **Fit with the final plan:** the final plan gives AWS 30 min/day and books the exam for the week of 19 April. These 2 hours replace that slot for 10 weeks. If you finish week 10 scoring 80% or more twice, you can book the exam earlier, in February.
+- **Fit with the final plan:** the final plan gives AWS 30 min/day and books the exam for the week of 19 April. Your 1 hour a day replaces that slot until about 25 February. If you then score 80% or more twice, book the exam for early March; otherwise keep 19 April.
 
-## 02. The 2-hour routine (every day)
+## 02. Your dates at 1 hour a day (current routine)
 
-| Block      | Time   | What you do                                                                                                                                                                                                   |
-|------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+Your routine is now **1 hour of cloud every day**, next to DSA and Core CS. Use the same topics and labs; each plan week simply takes two calendar weeks.
+
+| Plan weeks                    | Dates                        | How                                                                                   |
+|-------------------------------|------------------------------|---------------------------------------------------------------------------------------|
+| W0–W3 + start of W4           | Thu 19 Nov 2026              | One long day (about 10 h): start-up, IAM, compute, networking, S3 basics              |
+| W4: Storage                   | Fri 20 Nov – Thu 03 Dec 2026 | Each 2-hour plan day becomes two 1-hour days: day A = Learn + Do, day B = Do + Recall |
+| W5: Databases                 | Fri 04 Dec – Thu 17 Dec 2026 | Each 2-hour plan day becomes two 1-hour days: day A = Learn + Do, day B = Do + Recall |
+| W6: Resilience and scaling    | Fri 18 Dec – Thu 31 Dec 2026 | Each 2-hour plan day becomes two 1-hour days: day A = Learn + Do, day B = Do + Recall |
+| W7: Decoupling and serverless | Fri 01 Jan – Thu 14 Jan 2027 | Each 2-hour plan day becomes two 1-hour days: day A = Learn + Do, day B = Do + Recall |
+| W8: Security and monitoring   | Fri 15 Jan – Thu 28 Jan 2027 | Each 2-hour plan day becomes two 1-hour days: day A = Learn + Do, day B = Do + Recall |
+| W9: Performance and cost      | Fri 29 Jan – Thu 11 Feb 2027 | Each 2-hour plan day becomes two 1-hour days: day A = Learn + Do, day B = Do + Recall |
+| W10: Exam practice            | Fri 12 Feb – Thu 25 Feb 2027 | Each 2-hour plan day becomes two 1-hour days: day A = Learn + Do, day B = Do + Recall |
+
+**Finish:** about 25 Feb 2027. **Exam:** if two full practice sets score 80%+, book it for early March, before your college exams (22 Mar – 7 Apr); otherwise book the week of 19 April. The day-by-day tables on the next pages still list the topics in order; follow them at this pace.
+
+## 03. The 2-hour routine (every day)
+
+| Block      | Time   | What you do                                                                                                                                                                                                     |
+|------------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1\. Learn  | 50 min | Your sir's lecture or the matching AWS Skill Builder module, then the AWS FAQ page for that day's service. Write one-line notes: what it is, when to choose it, one limit.^([\[3\]](#-sources)[\[4\]](#-sources)) |
-| 2\. Do     | 50 min | Weekdays: build it in the console or CLI (Free Tier) or draw the architecture on paper; then 5 practice questions on the topic. Saturday: one full lab.^([\[5\]](#-sources))                                    |
-| 3\. Recall | 20 min | Close the notes and write the day's topic from memory; turn every mistake into an Anki card; tick the day in the table.                                                                                       |
+| 2\. Do     | 50 min | Weekdays: build it in the console or CLI (Free Tier) or draw the architecture on paper; then 5 practice questions on the topic. Saturday: one full lab.^([\[5\]](#-sources))                                     |
+| 3\. Recall | 20 min | Close the notes and write the day's topic from memory; turn every mistake into an Anki card; tick the day in the table.                                                                                         |
 
 **Cost rule:** set the budget alert on day 1 (lab 1), and on every lab day delete what you created before you stop. NAT gateways, load balancers, RDS and unattached Elastic IPs bill by the hour.
 
@@ -40,7 +58,7 @@ Day 1 is Wed 18 Nov 2026 (a 5-day start-up); week 1 starts Mon 23 Nov. Missed a 
 - Saturday: the week's lab from the lab workbook (2 hours).
 - Sunday: review, the week's three exam rules, and missed questions.
 
-## 03. Day by day, weeks 0–5
+## 04. Day by day, weeks 0–5
 
 | Date       | Week | Topic (2 hours)                                                                                                                 |
 |------------|------|---------------------------------------------------------------------------------------------------------------------------------|
@@ -85,7 +103,7 @@ Day 1 is Wed 18 Nov 2026 (a 5-day start-up); week 1 starts Mon 23 Nov. Missed a 
 | Sat 26 Dec | W5   | **Lab:** Private RDS MySQL database (lab 7) in the AWS lab workbook; delete everything after                                    |
 | Sun 27 Dec | W5   | **Review:** recall test on this week's three exam rules, redo the week's missed questions, plan next week                       |
 
-## 04. Day by day, weeks 6–10
+## 05. Day by day, weeks 6–10
 
 | Date       | Week | Topic (2 hours)                                                                                               |
 |------------|------|---------------------------------------------------------------------------------------------------------------|
@@ -125,7 +143,7 @@ Day 1 is Wed 18 Nov 2026 (a 5-day start-up); week 1 starts Mon 23 Nov. Missed a 
 | Sat 30 Jan | W10  | **Full mock:** 65 questions in 130 minutes (all 60 pack questions + 5 official samples)                       |
 | Sun 31 Jan | W10  | **Decide:** score 80%+ twice → book the exam; else repeat weeks 8–10 practice                                 |
 
-## 05. Each week's exam rules (learn these by heart)
+## 06. Each week's exam rules (learn these by heart)
 
 | Week | Topic                     | Rules the exam keeps testing                                                                                                                                                                                                                       |
 |------|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -140,7 +158,7 @@ Day 1 is Wed 18 Nov 2026 (a 5-day start-up); week 1 starts Mon 23 Nov. Missed a 
 | W9   | Performance and cost      | Static content worldwide = CloudFront; non-HTTP global performance = Global Accelerator. Query S3 data with SQL, no servers = Athena. Steady 1–3 year usage = Savings Plans or Reserved Instances.                                                 |
 | W10  | Exam practice             | Read the last line of the question first: cheapest, fastest, least operational overhead or most secure. Eliminate two answers, then compare the remaining two on that last line. Managed and serverless usually wins 'least operational overhead'. |
 
-## 06. Checkpoints and how to know you are ready
+## 07. Checkpoints and how to know you are ready
 
 | When       | Check                                                                                       | Pass mark                         |
 |------------|---------------------------------------------------------------------------------------------|-----------------------------------|

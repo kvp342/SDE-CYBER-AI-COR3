@@ -53,10 +53,20 @@ END = START + _dt.timedelta(days=69); FIRST = _dt.date(2026, 11, 18)
 
 sec("why", "What this plan is", UL([
  "<b>Course assumed:</b> AWS Certified Solutions Architect – Associate (exam code SAA-C03). If your sir's course is a different one, keep the daily routine and swap the weekly topics for his modules." + C(EXAMP),
- "<b>Length:</b> 10 weeks, 2 hours every day, from " + FIRST.strftime("%a %d %b %Y") + " to " + END.strftime("%a %d %b %Y") + ". A 5-day start-up (W0), then weeks 1–9 (Monday to Sunday) teach the four exam domains; week 10 is practice.",
+ "<b>Length:</b> written as 10 weeks at 2 hours a day (the tables below); at your current 1 hour a day it runs to about 25 Feb 2027 (Section 2). Original 2-hour dates: " + FIRST.strftime("%a %d %b %Y") + " to " + END.strftime("%a %d %b %Y") + ". A 5-day start-up (W0), then weeks 1–9 (Monday to Sunday) teach the four exam domains; week 10 is practice.",
  "<b>Exam:</b> 65 questions (50 scored, 15 unscored), 130 minutes, pass mark 720 on a scale of 100–1000. Domains: Secure 30%, Resilient 26%, High-performing 24%, Cost-optimised 20%." + C(GUIDE),
  "<b>Your other files:</b> notes and 60 practice questions are in " + K("generated/aws-saa-c03-study-pack.pdf", "the SAA-C03 study pack") + "; the hands-on labs are in " + K("generated/aws-lab-workbook.pdf", "the AWS lab workbook") + "; your own project is explained in " + K("generated/tenantwall-explained.pdf", "TenantWall explained") + ".",
- "<b>Fit with the final plan:</b> the final plan gives AWS 30 min/day and books the exam for the week of 19 April. These 2 hours replace that slot for 10 weeks. If you finish week 10 scoring 80% or more twice, you can book the exam earlier, in February."]))
+ "<b>Fit with the final plan:</b> the final plan gives AWS 30 min/day and books the exam for the week of 19 April. Your 1 hour a day replaces that slot until about 25 February. If you then score 80% or more twice, book the exam for early March; otherwise keep 19 April."]))
+
+ONE_H = [("W0–W3 + start of W4", "Thu 19 Nov 2026", "One long day (about 10 h): start-up, IAM, compute, networking, S3 basics")]
+_d = _dt.date(2026, 11, 20)
+for _w in range(4, 11):
+    _e = _d + _dt.timedelta(days=13)
+    ONE_H.append((f"W{_w}: {WEEKS[_w - 1][0]}", f"{_d.strftime('%a %d %b')} – {_e.strftime('%a %d %b %Y')}", "Each 2-hour plan day becomes two 1-hour days: day A = Learn + Do, day B = Do + Recall"))
+    _d = _e + _dt.timedelta(days=1)
+sec("onehour", "Your dates at 1 hour a day (current routine)", "<p>Your routine is now <b>1 hour of cloud every day</b>, next to DSA and Core CS. Use the same topics and labs; each plan week simply takes two calendar weeks.</p>" +
+ T(["Plan weeks", "Dates", "How"], [[E(a), E(b), E(c)] for a, b, c in ONE_H]) +
+ '<p class="note"><b>Finish:</b> about 25 Feb 2027. <b>Exam:</b> if two full practice sets score 80%+, book it for early March, before your college exams (22 Mar – 7 Apr); otherwise book the week of 19 April. The day-by-day tables on the next pages still list the topics in order; follow them at this pace.</p>')
 
 sec("routine", "The 2-hour routine (every day)", T(["Block", "Time", "What you do"], [
  ["1. Learn", "50 min", "Your sir's lecture or the matching AWS Skill Builder module, then the AWS FAQ page for that day's service. Write one-line notes: what it is, when to choose it, one limit." + C(SB) + C(FAQ)],
@@ -94,7 +104,7 @@ def body(pages):
     pg = lambda k: str(pages.get(k, "00")) if pages else "00"
     ix = "".join(f'<tr><td><a href="#{i}">{n + 1}. {E(t)}</a></td><td class="pg"><a href="#{i}">{pg(i)}</a></td></tr>' for n, (i, t, _) in enumerate(SEC))
     ix += f'<tr><td><a href="#src">Sources ({len(SOURCES)})</a></td><td class="pg"><a href="#src">{pg("src")}</a></td></tr>'
-    out = [f'''<section><p class="eb">CLOUD SOLUTIONS ARCHITECT · 2 HOURS A DAY</p><h1>Solutions Architect<br><span>in 10 weeks, 2 hours a day</span></h1>
+    out = [f'''<section><p class="eb">CLOUD SOLUTIONS ARCHITECT · 2 HOURS A DAY</p><h1>Solutions Architect<br><span>10 plan weeks, now 1 hour a day</span></h1>
 <p class="lead">A day-by-day plan for the Cloud Solutions Architect course (AWS SAA-C03): one fixed 2-hour routine, a topic for every day, a lab every Saturday, a review every Sunday, the rules the exam keeps testing, and checkpoints that tell you when to book the exam.</p>
 <table class="ix"><thead><tr><th>Section</th><th class="pg">Page</th></tr></thead><tbody>{ix}</tbody></table>
 <p class="note">Day 1 is Wed 18 Nov 2026 (a 5-day start-up); week 1 starts Mon 23 Nov. Missed a day? Do not double up: move the rest of the table by one day and keep going.</p></section>''']

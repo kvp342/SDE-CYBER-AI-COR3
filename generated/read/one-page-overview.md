@@ -6,9 +6,9 @@ Your plan from 17 Nov 2026 to placements, in the same seven-phase DSA structure 
 
 **18–19 Nov**TenantWall shown; cloud course day
 
-**20 Nov – 30 Jan**Striver A2Z core, 5–6/day
+**20 Nov – 30 Jan**Striver A2Z on Codolio + same-topic LeetCode
 
-**Feb – May**Hard pass + Codeforces 1400 by 31 Mar
+**Feb – May**Hard pass + CF 1400; cyber 1–1.5 h/day
 
 **Feb – Mar**Internship applications, GSoC/LFX
 
@@ -16,15 +16,15 @@ Your plan from 17 Nov 2026 to placements, in the same seven-phase DSA structure 
 
 **22 Mar – 7 Apr**Exams: Anki only
 
-**Feb or 19 Apr**AWS SAA-C03
+**Mar or 19 Apr**AWS SAA-C03
 
-**May**Internship or AI-security project
+**May**AI-security project (or internship)
 
 **31 May – 31 Jul**Placement sprint
 
 **Aug – Dec**Placements
 
-**Every day:** Anki 15–20 min · DSA 3–4 h (5–6 new A2Z problems + redos on days 1, 3, 7, 21) · Core CS 1 h · Cloud course 2 h (to mid-Jan, then AWS 30 min) · log in the tracker. **Saturday:** OA set (from Feb). **Sunday:** 30-min revision test + weekly review. **Stuck rule:** 25 min (15 easy, 40 hard), then read, close, rewrite.
+**Every day:** Anki 15–20 min · DSA 3–4 h (5–6 new A2Z problems on [Codolio](https://codolio.com/question-tracker/sheet/strivers-a2z-dsa-sheet) + 1–2 same-topic LeetCode; redos on days 1, 3, 7, 21) · Core CS 1 h · Cloud 1 h (to 25 Feb) · tick progress on Codolio. **Saturday:** cyber 2 h until A2Z is done (cyber daily from Feb); OA set from Feb. **Sunday:** 30-min revision test + weekly review. **Stuck rule:** 25 min (15 easy, 40 hard), then read, close, rewrite.
 
 ## DSA in seven phases
 
@@ -48,7 +48,7 @@ Your plan from 17 Nov 2026 to placements, in the same seven-phase DSA structure 
 | Machine coding       | Food ordering, pluggable-eviction cache, inventory (plus every LLD above as 60–90 min practice)                                     | [Gap-fill](gap-fill-pack.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | Core CS, SQL         | OS, DBMS, CN, OOP: 1 h/day; 300 MCQs; 70 SQL questions                                                                              | [MCQ I](core-cs-mcq-bank.md) · [MCQ II](core-cs-mcq-bank-2.md) · [SQL I](sql-pack.md) · [SQL II](sql-pack-2.md)                                                                                                                                                                                           |
 | OAs, aptitude        | 24 timed OA sets on Saturdays (13 Feb – 4 Sep); 240 aptitude questions                                                              | [OA I](oa-simulation-packs.md) · [OA II](oa-simulation-packs-2.md) · [OA III](oa-simulation-packs-3.md) · [Aptitude II](aptitude-pack-2.md)                                                                                                                                                               |
-| Security, cloud      | Cloud course 2 h/day to mid-Jan; labs on weekends; TenantWall paper                                                                 | [Cloud plan](cloud-architect-2h-plan.md) · [TenantWall](tenantwall-explained.md) · [AWS labs](aws-lab-workbook.md) · [Sec labs](security-labs-workbook.md) · [Sec Q&A](cyber-security-interview-bank.md) |
+| Security, cloud      | Cloud 1 h/day to 25 Feb; cyber Saturdays, daily from Feb; TenantWall paper                                                          | [Cloud plan](cloud-architect-2h-plan.md) · [TenantWall](tenantwall-explained.md) · [AWS labs](aws-lab-workbook.md) · [Sec labs](security-labs-workbook.md) · [Sec Q&A](cyber-security-interview-bank.md) |
 | Projects             | Backend, AI-security, C++ networking, SOC log analyser                                                                              | [Networking](network-programming-project.md) · [logsentry](soc-log-analysis-project.md)                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | Applying             | Resume, profiles, 10 applications + 5 messages a week, open source                                                                  | [Resume](resume-kit.md) · [Tracker](applications-outreach-kit.md) · [GSoC](open-source-gsoc-guide.md)                                                                                                                                                                                                                                                                                                      |
 | Interviews           | Mocks from March (2/week from 31 May), company files, stories, interview day                                                        | [Mocks I](mock-interview-scripts.md) · [Mocks II](mock-interview-scripts-2.md) · [Companies](company-files-3.md) · [Day kit](interview-day-kit.md)                                                                                                                                                        |

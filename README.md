@@ -4,6 +4,17 @@
 
 My placement kit (B.Tech CSE Cybersecurity, class of 2028). **Plan: Path A**, an SDE profile with security and cloud depth, plus an Elite HFT track that opens only if I pass the 31 March 2027 checkpoint.
 
+## My daily routine (from 20 Nov 2026)
+
+| Block | Time | What |
+|---|---|---|
+| DSA | 3–4 h | [Striver A2Z sheet on Codolio](https://codolio.com/question-tracker/sheet/strivers-a2z-dsa-sheet): the next 5–6 problems in order (learn the concept, solve, tick), plus 1–2 LeetCode problems on the same topic. LeetCode contests from December, Codeforces from February. |
+| Cloud | 1 h | Solutions Architect course: `generated/cloud-architect-2h-plan.pdf` (dates at 1 h a day in section 2; finish about 25 Feb, exam March or 19 April) |
+| Core CS | 1 h | OS, DBMS, Computer Networks, OOP, one subject at a time |
+| Anki | 15 min | `generated/anki/` |
+| Cyber | Saturday 2 h now; 1–1.5 h daily from Feb | Security labs, PortSwigger Web Security Academy; from Feb the SOC project and the TenantWall paper (due 21 Mar) |
+| AI | May 2027 | AI-security project: `generated/ai-security-starter/` |
+
 ## Open
 
 | File | What it is |

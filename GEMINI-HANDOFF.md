@@ -6,6 +6,10 @@ Today's date and where I am: [FILL IN, for example "12 Nov 2026, in my village u
 
 ---
 
+
+## Current routine (agreed 18 Nov 2026)
+DSA 3–4 h on the Striver A2Z sheet tracked on Codolio (https://codolio.com/question-tracker/sheet/strivers-a2z-dsa-sheet) plus 1–2 same-topic LeetCode problems; Cloud (Solutions Architect) 1 h a day to about 25 Feb 2027; Core CS 1 h; Anki 15 min; cyber 2 h on Saturdays until A2Z is done (about 30 Jan), then 1–1.5 h daily; AI-security project in May 2027. LeetCode contests from December, Codeforces from February.
+
 ## 0. Latest changes, 13 to 14 Nov 2026. These override anything below.
 
 A senior warned that DSA + cyber + AI + cloud at once would burn me out. We checked: Nov to Jan was manageable (about 6 tracks), but Feb to Mar had 10 tracks at 8 to 9 hours a day on top of college. I chose **Path A** with a gated HFT option.
