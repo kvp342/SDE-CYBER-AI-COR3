@@ -1,5 +1,6 @@
 % TenantWall paper skeleton (IEEE conference format). Every "% WRITE:" comment is a prompt; replace it with your text.
 % Build: pdflatex main && bibtex main && pdflatex main && pdflatex main
+% DRAFT TEXT: sections marked "% DRAFT (17 Nov 2026 run)" hold measured results from the real AWS run; rewrite them in your own words before submitting.
 \documentclass[conference]{IEEEtran}
 \usepackage{graphicx}
 \usepackage{booktabs}
@@ -69,12 +70,12 @@ cloud security, multi-tenancy, attribute-based access control, AWS IAM, audit lo
 \toprule
 Threat & Mitigation in TenantWall \\
 \midrule
-Spoofing & Roles with temporary credentials, MFA \\
+Spoofing & Per-user credentials and tags; MFA recommended \\
 Tampering & Explicit deny on tag changes; log validation \\
 Repudiation & CloudTrail with S3 data events \\
 Information disclosure & ABAC prefix and tag conditions; TLS only \\
-Denial of service & Versioning; budget alarms \\
-Elevation of privilege & No IAM write actions for tenant roles \\
+Denial of service & Instance-type limit; budget alarms \\
+Elevation of privilege & Explicit deny on IAM tag and policy changes \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -84,7 +85,7 @@ Elevation of privilege & No IAM write actions for tenant roles \\
 % the bucket policy denying non-TLS requests; why denies are separate from allows. Show one short policy excerpt:
 \begin{lstlisting}
 "Condition": {"StringEquals": {
-  "aws:ResourceTag/tenant": "${aws:PrincipalTag/tenant}"}}
+  "ec2:ResourceTag/Team": "${aws:PrincipalTag/Team}"}}
 \end{lstlisting}
 \begin{figure}[t]
 \centering
@@ -94,8 +95,10 @@ Elevation of privilege & No IAM write actions for tenant roles \\
 \end{figure}
 
 \section{Implementation}
-% WRITE: region, services, how tenants and roles are created and tagged, the trail with S3 data events,
-% the metric filter pattern and alarm settings (generated/tenantwall/alerting/), cost controls. Method flow: Fig.~\ref{fig:flow}.
+% DRAFT (17 Nov 2026 run)
+TenantWall was deployed in one AWS account in region us-east-1 with two tenants, \emph{alpha} and \emph{beta}, each represented by an IAM user tagged \texttt{Team=alpha} or \texttt{Team=beta}, and a separate administrator user. Two customer-managed identity policies are attached to both tenant users. \texttt{TenantABAC\_EC2} has seven statements: read-only \texttt{ec2:Describe*}; start, stop, reboot and terminate only where \texttt{ec2:ResourceTag/Team} equals \texttt{\$\{aws:PrincipalTag/Team\}}; \texttt{RunInstances} only when the request tags \texttt{Team} with the caller's own value and the type is \texttt{t2.micro} or \texttt{t3.micro}; permission on the resources a launch needs besides the instance; \texttt{CreateTags} only as part of \texttt{RunInstances} (\texttt{ec2:CreateAction}); decoding of authorization messages; and an explicit \texttt{Deny} on \texttt{iam:TagUser}, \texttt{UntagUser}, \texttt{PutUserPolicy}, \texttt{AttachUserPolicy} and \texttt{AddUserToGroup}. \texttt{TenantABAC\_S3} allows object reads, writes and deletes, and listing, only under the prefix named by the caller's \texttt{Team} tag. A bucket policy adds explicit denies for requests without TLS and for any principal whose \texttt{Team} tag does not match a prefix, excluding the administrator.
+
+Monitoring uses one multi-region CloudTrail trail with log-file validation and S3 data events for the tenant bucket, delivered to an encrypted log bucket and to a CloudWatch Logs group (30-day retention). Three metric filters count (i) \texttt{AccessDenied*} and \texttt{*UnauthorizedOperation} error codes, (ii) changes to user tags, group membership and user policies, and refused \texttt{CreateTags}, and (iii) bucket- and user-policy changes. Each feeds an alarm (sum over 300\,s, threshold $\geq 1$, missing data treated as not breaching) that publishes to an SNS topic with an e-mail subscription. All three policies were validated with IAM Access Analyzer before deployment.
 \begin{figure}[t]
 \centering
 \includegraphics[width=\linewidth]{../flowchart.png}
@@ -104,29 +107,45 @@ Elevation of privilege & No IAM write actions for tenant roles \\
 \end{figure}
 
 \section{Evaluation}
-% WRITE: research questions (RQ1 isolation holds? RQ2 how fast are denied attempts reported? RQ3 cost and overhead?).
-% Method: run the isolation test plan (generated/tenantwall-helpers.pdf) N times; record outcomes and alert delays.
+% DRAFT (17 Nov 2026 run)
+We asked: (RQ1) does isolation hold for allowed and refused operations, and is each refusal an explicit or an implicit deny? (RQ2) how quickly are refused attempts reported? (RQ3) do the policies pass automated validation?
+
+\textbf{RQ1.} Fourteen scenarios were run with the real tenant credentials (Table~\ref{tab:results}); all 14 produced the expected outcome. Refusal types were established with \texttt{sts decode-authorization-message} for EC2, the error message for S3 and IAM, and the IAM policy simulator for scenario 14. Seven refusals were implicit (no matching allow) and three explicit (a matching deny). After the run, alpha's user tag and its instance's tag were unchanged.
+
 \begin{table}[t]
-\caption{Isolation test results}
+\caption{Isolation test results (real AWS, 17 Nov 2026)}
 \label{tab:results}
 \centering
-\begin{tabular}{@{}lccc@{}}
+\footnotesize
+\begin{tabular}{@{}rlll@{}}
 \toprule
-Test & Expected & Observed & Alert (min) \\
+\# & Attempt by tenant alpha & Result & Deny type \\
 \midrule
-A reads B's object & Deny & [ ] & [ ] \\
-A writes to B's prefix & Deny & [ ] & [ ] \\
-A stops B's instance & Deny & [ ] & [ ] \\
-A re-tags an instance & Deny & [ ] & [ ] \\
-A reads own object & Allow & [ ] & -- \\
+1 & Launch micro instance tagged alpha & Allowed & -- \\
+2 & Launch with no Team tag & Refused & Implicit \\
+3 & Launch tagged Team=beta & Refused & Implicit \\
+4 & Launch a large instance type & Refused & Implicit \\
+5 & (beta) launch own micro instance & Allowed & -- \\
+6 & Stop beta's instance & Refused & Implicit \\
+7 & Stop own instance (dry run) & Allowed & -- \\
+8 & Re-tag own instance to beta & Refused & Implicit \\
+9 & Change own user tag to beta & Refused & Explicit \\
+10 & Upload to own prefix & Allowed & -- \\
+11 & Read an object in beta's prefix & Refused & Explicit \\
+12 & List beta's prefix & Refused & Implicit \\
+13 & Read own object without TLS & Refused & Explicit \\
+14 & Terminate beta's instance (simulator) & Refused & Implicit \\
 \bottomrule
 \end{tabular}
 \end{table}
-% WRITE: detection delay as median and range over trials; false alerts seen; monthly cost of data events and logs.
+
+\textbf{RQ2.} CloudTrail events for refused EC2 and IAM calls reached CloudWatch Logs 63--130\,s after the call; S3 data events took about 316\,s. The access-denied alarm entered the ALARM state 143\,s after the first refused call and the tag-tampering alarm 104\,s after the refused \texttt{TagUser}, and both sent e-mail notifications. The policy-change alarm stayed OK, as no policy was changed. These figures come from a single run and should be repeated before being reported as typical.
+
+\textbf{RQ3.} IAM Access Analyzer policy validation reported no errors, security warnings, warnings or suggestions for the two identity policies and the bucket policy.
 
 \section{Discussion and Limitations}
-% WRITE: tags as the trust anchor (who may set them); DescribeInstances has no resource-level control;
-% CloudTrail delivery delay; scaling to many tenants; what would change for production.
+% DRAFT (17 Nov 2026 run)
+Tags are the trust anchor: isolation holds only while tenants cannot set their own principal tags, which the explicit deny enforces, and only if administrators tag resources correctly. \texttt{ec2:Describe*} does not support resource-level permissions, so tenants can see, but not act on, each other's instances. Detection is bounded by CloudTrail delivery, which was minutes rather than seconds, so alerting complements prevention rather than replacing it. The access-denied filter counts every refused call in the account: about 30 minutes after the test, two refused calls not made by any tenant user (probably from the management console) raised the alarm again; scoping the filter to tenant principals would remove such alerts. The bucket policy grows by one statement per tenant and is limited by the bucket-policy size limit; larger deployments would use one account per tenant under AWS Organizations.
 
 \section{Related Work}
 % WRITE: 1 paragraph each on cloud isolation \cite{ristenpart2009}, access-control models \cite{sandhu1996,jin2012,nist800162},

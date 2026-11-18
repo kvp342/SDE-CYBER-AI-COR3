@@ -1,18 +1,20 @@
 SPACED REPETITION · ANKI DECKS
 
-# 1056 flashcards, ready to import
+# 1132 flashcards, ready to import
 
 Seven decks made from material already checked elsewhere in this kit (all 148 worked solutions, Core CS Q&A, one-pagers, both MCQ banks, the pattern tree, the STL card, the 30 bugs, the security pages and interview bank, the AWS pack and both aptitude packs). Anki shows each card just before you would forget it, so 15–20 minutes a day keeps everything fresh until placements.
 
-| File                            | Deck                            | Cards |
-|---------------------------------|---------------------------------|-------|
-| `generated/anki/solutions.csv`  | Worked solutions (148 problems) | 148   |
-| `generated/anki/core-cs.csv`    | Core CS                         | 392   |
-| `generated/anki/patterns.csv`   | DSA patterns and C++            | 57    |
-| `generated/anki/complexity.csv` | Complexity facts                | 34    |
-| `generated/anki/security.csv`   | Security                        | 125   |
-| `generated/anki/aws.csv`        | AWS SAA-C03                     | 100   |
-| `generated/anki/aptitude.csv`   | Aptitude shortcuts              | 200   |
+| File                             | Deck                            | Cards |
+|----------------------------------|---------------------------------|-------|
+| `generated/anki/solutions.csv`   | Worked solutions (148 problems) | 148   |
+| `generated/anki/core-cs.csv`     | Core CS                         | 392   |
+| `generated/anki/patterns.csv`    | DSA patterns and C++            | 57    |
+| `generated/anki/complexity.csv`  | Complexity facts                | 34    |
+| `generated/anki/security.csv`    | Security                        | 125   |
+| `generated/anki/aws.csv`         | AWS SAA-C03                     | 100   |
+| `generated/anki/tenantwall.csv`  | TenantWall project              | 36    |
+| `generated/anki/cloud-rules.csv` | Cloud architect exam rules      | 40    |
+| `generated/anki/aptitude.csv`    | Aptitude shortcuts              | 200   |
 
 ## Android: AnkiDroid (free)
 

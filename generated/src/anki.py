@@ -5,7 +5,7 @@ from pypdf import PdfReader, PdfWriter
 from reportlab.pdfgen import canvas
 ROOT = pathlib.Path(__file__).resolve().parents[2]; OUT = ROOT / "generated"; SRC = OUT / "src"; DECKS = OUT / "anki"
 sys.path[:0] = [str(SRC), str(ROOT / "sources" / "kb")]
-import t_qa, t_sec, mcq_data, mcq2_data, aws_data, apti_data, apti2_data, secbank_data, t_probs, t_probs2, t_probs3, t_probs4
+import tw_cards, csa_data, t_qa, t_sec, mcq_data, mcq2_data, aws_data, apti_data, apti2_data, secbank_data, t_probs, t_probs2, t_probs3, t_probs4
 from pattern_stl import TREE, STL, BUGS            # importing builds that PDF too; cheap and keeps one source of truth
 from onepagers import P as ONEPAGERS
 E = html.escape
@@ -15,6 +15,11 @@ def sol_card(p):
     pattern = p["why"].split(".")[0].replace("Pattern: ", "")
     cx = next((x.replace("Complexity: ", "") for x in p["points"] if str(x).startswith("Complexity")), "")
     return (f"{p['title']}: which pattern, and what is the key idea?", f"Pattern: {pattern}. {' '.join(p['core'])}" + (f" Complexity: {cx}." if cx else ""))
+def rule_card(topic, r):
+    """Turn an exam rule into a question: 'need = service' asks for the service; 'A; B' or 'A: B' asks for B; else ask to complete it."""
+    for sep in (" = ", "; ", ": "):
+        if sep in r: a, b = r.split(sep, 1); return (f"{topic}: {a} → ?", r)
+    w = r.split(); return (f"{topic}: complete the rule: {' '.join(w[:len(w) // 2])} …", r)
 decks = {
  "solutions": ("Worked solutions (148 problems)", [sol_card(p) for p in t_probs.P + t_probs2.P + t_probs3.P + t_probs4.P]),
  "core-cs": ("Core CS", [(q, a) for t in t_qa.TOPICS if t["id"] != "qa-security" for q, a in t["qa"]]
@@ -30,6 +35,9 @@ decks = {
  "aws": ("AWS SAA-C03", [(f"Which AWS service? {need}", svc) for need, svc in aws_data.NEED]
          + [(q[0], f"{q[1]}. {q[5]}") for k in aws_data.QS for q in aws_data.QS[k]]
          + [(f"SAA-C03 domain '{t}' ({w}): key points?", " • ".join(n)) for k, t, w, kb, n in aws_data.DOMAINS]),
+ "tenantwall": ("TenantWall project", tw_cards.CARDS),
+ "cloud-rules": ("Cloud architect exam rules", [rule_card(t, r) for t, _, _, rules in csa_data.WEEKS for r in rules]
+                 + [(f"Cloud week {n + 1} ({t}): the five topics?", " • ".join(days)) for n, (t, _, days, _) in enumerate(csa_data.WEEKS)]),
  "aptitude": ("Aptitude shortcuts", [(q["q"], f"{q['a']}. {q['why']}") for key, (t, s, qs) in apti_data.SECTIONS.items() if key != "verbal" for q in qs]
               + [(q["q"] if not q.get("data") else q["data"] + "\n" + q["q"], f"{q['a']}. {q['why']}") for key, (t, s, qs) in apti2_data.SECTIONS.items() for q in qs]),
 }

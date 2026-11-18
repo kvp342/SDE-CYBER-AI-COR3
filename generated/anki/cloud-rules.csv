@@ -1,0 +1,45 @@
+#separator:Semicolon
+#html:false
+#notetype:Basic
+#deck:Placement::Cloud architect exam rules
+#tags:placement cloud-rules
+Cloud basics and IAM: An explicit Deny anywhere wins → ?;"An explicit Deny anywhere wins; SCPs and boundaries limit, they never grant."
+Cloud basics and IAM: complete the rule: Applications on EC2 or Lambda …;Applications on EC2 or Lambda get a role, never access keys.
+Cloud basics and IAM: Cross-account access → ?;Cross-account access = a role in the target account + AssumeRole.
+Compute: Spot → ?;Spot = cheapest, can be interrupted: only for fault-tolerant work.
+Compute: Instance store is lost when the instance stops → ?;"Instance store is lost when the instance stops; EBS persists."
+Compute: EBS lives in one AZ → ?;"EBS lives in one AZ; EFS is shared across AZs."
+Networking: Private subnet reaching the internet → ?;Private subnet reaching the internet = NAT gateway in a public subnet.
+Networking: Private access to S3 without internet → ?;Private access to S3 without internet = gateway endpoint.
+Networking: Many VPCs + on-prem → ?;Many VPCs + on-prem = Transit Gateway.
+Storage: Unknown or changing access pattern → ?;Unknown or changing access pattern = Intelligent-Tiering.
+Storage: Write-once compliance → ?;Write-once compliance = Object Lock (compliance mode).
+Storage: Huge offline transfer → ?;"Huge offline transfer = Snow family; online sync = DataSync."
+Databases: Multi-AZ → ?;"Multi-AZ = failover, not read scaling; read replicas = read scaling."
+Databases: Microsecond DynamoDB reads → ?;Microsecond DynamoDB reads = DAX.
+Databases: Key-value at any scale, serverless → ?;Key-value at any scale, serverless = DynamoDB.
+Resilience and scaling: Lower RTO/RPO costs more → ?;Lower RTO/RPO costs more: backup-restore < pilot light < warm standby < active-active.
+Resilience and scaling: Static IP for a load balancer → ?;Static IP for a load balancer = NLB (or Global Accelerator).
+Resilience and scaling: Failover between Regions → ?;Failover between Regions = Route 53 failover routing + health checks.
+Decoupling and serverless: Decouple producer and consumer → ?;Decouple producer and consumer = SQS.
+Decoupling and serverless: One event to many consumers → ?;One event to many consumers = SNS fan-out or EventBridge.
+Decoupling and serverless: Exactly-once, ordered processing → ?;Exactly-once, ordered processing = SQS FIFO.
+Security and monitoring: Automatic secret rotation → ?;Automatic secret rotation = Secrets Manager.
+Security and monitoring: Who did what → ?;"Who did what = CloudTrail; resource configuration over time = Config."
+Security and monitoring: Sensitive data in S3 → ?;"Sensitive data in S3 = Macie; threat detection = GuardDuty."
+Performance and cost: Static content worldwide → ?;"Static content worldwide = CloudFront; non-HTTP global performance = Global Accelerator."
+Performance and cost: Query S3 data with SQL, no servers → ?;Query S3 data with SQL, no servers = Athena.
+Performance and cost: Steady 1–3 year usage → ?;Steady 1–3 year usage = Savings Plans or Reserved Instances.
+Exam practice: Read the last line of the question first → ?;Read the last line of the question first: cheapest, fastest, least operational overhead or most secure.
+Exam practice: complete the rule: Eliminate two answers, then compare the …;Eliminate two answers, then compare the remaining two on that last line.
+Exam practice: complete the rule: Managed and serverless usually …;Managed and serverless usually wins 'least operational overhead'.
+Cloud week 1 (Cloud basics and IAM): the five topics?;"Global infrastructure: Regions, Availability Zones, edge locations; shared responsibility model; the console, CLI and SDKs • IAM users, groups, roles; access keys vs temporary credentials; MFA; root user rules • Policies: identity vs resource-based, JSON elements, evaluation logic (explicit deny > allow > implicit deny) • Organizations, SCPs, permission boundaries, IAM Identity Center, cross-account roles with STS AssumeRole • Re-read the IAM parts of TenantWall explained: ABAC, condition keys, policy variables, Access Analyzer"
+Cloud week 2 (Compute): the five topics?;"EC2 instance families, sizing, AMIs, user data, instance metadata (IMDSv2) • Purchase options: On-Demand, Savings Plans, Reserved Instances, Spot, Dedicated Hosts/Instances • Block storage: EBS volume types (gp3, io2, st1, sc1), snapshots, instance store; EFS for shared files • Placement groups (cluster, spread, partition), ENI, Elastic IP, hibernation • Lambda basics, containers on ECS/EKS/Fargate, Elastic Beanstalk: when to choose each"
+Cloud week 3 (Networking): the five topics?;"VPC, CIDR, subnets, route tables, Internet Gateway; public vs private subnets • NAT gateway; security groups (stateful, allow only) vs network ACLs (stateless, allow and deny) • VPC endpoints: gateway (S3, DynamoDB) vs interface (PrivateLink); VPC Flow Logs • VPC peering (not transitive), Transit Gateway, Site-to-Site VPN, Direct Connect • Route 53 basics: hosted zones, records, alias records"
+Cloud week 4 (Storage): the five topics?;S3 basics: buckets, objects, keys, prefixes, consistency, versioning, presigned URLs • Storage classes (Standard, Intelligent-Tiering, Standard-IA, One Zone-IA, Glacier tiers) and lifecycle rules • S3 security: Block Public Access, bucket policies, encryption (SSE-S3, SSE-KMS, client-side), Object Lock • Replication (CRR/SRR), Transfer Acceleration, multipart upload, S3 event notifications • FSx, Storage Gateway, DataSync, Snow family, AWS Backup
+Cloud week 5 (Databases): the five topics?;RDS engines, Multi-AZ (availability) vs read replicas (read scaling), backups and snapshots • Aurora: storage model, replicas, Aurora Serverless, Global Database • DynamoDB: partition and sort keys, capacity modes, GSI/LSI, Streams, TTL, global tables • ElastiCache (Redis/Memcached) and DAX: caching patterns • Redshift, Athena and other purpose-built databases: which question words point to which
+Cloud week 6 (Resilience and scaling): the five topics?;"Elastic Load Balancing: ALB (HTTP, path/host rules), NLB (TCP/UDP, static IP), GWLB • Auto Scaling groups: launch templates, health checks, scaling policies (target tracking, step, scheduled) • Route 53 routing policies: simple, weighted, latency, failover, geolocation, multivalue; health checks • Disaster recovery: backup and restore, pilot light, warm standby, multi-site active-active; RPO and RTO • Design a three-tier web app across two AZs on paper; check each tier for a single point of failure"
+Cloud week 7 (Decoupling and serverless): the five topics?;"SQS: standard vs FIFO, visibility timeout, dead-letter queues, long polling • SNS topics and fan-out (SNS to several SQS queues); EventBridge rules and buses • API Gateway + Lambda: limits, concurrency, cold starts; Step Functions for workflows • Streaming: Kinesis Data Streams vs Data Firehose; when SQS is enough • Re-architect a monolith on paper into queue-based services; mark where each service fits"
+Cloud week 8 (Security and monitoring): the five topics?;"KMS (keys, key policies, envelope encryption), CloudHSM, ACM certificates • Secrets Manager vs Systems Manager Parameter Store; WAF, Shield, Firewall Manager • GuardDuty, Inspector, Macie, Security Hub, Detective: what each one finds • CloudTrail (management vs data events), CloudWatch metrics, logs, alarms; AWS Config rules • TenantWall explained: walk through your own CloudTrail, metric filters, alarms and SNS from memory"
+Cloud week 9 (Performance and cost): the five topics?;"CloudFront (caching, origins, OAC) vs Global Accelerator; caching at every layer • Analytics: Athena, Glue, EMR, Kinesis, QuickSight, Lake Formation; when each fits • Pricing: Savings Plans vs RIs vs Spot; S3 class costs; data transfer costs; NAT gateway costs • Cost tools: Cost Explorer, Budgets, Cost and Usage Report, Compute Optimizer, Trusted Advisor • Well-Architected: the six pillars and the questions each asks"
+Cloud week 10 (Exam practice): the five topics?;"Practice set 1: questions 1–30 of your SAA-C03 study pack, timed (60 min); log every miss • Re-read notes for each missed topic in the docs and FAQs • Practice set 2: questions 31–60 of the study pack, timed • Official sample questions and the free Skill Builder practice question set • Weak-area day: redo all missed questions; rewrite the 'which service' table from memory"

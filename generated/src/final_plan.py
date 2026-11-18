@@ -42,14 +42,17 @@ sec("rules", "Read this first: the seven rules", UL([
 # ------------------------------------------------------------------ 2
 sec("phases", "The plan on one page", T(["When", "Phase", "Goal", "Open"], [
  ["16–17 Nov 2026", "C++ refresh", "STL fluency, no compile errors", K("generated/patterns-stl-card.pdf")],
- ["18 Nov 2026 – 30 Jan 2027", "Striver A2Z core", "Classic 18-step sheet, 5–6 problems a day", K("Striver-A2Z-DSA-Sheet-Classic.pdf") + ", " + K("generated/worked-solutions-2.pdf")],
- ["Daily, from 18 Nov", "Core CS + flashcards", "1 hour Core CS, 15–20 min Anki", K("generated/core-cs-one-pagers.pdf") + ", " + K("generated/anki/", "anki decks")],
+ ["18 Nov 2026", "TenantWall finish + show", "Run the 14 tests yourself, screenshots, Policy Generator, diagrams; evening C++/STL skim", K("generated/tenantwall-explained.pdf")],
+ ["19 Nov 2026", "Cloud course day", "About 10 h: plan weeks 0–4 (setup, IAM, compute, networking, S3); 1 h DSA", K("generated/cloud-architect-2h-plan.pdf")],
+ ["20 Nov 2026 – mid-Jan 2027", "Cloud course, 2 h a day", "Continue the plan from where 19 Nov ended", K("generated/cloud-architect-2h-plan.pdf")],
+ ["20 Nov 2026 – 30 Jan 2027", "Striver A2Z core", "Classic 18-step sheet, 5–6 problems a day", K("Striver-A2Z-DSA-Sheet-Classic.pdf") + ", " + K("generated/worked-solutions-2.pdf")],
+ ["Daily, from 20 Nov", "Core CS + flashcards", "1 hour Core CS, 15–20 min Anki", K("generated/core-cs-one-pagers.pdf") + ", " + K("generated/anki/", "anki decks")],
  ["8 Feb – 19 May 2027", "Hard pass + Codeforces", "Hard problems, OA sets, Codeforces 1400 by 31 Mar", K("generated/worked-solutions-3.pdf") + ", " + K("generated/oa-simulation-packs.pdf") + ", " + K("generated/codeforces-ladder.pdf")],
  ["Feb – Mar 2027", "Internship applications", "Resume final, profiles live, apply and ask for referrals", K("generated/resume-kit.pdf") + ", " + K("generated/profile-kit.pdf")],
  ["By 21 Mar 2027", "TenantWall paper", "Submit the research paper", K("generated/tenantwall-paper-outline.pdf")],
  ["22 Mar – 7 Apr 2027", "Exams", "Pause new material; Anki only", K("generated/anki-decks-guide.pdf")],
  ["31 Mar 2027", "Checkpoint", "Elite (HFT) track only if the gate is passed", K("generated/elite-track-pack.pdf")],
- ["Week of 19 Apr 2027", "AWS SAA-C03 exam", "Pass the certification", K("generated/aws-saa-c03-study-pack.pdf")],
+ ["Feb 2027, or week of 19 Apr", "AWS SAA-C03 exam", "Book in February once two practice sets score 80%+; otherwise keep 19 April", K("generated/aws-saa-c03-study-pack.pdf")],
  ["May 2027", "AI-security project (or internship)", "A deployed, tested project; if you land a summer internship, it replaces this", K("generated/ai-security-starter-guide.pdf")],
  ["31 May – 31 Jul 2027", "Placement sprint", "Mocks, company files, LLD and system design, OA sets", K("generated/mock-interview-scripts.pdf") + ", " + K("generated/company-files-2.pdf")],
  ["Aug – Dec 2027", "Placements", "OAs and interviews; 6-month internship and full-time offers", K("generated/interview-day-kit.pdf")],
@@ -58,7 +61,7 @@ sec("phases", "The plan on one page", T(["When", "Phase", "Goal", "Open"], [
 # ------------------------------------------------------------------ 3
 sec("months", "Month by month: what to do and what to finish", T(["Month", "Do", "Finish by month end"], [
  ["Nov 2026", "A2Z steps 1–3 (about). Set up the tracker and Anki. Apply to the Science Academies research fellowship (SRFP) if research interests you: closes 30 Nov 2026." + S("https://www.ias.ac.in/public/Resources/News/SRFP2027_Announcement.pdf", "Indian Academy of Sciences: SRFP 2027 announcement"), "Arrays, hashing, sorting, binary search basics"],
- ["Dec 2026", "A2Z steps 4–9 (binary search, strings, linked list, recursion). Resume v1 from the resume kit.", "Resume v1; about 200+ problems logged (5–6 a day since 18 Nov)"],
+ ["Dec 2026", "A2Z steps 4–9 (binary search, strings, linked list, recursion). Resume v1 from the resume kit.", "Resume v1; about 200+ problems logged (5–6 a day since 20 Nov)"],
  ["Jan 2027", "A2Z steps 10–18 (stack, heap, greedy, trees, graphs, DP). Pick open-source orgs for GSoC or LFX and make 2–3 small contributions (see the open-source guide).", "A2Z core done (30 Jan); GitHub profile clean"],
  ["Feb 2027", "Hard pass begins. Codeforces ladder. OA sets 1–4 on Saturdays. Write the TenantWall paper. Watch for GSoC orgs (mid-Feb) and IIT summer research calls." + S("https://developers.google.com/open-source/gsoc/timeline", "Google Summer of Code timeline (official)") + S("https://nm7.si/blog/research-internships-at-iits-for-ug-students", "Research internships at IITs for UG students (dates roundup)"), "Applications sent; 2 mocks done"],
  ["Mar 2027", "Internship season. Apply daily (Section 8). GSoC proposal in the contributor window (2026's was 16–31 Mar). Codeforces 1400 gate on 31 Mar. Paper by 21 Mar.", "Paper submitted; gate result known"],
@@ -85,7 +88,7 @@ sec("daily", "The daily and weekly system", T(["Block", "Time", "What", "Open"],
  ["Warm-up", "15–20 min", "Anki reviews (all decks)", K("generated/anki-decks-guide.pdf")],
  ["DSA", "3–4 h", "5–6 new problems in sheet order, plus the day's redos (1-3-7-21)", K("generated/patterns-stl-card.pdf")],
  ["Core CS", "1 h", "One topic: read the one-pager, answer 10 MCQs, explain it aloud", K("generated/core-cs-mcq-bank.pdf")],
- ["Track work", "30–60 min", "AWS (30 min), security labs or project work by phase", K("generated/security-lab-notebook.pdf")],
+ ["Track work", "2 h until mid-Jan, then 30–60 min", "Cloud course 2 h a day (" + K("generated/cloud-architect-2h-plan.pdf", "plan") + "); after it: AWS revision, security labs or project work by phase", K("generated/security-lab-notebook.pdf")],
  ["Log", "10 min", "Tracker, plus one Anki card for every problem you got wrong", K("generated/weekly-planner.pdf")],
 ]) + "<h3>Every week</h3>" + UL([
  "<b>Saturday:</b> one OA set under exam conditions (90 minutes), from the date the set lists. Score it the same day.",
@@ -187,7 +190,7 @@ def body(pages):
     out = [f'''<section><p class="eb">FINAL PLAN · NOV 2026 TO PLACEMENTS</p><h1>Your final plan<br><span>to internships and placements</span></h1>
 <p class="lead">Internships from March 2027, placements from August 2027. This is the plan, the rules, the deadlines and the targets on a few pages, filtered from what seniors and guides recommend and tied to the files in this kit. Read Section 1 now, Section 2 every month, and Section 12 whenever you are unsure what to open.</p>
 <table class="ix"><thead><tr><th>Section</th><th class="pg">Page</th></tr></thead><tbody>{ix}</tbody></table>
-<p class="note">Today's action: if research appeals to you, the Science Academies summer research fellowship (SRFP) closes on 30 November 2026 (Section 4). Everything else starts with Striver A2Z on 18 November.</p></section>''']
+<p class="note">Today's action: if research appeals to you, the Science Academies summer research fellowship (SRFP) closes on 30 November 2026 (Section 4). TenantWall is finished and shown on 18 November, the cloud course starts on 19 November, and Striver A2Z starts on 20 November.</p></section>''']
     for n, (i, t, b) in enumerate(SEC):
         out.append(f'<section class="sec" id="{i}"><h2><span class="num">{n + 1:02d}</span>{E(t)}<a class="back" href="#top">↑ Index</a></h2>{b}</section>')
     out.append('<section class="sec" id="src"><h2><span class="num">··</span>Sources<a class="back" href="#top">↑ Index</a></h2><p>Checked on 17 Nov 2026. Blogs and forum posts are single opinions; official pages win when they disagree. Numbers marked as rules of thumb are not company requirements.</p><ol class="src">'
