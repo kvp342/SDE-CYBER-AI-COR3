@@ -19,7 +19,7 @@ SECTIONS = [
  ("VIII. Related work", "about 0.5 page", ["Cloud isolation research, access-control models, cloud audit and monitoring.", "How TenantWall differs: a concrete, tested design on one provider with alerting."]),
  ("IX. Conclusion", "1 paragraph", ["What was built, measured results, one line of future work."]),
 ]
-FIGS = [("Fig. 1", "Architecture (generated/tenantwall/architecture.png); redraw with official AWS icons for the final version"), ("Fig. 2", "Method flowchart (generated/tenantwall/flowchart.png)"),
+FIGS = [("Fig. 1", "Architecture with official AWS icons (generated/tenantwall/diagrams/tenantwall-architecture.png, from the .drawio file)"), ("Fig. 2", "Method flowchart (generated/tenantwall/diagrams/tenantwall-flowchart.png)"),
         ("Table I", "STRIDE threats and mitigations"), ("Table II", "Isolation test results: expected, observed, alert delay"), ("Optional", "Detection delay over trials (a small bar or box plot)")]
 WEEKS = [("Week 1", "Related work and background: read the cited sources, write Sections II and VIII"), ("Week 2", "Design: Section IV with the policy excerpt and Fig. 1"),
          ("Week 3", "Implementation: Section V; run every isolation test once and save the evidence"), ("Week 4", "Evaluation runs: repeat tests, measure alert delays and cost; fill Table II"),

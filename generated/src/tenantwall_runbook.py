@@ -108,7 +108,7 @@ sec("diagrams", "Step 5: architecture diagram and flowchart (60 minutes)", UL([
  "Open <a href='https://app.diagrams.net'>draw.io (diagrams.net)</a> → More Shapes → enable the <b>AWS</b> shape library (it contains the official AWS architecture icons" + D(*ICO) + ").",
  "<b>Architecture diagram:</b> the AWS account as a big box; inside it IAM (users tagged Team=A / Team=B, the Tenants group, the two identity policies), the S3 bucket with team prefixes and its bucket policy, EC2 instances tagged by team, and the new path CloudTrail → S3 log bucket and CloudWatch Logs → metric filters → alarms → SNS → email. Draw allowed paths in green, refused ones in red.",
  "<b>Method flowchart:</b> request → does an explicit Deny match? (yes → refused, explicit) → does an Allow match with Team equal to the resource's team or prefix? (no → refused, implicit; yes → allowed) → in every case CloudTrail records it → refused calls counted → alarm.",
- "Use " + K("generated/tenantwall/architecture.png", "architecture.png") + " and " + K("generated/tenantwall/flowchart.png", "flowchart.png") + " as a starting sketch, but redraw them with the official icons, since that is what your professor asked for.",
+ "Done: " + K("generated/tenantwall/diagrams/tenantwall-architecture.png", "architecture") + " and " + K("generated/tenantwall/diagrams/tenantwall-flowchart.png", "flowchart") + " with the official AWS icons, exported from the .drawio files in the same folder (edit those at app.diagrams.net).",
  "Export both as PNG at 300 DPI (File → Export as → PNG → zoom 300%) and save the .drawio files too: <b>S12</b>, <b>S13</b>."]))
 
 sec("paper", "Step 6: update the paper (40 minutes)", T(["Where", "Add"], [

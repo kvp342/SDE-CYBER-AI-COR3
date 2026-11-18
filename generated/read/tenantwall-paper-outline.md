@@ -78,13 +78,13 @@ Lengths assume a 6-page two-column paper; scale to your venue.
 
 ### Figures and tables
 
-|          |                                                                                                            |
-|----------|------------------------------------------------------------------------------------------------------------|
-| Fig. 1   | Architecture (generated/tenantwall/architecture.png); redraw with official AWS icons for the final version |
-| Fig. 2   | Method flowchart (generated/tenantwall/flowchart.png)                                                      |
-| Table I  | STRIDE threats and mitigations                                                                             |
-| Table II | Isolation test results: expected, observed, alert delay                                                    |
-| Optional | Detection delay over trials (a small bar or box plot)                                                      |
+|          |                                                                                                                         |
+|----------|-------------------------------------------------------------------------------------------------------------------------|
+| Fig. 1   | Architecture with official AWS icons (generated/tenantwall/diagrams/tenantwall-architecture.png, from the .drawio file) |
+| Fig. 2   | Method flowchart (generated/tenantwall/diagrams/tenantwall-flowchart.png)                                               |
+| Table I  | STRIDE threats and mitigations                                                                                          |
+| Table II | Isolation test results: expected, observed, alert delay                                                                 |
+| Optional | Detection delay over trials (a small bar or box plot)                                                                   |
 
 ### Seven weeks to 21 March
 

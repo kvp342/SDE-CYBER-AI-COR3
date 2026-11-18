@@ -87,12 +87,12 @@ Elevation of privilege & Explicit deny on IAM tag and policy changes \\
 "Condition": {"StringEquals": {
   "ec2:ResourceTag/Team": "${aws:PrincipalTag/Team}"}}
 \end{lstlisting}
-\begin{figure}[t]
+\begin{figure*}[t]
 \centering
-\includegraphics[width=\linewidth]{../architecture.png}
+\includegraphics[width=0.9\textwidth]{../diagrams/tenantwall-architecture.png}
 \caption{TenantWall architecture: tag-matched IAM evaluation and the CloudTrail $\rightarrow$ CloudWatch $\rightarrow$ SNS alerting path.}
 \label{fig:arch}
-\end{figure}
+\end{figure*}
 
 \section{Implementation}
 % DRAFT (17 Nov 2026 run)
@@ -101,7 +101,7 @@ TenantWall was deployed in one AWS account in region us-east-1 with two tenants,
 Monitoring uses one multi-region CloudTrail trail with log-file validation and S3 data events for the tenant bucket, delivered to an encrypted log bucket and to a CloudWatch Logs group (30-day retention). Three metric filters count (i) \texttt{AccessDenied*} and \texttt{*UnauthorizedOperation} error codes, (ii) changes to user tags, group membership and user policies, and refused \texttt{CreateTags}, and (iii) bucket- and user-policy changes. Each feeds an alarm (sum over 300\,s, threshold $\geq 1$, missing data treated as not breaching) that publishes to an SNS topic with an e-mail subscription. All three policies were validated with IAM Access Analyzer before deployment.
 \begin{figure}[t]
 \centering
-\includegraphics[width=\linewidth]{../flowchart.png}
+\includegraphics[width=\linewidth]{../diagrams/tenantwall-flowchart.png}
 \caption{Request evaluation and alerting method.}
 \label{fig:flow}
 \end{figure}
